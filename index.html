@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>サイトタイトル</title>
+    <meta
+      name="description"
+      content="サイトの説明文をここに記載します。"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="img/favicon.png" />
+    <!-- リセットCSS -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- サイトのCSS（Live Sass CompilerでSCSSからコンパイル） -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- ========== HEADER ========== -->
+    <header id="header">
+      <!-- ロゴ -->
+      <div class="logo">
+        <a href="#"><img src="img/logo.svg" alt="ロゴ" /></a>
+      </div>
+
+      <!-- ハンバーガーメニュー（ナビゲーション） -->
+      <nav class="hamburger-menu">
+        <ul class="menu-list">
+          <li><a href="#firstview">TOP</a></li>
+          <li><a href="#feature">特徴</a></li>
+          <li><a href="#flow">流れ</a></li>
+          <li><a href="#voice">お客様の声</a></li>
+          <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+        <!-- CTAボタン（必要に応じて使用） -->
+        <!-- <a class="btn" href="#contact">お問い合わせはこちら</a> -->
+      </nav>
+
+      <!-- ハンバーガーアイコン（3本線） -->
+      <div class="toggle-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- オーバーレイ（メニュー展開時の背景） -->
+      <div id="mask"></div>
+    </header>
+
+    <!-- ========== MAIN ========== -->
+    <main>
+
+      <!-- ファーストビュー（動画 or 画像） -->
+      <div id="firstview" class="first-view">
+        <!-- 動画を使う場合 -->
+        <video
+          class="bg-video"
+          src="video/background-video.mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
+
+        <!-- ファーストビューのテキスト -->
+        <div class="first-view-text">
+          <p class="catch-copy">キャッチコピーを<br />ここに入れる</p>
+          <p class="sub-copy">サブコピーのテキストをここに記載します</p>
+          <a class="btn" href="#contact">お問い合わせはこちら</a>
+        </div>
+      </div>
+
+      <!-- ========== 特徴セクション ========== -->
+      <section id="feature" class="wrapper">
+        <h2 class="sec-title">特徴・サービス</h2>
+
+        <ul class="feature-list">
+          <li class="feature-item">
+            <img src="img/feature1.jpg" alt="特徴1" />
+            <h3 class="feature-title">特徴タイトル1</h3>
+            <p>テキストテキストテキストテキストテキストテキストテキスト</p>
+          </li>
+          <li class="feature-item">
+            <img src="img/feature2.jpg" alt="特徴2" />
+            <h3 class="feature-title">特徴タイトル2</h3>
+            <p>テキストテキストテキストテキストテキストテキストテキスト</p>
+          </li>
+          <li class="feature-item">
+            <img src="img/feature3.jpg" alt="特徴3" />
+            <h3 class="feature-title">特徴タイトル3</h3>
+            <p>テキストテキストテキストテキストテキストテキストテキスト</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ========== 流れセクション ========== -->
+      <section id="flow" class="wrapper">
+        <h2 class="sec-title">ご利用の流れ</h2>
+        <p class="sec-lead">お気軽にお問い合わせください。</p>
+
+        <ol class="flow-list">
+          <li class="flow-item">
+            <span class="flow-num">1</span>
+            <h3 class="flow-title">お問い合わせ</h3>
+            <p>テキストテキストテキストテキストテキストテキストテキスト</p>
+          </li>
+          <li class="flow-item">
+            <span class="flow-num">2</span>
+            <h3 class="flow-title">ヒアリング・提案</h3>
+            <p>テキストテキストテキストテキストテキストテキストテキスト</p>
+          </li>
+          <li class="flow-item">
+            <span class="flow-num">3</span>
+            <h3 class="flow-title">サービス開始</h3>
+            <p>テキストテキストテキストテキストテキストテキストテキスト</p>
+          </li>
+          <li class="flow-item">
+            <span class="flow-num">4</span>
+            <h3 class="flow-title">アフターサポート</h3>
+            <p>テキストテキストテキストテキストテキストテキストテキスト</p>
+          </li>
+        </ol>
+      </section>
+
+      <!-- ========== お客様の声セクション ========== -->
+      <section id="voice" class="wrapper">
+        <h2 class="sec-title">お客様の声</h2>
+
+        <div class="review inview">
+          <div class="review-user">
+            <img src="img/icon-user1.png" alt="ユーザー1" />
+            <p class="review-name">○○○さん<br />会社員</p>
+          </div>
+          <div class="review-text">
+            <p>テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+          </div>
+        </div>
+
+        <div class="review inview">
+          <div class="review-user">
+            <img src="img/icon-user2.png" alt="ユーザー2" />
+            <p class="review-name">○○○さん<br />自営業</p>
+          </div>
+          <div class="review-text">
+            <p>テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+          </div>
+        </div>
+
+        <div class="review inview">
+          <div class="review-user">
+            <img src="img/icon-user3.png" alt="ユーザー3" />
+            <p class="review-name">○○○さん<br />学生</p>
+          </div>
+          <div class="review-text">
+            <p>テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== お問い合わせセクション ========== -->
+      <section id="contact" class="wrapper">
+        <h2 class="sec-title">お問い合わせ</h2>
+        <p class="sec-lead">お問い合わせは下記のフォームからお願いいたします。</p>
+
+        <div class="contact-wrapper">
+          <div class="contact-form">
+            <form action="#" method="post">
+              <div class="form-item">
+                <label for="name">お名前 <span class="required">必須</span></label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="山田 太郎"
+                  required
+                />
+              </div>
+
+              <div class="form-item">
+                <label for="email">メールアドレス <span class="required">必須</span></label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="example@email.com"
+                  required
+                />
+              </div>
+
+              <div class="form-item">
+                <label for="tel">電話番号</label>
+                <input
+                  type="tel"
+                  id="tel"
+                  name="tel"
+                  placeholder="000-0000-0000"
+                />
+              </div>
+
+              <div class="form-item">
+                <label for="message">お問い合わせ内容 <span class="required">必須</span></label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="6"
+                  placeholder="お問い合わせ内容をご記入ください"
+                  required
+                ></textarea>
+              </div>
+
+              <div class="form-item form-submit">
+                <button type="submit" class="btn">送信する</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer id="footer">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <img src="img/logo.svg" alt="ロゴ" />
+        </div>
+
+        <ul class="footer-menu">
+          <li><a href="#firstview">TOP</a></li>
+          <li><a href="#feature">特徴</a></li>
+          <li><a href="#flow">流れ</a></li>
+          <li><a href="#voice">お客様の声</a></li>
+          <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+      </div>
+
+      <small>&copy; 2025 サイト名 All Rights Reserved.</small>
+    </footer>
+
+    <!-- ページトップへ戻るボタン -->
+    <button class="to-top" aria-label="ページトップへ戻る">▲</button>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- サイトのJS -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

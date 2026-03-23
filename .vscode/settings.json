@@ -1,0 +1,20 @@
+{
+  // Live Sass Compiler の設定
+  // 参考: https://github.com/glenn2223/vscode-live-sass-compiler/blob/HEAD/docs/settings.md
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",         // 出力形式: expanded（読みやすい展開形式） / compressed（圧縮）
+      "extensionName": ".css",      // 出力ファイルの拡張子
+      "savePath": null              // null の場合、SCSSファイルと同じフォルダに出力
+    }
+  ],
+  "liveSassCompile.settings.generateMap": true,        // .css.map ファイルを生成する
+  "liveSassCompile.settings.autoprefix": [             // ベンダープレフィックスを自動付与
+    "> 1%",
+    "last 2 versions"
+  ],
+  "liveSassCompile.settings.excludeList": [
+    "/**/node_modules/**",
+    "/.vscode/**"
+  ]
+}

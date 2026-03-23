@@ -1,0 +1,82 @@
+@use "mixin" as m;
+
+// ============================================================
+// お問い合わせセクション
+// ============================================================
+// コンタクトフォームを表示するセクション。
+// 最大幅を絞ってフォームを読みやすい幅に収めている。
+
+#contact {
+    background-color: #fff;
+}
+
+// フォームの最大幅を絞るラッパー
+.contact-wrapper {
+    max-width: 700px; // ← フォーム全体の最大幅（広げると横長になる）
+    margin: 0 auto; // ← 中央に配置
+}
+
+.contact-form {
+    form {
+        display: flex;
+        flex-direction: column; // ← 各フォームアイテムを縦に積む
+        gap: 24px; // ← 各フォームアイテム間の余白（増やすと余裕が生まれる）
+    }
+}
+
+// -------------------------------------------------------
+// フォームの1項目分（ラベル＋入力欄のセット）
+// -------------------------------------------------------
+.form-item {
+    display: flex;
+    flex-direction: column; // ← ラベルと入力欄を縦に並べる
+    gap: 8px; // ← ラベルと入力欄の間の余白
+
+    label {
+        font-size: 0.9rem; // ← ラベルの文字サイズ
+        font-weight: bold;
+        color: #333;
+    }
+
+    // 入力欄（テキスト・メール・電話番号など）とテキストエリア共通
+    input,
+    textarea {
+        width: 100%;
+        padding: 12px 16px; // ← 入力欄の内側余白（増やすと入力欄が大きくなる）
+        border: 1px solid #ddd; // ← 入力欄の枠線の色（濃くすると枠が目立つ）
+        border-radius: 4px; // ← 入力欄の角の丸み（0にすると四角）
+        font-size: 1rem;
+        font-family: inherit; // ← サイト全体のフォントを引き継ぐ（消すとブラウザのデフォルトフォントになる）
+        transition: border-color 0.3s, box-shadow 0.3s; // ← フォーカス時のアニメーション速度
+        outline: none; // ← ブラウザデフォルトのフォーカス枠（青い点線など）を消す
+        background-color: #fafafa; // ← 入力欄の背景色（通常時は薄いグレー）
+
+        // カーソルが入力欄に当たった時（フォーカス時）
+        &:focus {
+            border-color: #333; // ← フォーカス時の枠線の色
+            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08); // ← フォーカス時の外側の光彩（半透明）
+            background-color: #fff; // ← フォーカス時は白背景にする
+        }
+
+        // placeholder（入力前のヒントテキスト）のスタイル
+        &::placeholder {
+            color: #bbb; // ← placeholderの色（薄めにしてヒントとわかるようにする）
+        }
+    }
+
+    textarea {
+        resize: vertical; // ← テキストエリアを縦方向だけリサイズ可能にする（none にすると固定）
+        line-height: 1.7; // ← テキストエリア内の行間
+    }
+}
+
+// 送信ボタンのコンテナ
+.form-submit {
+    align-items: center; // ← ボタンを中央揃え
+    margin-top: 8px;
+
+    .btn {
+        padding: 18px 60px; // ← 送信ボタンのサイズ（.btn の基本サイズより大きくしている）
+        font-size: 1rem;
+    }
+}

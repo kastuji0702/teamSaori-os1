@@ -1,0 +1,160 @@
+@use "mixin" as m;
+
+// ============================================================
+// ヘッダー
+// ============================================================
+// サイト上部に固定されるナビゲーションエリア。
+// 「ロゴ」「ナビゲーションリスト」「ハンバーガーボタン」で構成される。
+
+#header {
+    position: fixed; // ← スクロールしても上部に固定される（staticにすると普通の配置になる）
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; // ← ヘッダーの高さ（変えると全体の高さが変わる。JSのheaderHeightと合わせること）
+    display: flex;
+    align-items: center; // ← 縦方向を中央揃え
+    justify-content: space-between; // ← ロゴとナビを左右の両端に配置
+    padding: 0 40px; // ← ヘッダーの左右の内側余白
+    background-color: #fff; // ← ヘッダーの背景色（透過にする場合は rgba(255,255,255,0.9) など）
+    z-index: 100; // ← 他の要素より手前に表示する（数値が大きいほど前面）
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08); // ← ヘッダー下の影（0にすると消える）
+    transition: background-color 0.3s; // ← スクロール時に背景色を変えるなど、JSで操作する時のアニメーション速度
+
+    @include m.tab {
+        padding: 0 20px; // ← タブレット以下での左右余白
+    }
+}
+
+// -------------------------------------------------------
+// ロゴ
+// -------------------------------------------------------
+.logo {
+    img {
+        height: 40px; // ← ロゴ画像の高さ（変えるとロゴのサイズが変わる）
+        width: auto; // ← 高さに合わせて横幅を自動調整（縦横比を保つ）
+    }
+}
+
+// -------------------------------------------------------
+// ナビゲーション（PCではそのまま表示、タブレット以下ではスライドインメニューになる）
+// -------------------------------------------------------
+.hamburger-menu {
+
+    // ▼ タブレット以下：画面右側に隠れているパネルとして表示
+    @include m.tab {
+        position: fixed;
+        top: 0;
+        right: -100%; // ← 通常は画面の右外に隠れている（0にするとメニューが開いた状態）
+        width: 280px; // ← スライドインするメニューパネルの横幅
+        height: 100vh; // ← 画面の高さいっぱいに広げる
+        background-color: #fff; // ← メニューパネルの背景色
+        z-index: 200;
+        transition: right 0.4s ease; // ← スライドのアニメーション速度（秒）。大きくするとゆっくり開く
+        padding: 100px 30px 40px; // ← メニューパネルの内側余白（上100pxはヘッダー分の余白）
+        box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1); // ← パネル左側の影
+    }
+
+    .menu-list {
+        display: flex; // ← PCでは横並び
+        gap: 32px; // ← PCでのメニュー項目間の余白（増やすと間隔が広がる）
+
+        @include m.tab {
+            flex-direction: column; // ← タブレット以下では縦並びに変える
+            gap: 0;
+        }
+
+        li {
+            @include m.tab {
+                border-bottom: 1px solid #eee; // ← タブレット以下でのメニュー項目の区切り線
+            }
+
+            a {
+                font-size: 0.875rem; // ← PCでのメニュー文字サイズ
+                font-weight: bold;
+                letter-spacing: 0.05em;
+                transition: color 0.3s; // ← ホバー時の色変化のアニメーション速度
+
+                &:hover {
+                    color: #888; // ← ホバー時の文字色（変えると変わる）
+                }
+
+                @include m.tab {
+                    display: block; // ← タップ領域を広げるためにblock表示
+                    padding: 18px 0; // ← タブレット以下でのリンクの上下タップ領域
+                    font-size: 1rem; // ← タブレット以下での文字サイズ
+                }
+            }
+        }
+    }
+}
+
+// -------------------------------------------------------
+// ハンバーガーボタン（3本線アイコン）
+// -------------------------------------------------------
+// PCでは非表示、タブレット以下で表示。
+// JSで .is-open クラスが付くと3本線が×に変化する。
+.toggle-btn {
+    display: none; // ← PC では非表示
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px; // ← ボタンの横幅
+    height: 20px; // ← ボタンの縦幅（線3本が入る高さ）
+    cursor: pointer;
+    z-index: 300; // ← オーバーレイ(150)より前面に表示するため高い値にする
+
+    @include m.tab {
+        display: flex; // ← タブレット以下で表示する
+    }
+
+    // 3本の線（spanタグ）のスタイル
+    span {
+        display: block;
+        width: 100%;
+        height: 2px; // ← 線の太さ（増やすと太くなる）
+        background-color: #333; // ← 線の色
+        transition: all 0.4s; // ← ×に変化する時のアニメーション速度
+        transform-origin: left center; // ← 回転の基点を左端にする
+    }
+
+    // メニューオープン時（JSで .is-open クラスが付いた時）に3本線が×になる
+    &.is-open {
+        span:nth-child(1) {
+            transform: rotate(45deg) translateY(-1px); // ← 1本目が右上がりの斜め線になる
+        }
+
+        span:nth-child(2) {
+            opacity: 0; // ← 真ん中の線が消える
+        }
+
+        span:nth-child(3) {
+            transform: rotate(-45deg) translateY(1px); // ← 3本目が右下がりの斜め線になる
+        }
+    }
+}
+
+// -------------------------------------------------------
+// オーバーレイ（メニュー展開時の背景暗転）
+// -------------------------------------------------------
+// メニューが開いた時に画面全体を薄暗くする。クリックするとメニューが閉じる。
+#mask {
+    display: none; // ← 通常は非表示（JSがis-openクラスを付けた時に表示）
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); // ← 暗転の色と透明度（0.5=50%の透明度）
+    z-index: 150; // ← ヘッダー(100)より前面、メニュー(200)より背面
+}
+
+// メニューが開いた状態（JSが #header に .is-open を付けた時）
+#header.is-open {
+    .hamburger-menu {
+        right: 0; // ← 右外に隠れていたパネルを画面内に引き込む
+    }
+
+    #mask {
+        display: block; // ← 背景暗転オーバーレイを表示する
+    }
+}
