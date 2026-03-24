@@ -1,160 +1,173 @@
 @use "mixin" as m;
 
 // ============================================================
-// ヘッダー
+// ヘッダー (_header.scss)
 // ============================================================
-// サイト上部に固定されるナビゲーションエリア。
-// 「ロゴ」「ナビゲーションリスト」「ハンバーガーボタン」で構成される。
 
 #header {
-    position: fixed; // ← スクロールしても上部に固定される（staticにすると普通の配置になる）
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 80px; // ← ヘッダーの高さ（変えると全体の高さが変わる。JSのheaderHeightと合わせること）
+    z-index: 100;
     display: flex;
-    align-items: center; // ← 縦方向を中央揃え
-    justify-content: space-between; // ← ロゴとナビを左右の両端に配置
-    padding: 0 40px; // ← ヘッダーの左右の内側余白
-    background-color: #fff; // ← ヘッダーの背景色（透過にする場合は rgba(255,255,255,0.9) など）
-    z-index: 100; // ← 他の要素より手前に表示する（数値が大きいほど前面）
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08); // ← ヘッダー下の影（0にすると消える）
-    transition: background-color 0.3s; // ← スクロール時に背景色を変えるなど、JSで操作する時のアニメーション速度
+    justify-content: space-between;
+    padding: 30px 40px;
 
-    @include m.tab {
-        padding: 0 20px; // ← タブレット以下での左右余白
-    }
-}
-
-// -------------------------------------------------------
-// ロゴ
-// -------------------------------------------------------
-.logo {
-    img {
-        height: 40px; // ← ロゴ画像の高さ（変えるとロゴのサイズが変わる）
-        width: auto; // ← 高さに合わせて横幅を自動調整（縦横比を保つ）
-    }
-}
-
-// -------------------------------------------------------
-// ナビゲーション（PCではそのまま表示、タブレット以下ではスライドインメニューになる）
-// -------------------------------------------------------
-.hamburger-menu {
-
-    // ▼ タブレット以下：画面右側に隠れているパネルとして表示
-    @include m.tab {
-        position: fixed;
-        top: 0;
-        right: -100%; // ← 通常は画面の右外に隠れている（0にするとメニューが開いた状態）
-        width: 280px; // ← スライドインするメニューパネルの横幅
-        height: 100vh; // ← 画面の高さいっぱいに広げる
-        background-color: #fff; // ← メニューパネルの背景色
-        z-index: 200;
-        transition: right 0.4s ease; // ← スライドのアニメーション速度（秒）。大きくするとゆっくり開く
-        padding: 100px 30px 40px; // ← メニューパネルの内側余白（上100pxはヘッダー分の余白）
-        box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1); // ← パネル左側の影
+    @include m.sp {
+        padding: 20px;
     }
 
-    .menu-list {
-        display: flex; // ← PCでは横並び
-        gap: 32px; // ← PCでのメニュー項目間の余白（増やすと間隔が広がる）
+    .logo {
+        width: 60px; // ロゴのサイズ
+        @include m.sp {
+            width: 45px;
+        }
+        img {
+            width: 100%;
+        }
+    }
+
+    // デスクトップ用メニュー（右上固定）
+    .side-menu {
+        display: flex;
+        gap: 30px;
+        align-items: flex-start;
+        color: #fff; // ヒーロー背景（画像）の上に表示されるため白字
 
         @include m.tab {
-            flex-direction: column; // ← タブレット以下では縦並びに変える
-            gap: 0;
+            display: none; // タブレット以下は非表示（ハンバーガーに切り替え）
         }
 
-        li {
-            @include m.tab {
-                border-bottom: 1px solid #eee; // ← タブレット以下でのメニュー項目の区切り線
-            }
-
-            a {
-                font-size: 0.875rem; // ← PCでのメニュー文字サイズ
-                font-weight: bold;
-                letter-spacing: 0.05em;
-                transition: color 0.3s; // ← ホバー時の色変化のアニメーション速度
-
+        .menu-list {
+            display: flex;
+            gap: 20px;
+            li a {
+                writing-mode: vertical-rl;
+                text-orientation: upright;
+                letter-spacing: 0.2em;
+                font-size: 0.9rem;
+                padding-bottom: 5px;
+                border-left: 1px solid transparent; // ホバーエフェクト用
+                transition: 0.3s;
+                
                 &:hover {
-                    color: #888; // ← ホバー時の文字色（変えると変わる）
-                }
-
-                @include m.tab {
-                    display: block; // ← タップ領域を広げるためにblock表示
-                    padding: 18px 0; // ← タブレット以下でのリンクの上下タップ領域
-                    font-size: 1rem; // ← タブレット以下での文字サイズ
+                    opacity: 0.7;
+                    color: var(--color-accent); // user requested
+                    border-left-color: var(--color-accent);
                 }
             }
         }
-    }
-}
 
-// -------------------------------------------------------
-// ハンバーガーボタン（3本線アイコン）
-// -------------------------------------------------------
-// PCでは非表示、タブレット以下で表示。
-// JSで .is-open クラスが付くと3本線が×に変化する。
-.toggle-btn {
-    display: none; // ← PC では非表示
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px; // ← ボタンの横幅
-    height: 20px; // ← ボタンの縦幅（線3本が入る高さ）
-    cursor: pointer;
-    z-index: 300; // ← オーバーレイ(150)より前面に表示するため高い値にする
-
-    @include m.tab {
-        display: flex; // ← タブレット以下で表示する
-    }
-
-    // 3本の線（spanタグ）のスタイル
-    span {
-        display: block;
-        width: 100%;
-        height: 2px; // ← 線の太さ（増やすと太くなる）
-        background-color: #333; // ← 線の色
-        transition: all 0.4s; // ← ×に変化する時のアニメーション速度
-        transform-origin: left center; // ← 回転の基点を左端にする
-    }
-
-    // メニューオープン時（JSで .is-open クラスが付いた時）に3本線が×になる
-    &.is-open {
-        span:nth-child(1) {
-            transform: rotate(45deg) translateY(-1px); // ← 1本目が右上がりの斜め線になる
-        }
-
-        span:nth-child(2) {
-            opacity: 0; // ← 真ん中の線が消える
-        }
-
-        span:nth-child(3) {
-            transform: rotate(-45deg) translateY(1px); // ← 3本目が右下がりの斜め線になる
+        .header-contact {
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            margin-left: 20px;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            
+            p {
+                margin-left: 10px; // 縦書き時の列間隔
+            }
+            .tel {
+                font-family: sans-serif;
+                font-size: 1.1rem;
+                font-weight: bold;
+                letter-spacing: 0.1em;
+                margin-top: 10px; // 縦書き時の上下
+            }
         }
     }
-}
 
-// -------------------------------------------------------
-// オーバーレイ（メニュー展開時の背景暗転）
-// -------------------------------------------------------
-// メニューが開いた時に画面全体を薄暗くする。クリックするとメニューが閉じる。
-#mask {
-    display: none; // ← 通常は非表示（JSがis-openクラスを付けた時に表示）
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); // ← 暗転の色と透明度（0.5=50%の透明度）
-    z-index: 150; // ← ヘッダー(100)より前面、メニュー(200)より背面
-}
+    // SP用ハンバーガーアイコン
+    .toggle-btn {
+        display: none;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 30px;
+        height: 30px;
+        z-index: 1002;
+        cursor: pointer;
 
-// メニューが開いた状態（JSが #header に .is-open を付けた時）
-#header.is-open {
-    .hamburger-menu {
-        right: 0; // ← 右外に隠れていたパネルを画面内に引き込む
+        @include m.tab {
+            display: block; // タブレット以下で表示
+        }
+
+        span {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #fff; // ヒーロー背景に対応
+            transition: all 0.3s;
+            
+            &:nth-child(1) { top: 4px; }
+            &:nth-child(2) { top: 14px; }
+            &:nth-child(3) { top: 24px; }
+        }
+    }
+
+    // SP用メニュー展開時
+    &.open {
+        .toggle-btn span {
+            background-color: #333; // 背景が白のオーバーレイ用
+            &:nth-child(1) { top: 14px; transform: rotate(45deg); }
+            &:nth-child(2) { opacity: 0; }
+            &:nth-child(3) { top: 14px; transform: rotate(-45deg); }
+        }
+        
+        .side-menu {
+            @include m.tab {
+                display: block;
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background-color: #fff;
+                color: #111; // オーバーレイメニュー内の文字色
+                z-index: 1001;
+                padding: 80px 40px;
+                flex-direction: column;
+                
+                .menu-list {
+                    flex-direction: column;
+                    gap: 30px;
+                    li a {
+                        writing-mode: horizontal-tb; // SPでは横書きに戻す
+                        font-size: 1.1rem;
+                        border-left: none;
+                    }
+                }
+                
+                .header-contact {
+                    writing-mode: horizontal-tb;
+                    margin-left: 0;
+                    margin-top: 40px;
+                    p {
+                        margin-left: 0;
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
     }
 
     #mask {
-        display: block; // ← 背景暗転オーバーレイを表示する
+        display: none;
+        @include m.tab {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0,0,0,0.6);
+            z-index: 1000;
+        }
+    }
+    &.open #mask {
+        @include m.tab { display: block; }
     }
 }

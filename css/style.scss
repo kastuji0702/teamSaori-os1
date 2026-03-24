@@ -1,74 +1,18 @@
 @charset "UTF-8";
 
 // ============================================================
-// style.scss  ← Live Sass Compiler でコンパイルする「エントリーポイント」
+// style.scss (エントリーポイント)
 // ============================================================
-// このファイルは @use で各パーシャルファイルを読み込み、
-// 1つの style.css にまとめる役割を持っている。
-//
-// ⚠️ ポイント: アンダースコア(_)で始まるファイルは「パーシャル」
-//    → 単独ではコンパイルされず、ここから @use で読み込まれて使われる。
-//    → style.scss だけを Watch Sass すればOK！
-//
-// ============================================================
-// 【各ファイルの役割まとめ】
-// ============================================================
-//  _mixin.scss      ... ブレークポイント・再利用スタイル（mixin）の定義
-//  _base.scss       ... 全体共通スタイル（フォント・色・.btn・.wrapper など）
-//  _header.scss     ... ヘッダー・ハンバーガーメニュー・オーバーレイ
-//  _main-firstview  ... ファーストビュー（背景動画・キャッチコピー）
-//  _main-feature    ... 特徴セクション（カードグリッド）
-//  _main-flow       ... 流れセクション（番号付きフロー）
-//  _main-voice      ... お客様の声セクション（スクロールアニメーション）
-//  _main-contact    ... お問い合わせフォーム
-//  _footer.scss     ... フッター（ロゴ・メニュー・コピーライト）
 
-// -------------------------------------------------------
-// パーシャルファイルの読み込み
-// -------------------------------------------------------
-// 新しいセクションを追加したら、対応する _ファイル名.scss を作成して
-// ここに @use "ファイル名"; を追記すると OK
-@use "mixin" as m; // ← mixin を m. で呼び出せるようにする（各ファイルで @include m.tab {} のように使う）
+@use "mixin" as m;
 @use "base";
 @use "header";
-@use "main-firstview";
-@use "main-feature";
-@use "main-flow";
-@use "main-voice";
-@use "main-contact";
+@use "main-hero";
+@use "main-concept";
+@use "main-menu";
+@use "main-occasion";
+@use "main-greeting";
+@use "main-faq";
+@use "main-info";
 @use "footer";
 
-// ============================================================
-// ページトップへ戻るボタン
-// ============================================================
-// 他のセクションと独立して使われるためここで定義している。
-
-.to-top {
-    display: none; // ← 初期は非表示（JSで scrollTop > 700px になったら fadeIn() する）
-    position: fixed; // ← スクロールしても画面の右下に固定される
-    bottom: 32px; // ← 画面下からの距離（増やすと上に来る）
-    right: 32px; // ← 画面右からの距離（増やすと左に来る）
-    width: 48px; // ← ボタンの横幅
-    height: 48px; // ← ボタンの縦幅（widthと同じ値で正方形）
-    background-color: #333; // ← ボタンの背景色
-    color: #fff; // ← ▲ アイコンの色
-    border: none;
-    border-radius: 50%; // ← 丸ボタンにする（0にすると四角）
-    font-size: 1rem;
-    cursor: pointer;
-    z-index: 500; // ← 最前面に表示（他の要素より大きな値にする）
-    transition: background-color 0.3s, transform 0.3s; // ← ホバー時のアニメーション速度
-
-    &:hover {
-        background-color: #555; // ← ホバー時の背景色（少し明るくして変化を示す）
-        transform: translateY(-2px); // ← ホバー時に少し浮き上がる
-    }
-
-    @include m.sp {
-        bottom: 20px; // ← SP以下での画面下からの距離
-        right: 20px; // ← SP以下での画面右からの距離
-        width: 42px;
-        height: 42px;
-        font-size: 0.875rem;
-    }
-}

@@ -1,0 +1,47 @@
+@use "mixin" as m;
+
+// ============================================================
+// 結びセクション (_main-greeting.scss)
+// ============================================================
+
+#greeting {
+    background-color: var(--color-main);
+    color: var(--color-text-light);
+    padding: 5rem 0; // PC: 80px
+    background-image: url('../img/backgroundimage02.webp'); // 和風テクスチャ
+    background-size: cover;
+    background-blend-mode: overlay;
+
+    @include m.sp {
+        padding: 2rem 0; // SP: 32px
+    }
+
+    .greeting-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
+        max-width: 800px;
+        margin: 0 auto;
+
+        @include m.sp {
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .vertical-title {
+            font-size: 2.5rem;
+            
+            @include m.sp {
+                font-size: 2rem;
+            }
+        }
+
+        .text-wrap {
+            // SPでも縦書きを維持する
+            font-size: 1.1rem;
+            line-height: 2.2;
+            letter-spacing: 0.15em;
+        }
+    }
+}

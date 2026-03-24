@@ -2,11 +2,8 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
-    <title>サイトタイトル</title>
-    <meta
-      name="description"
-      content="サイトの説明文をここに記載します。"
-    />
+    <title>鉄板焼き | サイトタイトル</title>
+    <meta name="description" content="上質な空間と最高級の鉄板焼きを提供する大人の隠れ家。" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" href="img/favicon.png" />
     <!-- リセットCSS -->
@@ -15,10 +12,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <!-- サイトのCSS（Live Sass CompilerでSCSSからコンパイル） -->
+    <!-- サイトのCSS -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
@@ -27,229 +24,251 @@
     <header id="header">
       <!-- ロゴ -->
       <div class="logo">
-        <a href="#"><img src="img/logo.svg" alt="ロゴ" /></a>
+        <a href="#"><img src="img/logo.webp" alt="ロゴ" /></a>
       </div>
 
-      <!-- ハンバーガーメニュー（ナビゲーション） -->
-      <nav class="hamburger-menu">
+      <!-- 横置きまたはサイドメニュー -->
+      <nav class="side-menu">
         <ul class="menu-list">
-          <li><a href="#firstview">TOP</a></li>
-          <li><a href="#feature">特徴</a></li>
-          <li><a href="#flow">流れ</a></li>
-          <li><a href="#voice">お客様の声</a></li>
-          <li><a href="#contact">お問い合わせ</a></li>
+          <li><a href="#concept">コンセプト</a></li>
+          <li><a href="#menu">お品書き</a></li>
+          <li><a href="#occasion">ご用途</a></li>
+          <li><a href="#faq">よくあるご質問</a></li>
+          <li><a href="#info">店舗情報</a></li>
         </ul>
-        <!-- CTAボタン（必要に応じて使用） -->
-        <!-- <a class="btn" href="#contact">お問い合わせはこちら</a> -->
+        <div class="header-contact">
+          <p>ご予約・お問い合わせ</p>
+          <a class="tel" href="tel:000-000-0000">000-000-0000</a>
+        </div>
       </nav>
 
-      <!-- ハンバーガーアイコン（3本線） -->
+      <!--ハンバーガーアイコン（SP用）-->
       <div class="toggle-btn">
         <span></span>
         <span></span>
         <span></span>
       </div>
-
-      <!-- オーバーレイ（メニュー展開時の背景） -->
       <div id="mask"></div>
     </header>
 
     <!-- ========== MAIN ========== -->
     <main>
-
-      <!-- ファーストビュー（動画 or 画像） -->
-      <div id="firstview" class="first-view">
-        <!-- 動画を使う場合 -->
-        <video
-          class="bg-video"
-          src="video/background-video.mp4"
-          autoplay
-          muted
-          loop
-          playsinline
-        ></video>
-
-        <!-- ファーストビューのテキスト -->
-        <div class="first-view-text">
-          <p class="catch-copy">キャッチコピーを<br />ここに入れる</p>
-          <p class="sub-copy">サブコピーのテキストをここに記載します</p>
-          <a class="btn" href="#contact">お問い合わせはこちら</a>
+      <!-- Hero Section -->
+      <div id="hero">
+        <div class="hero-top">
+           <img src="img/fastviewimage01.webp" alt="シェフが肉を切る様子" class="bg-img" />
+           <div class="hero-text">
+             <h1 class="vertical-title">上質な肉と鉄板焼き<br>大人の隠れ家</h1>
+           </div>
+        </div>
+        <div class="hero-bottom">
+           <img src="img/fastviewimage02.webp" alt="炎" class="bg-img" />
+           <div class="hero-subtext">
+             <p class="vertical-text">洗練された空間で<br>極上のひとときを</p>
+           </div>
         </div>
       </div>
 
-      <!-- ========== 特徴セクション ========== -->
-      <section id="feature" class="wrapper">
-        <h2 class="sec-title">特徴・サービス</h2>
+      <!-- Concept Section -->
+      <section id="concept" class="wrapper">
+        <div class="concept-inner">
+          <div class="concept-images">
+            <img src="img/menuimage01.webp" alt="コンセプト画像1" class="img-1">
+            <img src="img/menuimage02.webp" alt="コンセプト画像2" class="img-2">
+            <img src="img/Ourcommitmentimage01.webp" alt="コンセプト画像3" class="img-3">
+          </div>
+          <div class="concept-text-area">
+             <h2 class="vertical-title">五感で味わう、<br>鉄板焼きの極み</h2>
+             <p class="vertical-text">
+               最高級の食材を、熟練の職人が目の前で焼き上げます。<br>
+               音と香りが交差する至福の時間をお楽しみください。<br>
+               厳選された黒毛和牛と新鮮な海の幸。<br>
+               素材の旨味を最大限に引き出す、こだわりの技がここにあります。
+             </p>
+          </div>
+        </div>
+      </section>
 
-        <ul class="feature-list">
-          <li class="feature-item">
-            <img src="img/feature1.jpg" alt="特徴1" />
-            <h3 class="feature-title">特徴タイトル1</h3>
-            <p>テキストテキストテキストテキストテキストテキストテキスト</p>
+      <!-- Menu Section -->
+      <section id="menu" class="wrapper">
+        <div class="sec-header">
+           <h2 class="sec-title">お品書き・コース</h2>
+           <p class="sec-subtitle">MENU / COURSE</p>
+        </div>
+        <ul class="menu-list">
+          <li class="menu-item">
+            <img src="img/menuimage03.webp" alt="灯(あかり)コース" />
+            <div class="menu-item-text">
+              <h3 class="menu-title">灯(あかり)コース</h3>
+              <p class="menu-price">11,000円(税込)</p>
+              <p class="menu-desc">先付<br>季節の逸品<br>特選黒毛和牛サーロインステーキ<br>焼き野菜<br>ガーリックライス<br>香の物・赤出汁<br>デザート</p>
+            </div>
           </li>
-          <li class="feature-item">
-            <img src="img/feature2.jpg" alt="特徴2" />
-            <h3 class="feature-title">特徴タイトル2</h3>
-            <p>テキストテキストテキストテキストテキストテキストテキスト</p>
+          <li class="menu-item">
+            <img src="img/Ourcommitmentimage06.webp" alt="雅(みやび)コース" />
+            <div class="menu-item-text">
+              <h3 class="menu-title">雅(みやび)コース</h3>
+              <p class="menu-price">16,500円(税込)</p>
+              <p class="menu-desc">先付<br>前菜三種盛り合わせ<br>活鮑の鉄板焼き<br>特選黒毛和牛フィレステーキ<br>焼き野菜<br>ガーリックライス<br>香の物・赤出汁<br>デザート</p>
+            </div>
           </li>
-          <li class="feature-item">
-            <img src="img/feature3.jpg" alt="特徴3" />
-            <h3 class="feature-title">特徴タイトル3</h3>
-            <p>テキストテキストテキストテキストテキストテキストテキスト</p>
+          <li class="menu-item">
+            <img src="img/Ourcommitmentimage04.webp" alt="極(きわみ)コース" />
+            <div class="menu-item-text">
+              <h3 class="menu-title">極(きわみ)コース</h3>
+              <p class="menu-price">22,000円(税込)</p>
+              <p class="menu-desc">先付<br>前菜五種盛り合わせ<br>活伊勢海老の鉄板焼き<br>特選黒毛和牛シャトーブリアン<br>焼き野菜<br>ガーリックライス<br>香の物・赤出汁<br>デザート</p>
+            </div>
           </li>
         </ul>
       </section>
 
-      <!-- ========== 流れセクション ========== -->
-      <section id="flow" class="wrapper">
-        <h2 class="sec-title">ご利用の流れ</h2>
-        <p class="sec-lead">お気軽にお問い合わせください。</p>
-
-        <ol class="flow-list">
-          <li class="flow-item">
-            <span class="flow-num">1</span>
-            <h3 class="flow-title">お問い合わせ</h3>
-            <p>テキストテキストテキストテキストテキストテキストテキスト</p>
-          </li>
-          <li class="flow-item">
-            <span class="flow-num">2</span>
-            <h3 class="flow-title">ヒアリング・提案</h3>
-            <p>テキストテキストテキストテキストテキストテキストテキスト</p>
-          </li>
-          <li class="flow-item">
-            <span class="flow-num">3</span>
-            <h3 class="flow-title">サービス開始</h3>
-            <p>テキストテキストテキストテキストテキストテキストテキスト</p>
-          </li>
-          <li class="flow-item">
-            <span class="flow-num">4</span>
-            <h3 class="flow-title">アフターサポート</h3>
-            <p>テキストテキストテキストテキストテキストテキストテキスト</p>
-          </li>
-        </ol>
-      </section>
-
-      <!-- ========== お客様の声セクション ========== -->
-      <section id="voice" class="wrapper">
-        <h2 class="sec-title">お客様の声</h2>
-
-        <div class="review inview">
-          <div class="review-user">
-            <img src="img/icon-user1.png" alt="ユーザー1" />
-            <p class="review-name">○○○さん<br />会社員</p>
-          </div>
-          <div class="review-text">
-            <p>テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+      <!-- Occasion Section -->
+      <section id="occasion">
+        <div class="wrapper">
+          <div class="sec-header">
+            <h2 class="sec-title">大切なひとときを</h2>
+            <p class="sec-subtitle">A SPECIAL MOMENT</p>
           </div>
         </div>
+        
+        <div class="occasion-list">
+          <div class="occasion-item right-img">
+            <div class="text-box">
+              <h3 class="vertical-title">商談</h3>
+              <p class="en-title">BUSINESS</p>
+              <p class="desc">大切なお客様との会食やご接待に。<br>落ち着いた完全個室で、心置きなくお過ごしいただけます。</p>
+            </div>
+            <div class="img-box"><img src="img/Occasions01.webp" alt="商談" /></div>
+          </div>
 
-        <div class="review inview">
-          <div class="review-user">
-            <img src="img/icon-user2.png" alt="ユーザー2" />
-            <p class="review-name">○○○さん<br />自営業</p>
+          <div class="occasion-item left-img">
+             <div class="img-box"><img src="img/Occasions02.webp" alt="祝席" /></div>
+             <div class="text-box">
+              <h3 class="vertical-title">祝席</h3>
+              <p class="en-title">CELEBRATION</p>
+              <p class="desc">誕生日や記念日などの特別なお祝いに。<br>思い出に残るひとときを演出いたします。</p>
+            </div>
           </div>
-          <div class="review-text">
-            <p>テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-          </div>
-        </div>
 
-        <div class="review inview">
-          <div class="review-user">
-            <img src="img/icon-user3.png" alt="ユーザー3" />
-            <p class="review-name">○○○さん<br />学生</p>
+          <div class="occasion-item right-img">
+            <div class="text-box">
+              <h3 class="vertical-title">会食</h3>
+              <p class="en-title">DINING</p>
+              <p class="desc">ご家族やご友人との和やかなお食事に。<br>上質な空間とお料理で、豊かな時間をご提供します。</p>
+            </div>
+            <div class="img-box"><img src="img/Occasions03.webp" alt="会食" /></div>
           </div>
-          <div class="review-text">
-            <p>テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+          
+          <div class="occasion-item left-img">
+             <div class="img-box"><img src="img/Occasions04.webp" alt="空間" /></div>
+             <div class="text-box">
+              <h3 class="vertical-title">空間</h3>
+              <p class="en-title">SPACE</p>
+              <p class="desc">洗練された和モダンの内装。<br>ゆったりとくつろげるお席をご用意しております。</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- ========== お問い合わせセクション ========== -->
-      <section id="contact" class="wrapper">
-        <h2 class="sec-title">お問い合わせ</h2>
-        <p class="sec-lead">お問い合わせは下記のフォームからお願いいたします。</p>
-
-        <div class="contact-wrapper">
-          <div class="contact-form">
-            <form action="#" method="post">
-              <div class="form-item">
-                <label for="name">お名前 <span class="required">必須</span></label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="山田 太郎"
-                  required
-                />
-              </div>
-
-              <div class="form-item">
-                <label for="email">メールアドレス <span class="required">必須</span></label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="example@email.com"
-                  required
-                />
-              </div>
-
-              <div class="form-item">
-                <label for="tel">電話番号</label>
-                <input
-                  type="tel"
-                  id="tel"
-                  name="tel"
-                  placeholder="000-0000-0000"
-                />
-              </div>
-
-              <div class="form-item">
-                <label for="message">お問い合わせ内容 <span class="required">必須</span></label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="6"
-                  placeholder="お問い合わせ内容をご記入ください"
-                  required
-                ></textarea>
-              </div>
-
-              <div class="form-item form-submit">
-                <button type="submit" class="btn">送信する</button>
-              </div>
-            </form>
+      <!-- Greeting Section -->
+      <section id="greeting">
+        <div class="wrapper">
+          <div class="greeting-content">
+            <h2 class="vertical-title">結び</h2>
+            <div class="text-wrap">
+              <p class="vertical-text">
+                お客様の笑顔のために、日々研鑽を積んでおります。<br>
+                皆様のご来店を心よりお待ち申し上げております。<br>
+                特別な日も、そうでない日も、<br>
+                心に残るひとときをお過ごしください。
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
+      <!-- FAQ Section -->
+      <section id="faq" class="wrapper">
+        <div class="sec-header">
+           <h2 class="sec-title">よくあるご質問</h2>
+           <p class="sec-subtitle">FAQ</p>
+        </div>
+        <dl class="faq-list">
+          <div class="faq-item">
+            <dt>予約は必要ですか？</dt>
+            <dd>完全予約制とさせていただいております。事前のご予約をお願いいたします。</dd>
+          </div>
+          <div class="faq-item">
+            <dt>個室はありますか？</dt>
+            <dd>はい、2名様からご利用いただける完全個室をご用意しております。</dd>
+          </div>
+          <div class="faq-item">
+            <dt>駐車場はありますか？</dt>
+            <dd>専用駐車場はございません。お近くのコインパーキングをご利用ください。</dd>
+          </div>
+          <div class="faq-item">
+            <dt>ドレスコードはありますか？</dt>
+            <dd>スマートカジュアルを推奨しております。極端にカジュアルな服装はお控えください。</dd>
+          </div>
+        </dl>
+      </section>
+
+      <!-- Info Section -->
+      <section id="info" class="wrapper">
+        <div class="sec-header">
+           <h2 class="sec-title">店舗情報</h2>
+           <p class="sec-subtitle">SHOP INFO</p>
+        </div>
+        <div class="info-content">
+           <div class="info-table-wrap">
+              <table class="info-table">
+                <tr><th>店舗名</th><td>鉄板焼き 〇〇</td></tr>
+                <tr><th>住所</th><td>〒000-0000<br>東京都〇〇区〇〇1-2-3</td></tr>
+                <tr><th>電話番号</th><td>000-000-0000</td></tr>
+                <tr><th>営業時間</th><td>17:00 - 23:00 (L.O. 22:00)</td></tr>
+                <tr><th>定休日</th><td>日曜日・祝日</td></tr>
+              </table>
+           </div>
+           <div class="info-map-wrap">
+              <img src="img/Shopinformationimage.webp" alt="店舗外観・地図" class="shop-img" />
+           </div>
+        </div>
+      </section>
     </main>
 
     <!-- ========== FOOTER ========== -->
     <footer id="footer">
-      <div class="footer-inner">
-        <div class="footer-logo">
-          <img src="img/logo.svg" alt="ロゴ" />
+      <div class="footer-inner wrapper">
+        <div class="footer-left">
+          <div class="footer-logo">
+            <img src="img/logo.webp" alt="ロゴ" />
+          </div>
+          <p class="footer-address">〒000-0000 東京都〇〇区〇〇1-2-3<br>TEL: 000-000-0000</p>
         </div>
-
-        <ul class="footer-menu">
-          <li><a href="#firstview">TOP</a></li>
-          <li><a href="#feature">特徴</a></li>
-          <li><a href="#flow">流れ</a></li>
-          <li><a href="#voice">お客様の声</a></li>
-          <li><a href="#contact">お問い合わせ</a></li>
-        </ul>
+        <div class="footer-right">
+          <ul class="footer-menu">
+            <li><a href="#concept">コンセプト</a></li>
+            <li><a href="#menu">お品書き</a></li>
+            <li><a href="#occasion">ご用途</a></li>
+            <li><a href="#faq">よくあるご質問</a></li>
+            <li><a href="#info">店舗情報</a></li>
+          </ul>
+          <div class="sns-icons">
+            <a href="#"><img src="img/facebook-icon.png" alt="Facebook" /></a>
+            <a href="#"><img src="img/instagram-icon.png" alt="Instagram" /></a>
+            <a href="#"><img src="img/x-twitter-icon.png" alt="X" /></a>
+          </div>
+        </div>
       </div>
-
-      <small>&copy; 2025 サイト名 All Rights Reserved.</small>
+      <div class="copyright">
+        <small>&copy; 2026 鉄板焼き 〇〇 All Rights Reserved.</small>
+      </div>
     </footer>
 
-    <!-- ページトップへ戻るボタン -->
-    <button class="to-top" aria-label="ページトップへ戻る">▲</button>
+    <!-- ページトップへ戻るボタン（削除済み） -->
 
-    <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- サイトのJS -->
     <script src="js/main.js"></script>
   </body>
 </html>
