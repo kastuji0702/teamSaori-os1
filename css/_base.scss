@@ -3,125 +3,148 @@
 // ============================================================
 // ベーススタイル（全体共通）
 // ============================================================
-// このファイルはサイト全体に適用される基本スタイル。
-// フォント・色・余白など「サイト全体の雰囲気」を変えたい時にここを触る。
+
+:root {
+  --color-main: #2b3a2e; // 指定されたグリーン
+  --color-text: #111111; // 指定されたテキストカラー
+  --color-text-light: #ffffff;
+  --color-accent: #cfae70; // ユーザーが一部で使用再開したため変数のみ残す
+  --color-bg-light: #f5f5f0;
+  --font-base: "Noto Serif JP", serif;
+}
 
 html {
     width: 100%;
-    color: #333; // ← サイト全体の文字色（変えると全テキストの色が変わる）
-    font-family: "Noto Sans JP", sans-serif; // ← サイト全体のフォント（Google Fontsのフォント名を変えると変わる）
-    line-height: 1.7; // ← 行間（大きくするとゆったり、小さくするとコンパクトになる）
-    scroll-behavior: smooth; // ← ページ内リンクのスクロールをなめらかにする。削除するとカクッと瞬間移動する
+    color: var(--color-text);
+    font-family: var(--font-base);
+    line-height: 1.8;
+    letter-spacing: 0.1em;
+    scroll-behavior: smooth;
 }
 
 body {
     width: 100%;
-    font-size: 100%; // ← 基準のフォントサイズ（16px相当）。変えると全体の文字サイズが変わる
+    font-size: 16px;
     margin: 0;
-    background-color: #fff; // ← ページ全体の背景色
+    background-color: #fff;
+    overflow-x: hidden;
 }
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box; // ← paddingやborderをwidthの内側に含める設定（消さないこと！）
+*, *::before, *::after {
+    box-sizing: border-box;
 }
 
-ul,
-ol {
+ul, ol, li {
     margin: 0;
     padding: 0;
-    list-style: none; // ← リストの「・」や数字を消す。残したい場合はこの行を削除
-}
-
-li {
     list-style: none;
 }
 
 a {
-    text-decoration: none; // ← リンクの下線を消す。残したい場合はこの行を削除
-    color: #333; // ← リンクの文字色（変えると全リンクの色が変わる）
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.3s;
+    &:hover {
+        opacity: 0.7;
+    }
 }
 
 img {
-    max-width: 100%; // ← 画像が親要素からはみ出さないようにする（レスポンシブ対応の基本）
-    height: auto; // ← 横幅に合わせて高さを自動調整（縦横比を保つ）
-    display: block; // ← 画像の下に余白（スペース）が生じるのを防ぐ
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 // ============================================================
-// 共通クラス（HTMLで class="〇〇" と書いたら適用されるスタイル）
+// 共通クラス
 // ============================================================
 
-// -------------------------------------------------------
-// .wrapper（セクションの内側の余白・最大幅）
-// -------------------------------------------------------
-// HTMLで <section class="wrapper"> と書くと適用される。
-// コンテンツが画面いっぱいに広がりすぎないようにする。
+// セクション余白（PC:上下80px, SP:上下32px）
 .wrapper {
-    max-width: 1200px; // ← コンテンツの最大幅（増やすと横に広くなる）
-    margin: 0 auto; // ← 左右を自動で均等にして中央寄せにする
-
-    @include m.tab {
-        padding: 60px 24px; // ← タブレット以下での内側余白
-    }
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 24px; // 80px (5rem)
 
     @include m.sp {
-        padding: 50px 16px; // ← SP以下での内側余白
+        padding: 2rem 16px; // 32px (2rem)
     }
 }
 
-// -------------------------------------------------------
-// .sec-title（セクションタイトル共通スタイル）
-// -------------------------------------------------------
-// HTMLで <h2 class="sec-title"> と書くと適用される。
-// 下線や余白などは _mixin.scss の sec-title-line() で設定している。
+// ============================================================
+// 見出し・フォント一括設定
+// ============================================================
+
+// セクションヘッダー共通
+.sec-header {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+// 日本語 見出し：48px(bold) / 見出し下の余白：48px
 .sec-title {
-    @include m.sec-title-line(); // ← _mixin.scss の mixin を呼び出している
-}
-
-// -------------------------------------------------------
-// .sec-lead（セクションのリード文）
-// -------------------------------------------------------
-.sec-lead {
-    text-align: center; // ← 中央揃え。left にすると左揃えになる
-    color: #666; // ← リード文の色（メインの文字色より薄くしている）
-    margin-top: -2rem; // ← タイトルとの間の余白を詰める（マイナスにすることで近づける）
-    margin-bottom: 3rem; // ← リード文とコンテンツの間の余白
-}
-
-// -------------------------------------------------------
-// .btn（共通CTAボタン）
-// -------------------------------------------------------
-// HTMLで <a class="btn"> や <button class="btn"> と書くと適用される。
-.btn {
-    display: inline-block;
-    padding: 16px 40px; // ← ボタンの内側余白（上下16px・左右40px）。変えるとボタンの大きさが変わる
-    background-color: #333; // ← ボタンの背景色
-    color: #fff; // ← ボタンの文字色
-    font-size: 1rem; // ← ボタンの文字サイズ
-    font-weight: bold;
-    letter-spacing: 0.05em; // ← 文字間隔
-    border-radius: 4px; // ← 角の丸み（0にすると四角、50pxにすると丸ボタン）
-    transition: background-color 0.3s, opacity 0.3s; // ← ホバー時のアニメーション速度（秒）
-    cursor: pointer;
-    border: none;
-
-    &:hover {
-        // ← マウスを乗せた時のスタイル
-        opacity: 0.8; // ← 半透明にして押せることを示す（0〜1の値）
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    letter-spacing: 0.15em;
+    @include m.sp {
+        font-size: 2rem;
+        margin-bottom: 2rem;
     }
 }
 
-// -------------------------------------------------------
-// .required（フォームの「必須」ラベル）
-// -------------------------------------------------------
-.required {
-    display: inline-block;
-    margin-left: 8px;
-    padding: 2px 8px;
-    background-color: #e74c3c; // ← 「必須」バッジの背景色（赤系がよく使われる）
-    color: #fff;
-    font-size: 0.75rem;
-    border-radius: 3px;
+// 英語 見出し：24px(bold) / 見出し下の余白：24px
+.sec-subtitle {
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.2em;
+    @include m.sp {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+}
+
+// 縦書き 日本語 見出し：48px(bold)
+.vertical-title {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.2em;
+    @include m.sp {
+        font-size: 2rem;
+    }
+}
+
+// 縦書き 本文
+.vertical-text {
+    writing-mode: vertical-rl;
+    font-size: 1rem;
+    line-height: 2;
+    letter-spacing: 0.1em;
+    @include m.sp {
+        font-size: 0.95rem;
+        line-height: 1.8;
+    }
+}
+
+// 日本語 小見出し：32px(bold)
+.jp-subheading {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.5;
+    @include m.sp {
+        font-size: 1.5rem;
+    }
+}
+
+// 英語 小見出し：16px(bold)
+.en-title {
+    font-family: sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    margin-top: 10px;
 }
