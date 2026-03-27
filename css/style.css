@@ -164,7 +164,7 @@ img {
   }
 }
 #header .logo {
-  width: 60px;
+  width: 100px;
 }
 @media (max-width: 390px) {
   #header .logo {
@@ -200,12 +200,29 @@ img {
       -ms-writing-mode: tb-rl;
           writing-mode: vertical-rl;
   text-orientation: upright;
-  letter-spacing: 0.2em;
   font-size: 0.9rem;
-  padding-bottom: 5px;
   border-left: 1px solid transparent;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  position: relative;
+}
+#header .side-menu .menu-list li a .jp {
+  letter-spacing: 0.2em;
+  padding-bottom: 150px;
+}
+#header .side-menu .menu-list li a .jp::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 1px;
+  height: 70px;
+  background: #fff;
+}
+#header .side-menu .menu-list li a .en {
+  display: inline-block;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  margin-top: -16px;
 }
 #header .side-menu .menu-list li a:hover {
   opacity: 0.7;
@@ -213,23 +230,50 @@ img {
   border-left-color: var(--color-accent);
 }
 #header .side-menu .header-contact {
-  -webkit-writing-mode: vertical-rl;
-      -ms-writing-mode: tb-rl;
-          writing-mode: vertical-rl;
-  text-orientation: upright;
-  margin-left: 20px;
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  -webkit-writing-mode: horizontal-tb;
+      -ms-writing-mode: lr-tb;
+          writing-mode: horizontal-tb;
+  text-orientation: initial;
   font-size: 0.85rem;
   letter-spacing: 0.1em;
+  top: 120px;
+  left: 40px;
 }
-#header .side-menu .header-contact p {
-  margin-left: 10px;
-}
-#header .side-menu .header-contact .tel {
+#header .side-menu .header-contact .tel-no {
   font-family: sans-serif;
-  font-size: 1.1rem;
-  font-weight: bold;
+  font-size: 1.8rem;
   letter-spacing: 0.1em;
-  margin-top: 10px;
+}
+#header .side-menu .header-contact .header-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#header .side-menu .header-contact .header-info .map {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.5rem;
+}
+#header .side-menu .header-contact .header-info .map .icon {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#header .side-menu .header-contact .header-info .sns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+#header .side-menu .header-contact .header-info .sns img {
+  width: 100%;
+  height: auto;
 }
 #header .toggle-btn {
   display: none;

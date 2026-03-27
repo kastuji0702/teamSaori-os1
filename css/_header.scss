@@ -5,169 +5,227 @@
 // ============================================================
 
 #header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    padding: 30px 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 40px;
 
+  @include m.sp {
+    padding: 20px;
+  }
+
+  .logo {
+    width: 100px; // ロゴのサイズ
     @include m.sp {
-        padding: 20px;
+      width: 45px;
+    }
+    img {
+      width: 100%;
+    }
+  }
+
+  // デスクトップ用メニュー（右上固定）
+  .side-menu {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    color: #fff; // ヒーロー背景（画像）の上に表示されるため白字
+
+    @include m.tab {
+      display: none; // タブレット以下は非表示（ハンバーガーに切り替え）
     }
 
-    .logo {
-        width: 60px; // ロゴのサイズ
-        @include m.sp {
-            width: 45px;
+    .menu-list {
+      display: flex;
+      gap: 20px;
+
+      li a {
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        font-size: 0.9rem;
+        border-left: 1px solid transparent; // ホバーエフェクト用
+        transition: 0.3s;
+        position: relative;
+
+        .jp {
+          letter-spacing: 0.2em;
+          padding-bottom: 150px;
+
+          &::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            width: 1px;
+            height: 70px; 
+            background: #fff;
+          }
         }
-        img {
-            width: 100%;
+
+        .en {
+          display: inline-block;
+          transform: rotate(90deg);
+          margin-top: -16px;
         }
+
+        &:hover {
+          opacity: 0.7;
+          color: var(--color-accent); // user requested
+          border-left-color: var(--color-accent);
+        }
+      }
     }
 
-    // デスクトップ用メニュー（右上固定）
-    .side-menu {
+    .header-contact {
+      position: absolute;
+      bottom: 40px;
+      left: 40px;
+      writing-mode: horizontal-tb;
+      text-orientation: initial;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      top: 120px;
+      left: 40px;
+
+      .tel-no {
+        font-family: sans-serif;
+        font-size: 1.8rem;
+        letter-spacing: 0.1em;
+      }
+
+      .header-info {
         display: flex;
-        gap: 30px;
-        align-items: flex-start;
-        color: #fff; // ヒーロー背景（画像）の上に表示されるため白字
+        align-items: center;
 
-        @include m.tab {
-            display: none; // タブレット以下は非表示（ハンバーガーに切り替え）
+        .map {
+            display: flex;
+            font-size: 1.5rem;
+
+            .icon {
+                align-items: center;
+            }
         }
+
+        .sns {
+          display: flex;
+
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+
+  // SP用ハンバーガーアイコン
+  .toggle-btn {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    z-index: 1002;
+    cursor: pointer;
+
+    @include m.tab {
+      display: block; // タブレット以下で表示
+    }
+
+    span {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #fff; // ヒーロー背景に対応
+      transition: all 0.3s;
+
+      &:nth-child(1) {
+        top: 4px;
+      }
+      &:nth-child(2) {
+        top: 14px;
+      }
+      &:nth-child(3) {
+        top: 24px;
+      }
+    }
+  }
+
+  // SP用メニュー展開時
+  &.open {
+    .toggle-btn span {
+      background-color: #333; // 背景が白のオーバーレイ用
+      &:nth-child(1) {
+        top: 14px;
+        transform: rotate(45deg);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        top: 14px;
+        transform: rotate(-45deg);
+      }
+    }
+
+    .side-menu {
+      @include m.tab {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: #fff;
+        color: #111; // オーバーレイメニュー内の文字色
+        z-index: 1001;
+        padding: 80px 40px;
+        flex-direction: column;
 
         .menu-list {
-            display: flex;
-            gap: 20px;
-            li a {
-                writing-mode: vertical-rl;
-                text-orientation: upright;
-                letter-spacing: 0.2em;
-                font-size: 0.9rem;
-                padding-bottom: 5px;
-                border-left: 1px solid transparent; // ホバーエフェクト用
-                transition: 0.3s;
-                
-                &:hover {
-                    opacity: 0.7;
-                    color: var(--color-accent); // user requested
-                    border-left-color: var(--color-accent);
-                }
-            }
+          flex-direction: column;
+          gap: 30px;
+          li a {
+            writing-mode: horizontal-tb; // SPでは横書きに戻す
+            font-size: 1.1rem;
+            border-left: none;
+          }
         }
 
         .header-contact {
-            writing-mode: vertical-rl;
-            text-orientation: upright;
-            margin-left: 20px;
-            font-size: 0.85rem;
-            letter-spacing: 0.1em;
-            
-            p {
-                margin-left: 10px; // 縦書き時の列間隔
-            }
-            .tel {
-                font-family: sans-serif;
-                font-size: 1.1rem;
-                font-weight: bold;
-                letter-spacing: 0.1em;
-                margin-top: 10px; // 縦書き時の上下
-            }
+          writing-mode: horizontal-tb;
+          margin-left: 0;
+          margin-top: 40px;
+          p {
+            margin-left: 0;
+            margin-bottom: 10px;
+          }
         }
+      }
     }
+  }
 
-    // SP用ハンバーガーアイコン
-    .toggle-btn {
-        display: none;
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        width: 30px;
-        height: 30px;
-        z-index: 1002;
-        cursor: pointer;
-
-        @include m.tab {
-            display: block; // タブレット以下で表示
-        }
-
-        span {
-            position: absolute;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: #fff; // ヒーロー背景に対応
-            transition: all 0.3s;
-            
-            &:nth-child(1) { top: 4px; }
-            &:nth-child(2) { top: 14px; }
-            &:nth-child(3) { top: 24px; }
-        }
+  #mask {
+    display: none;
+    @include m.tab {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1000;
     }
-
-    // SP用メニュー展開時
-    &.open {
-        .toggle-btn span {
-            background-color: #333; // 背景が白のオーバーレイ用
-            &:nth-child(1) { top: 14px; transform: rotate(45deg); }
-            &:nth-child(2) { opacity: 0; }
-            &:nth-child(3) { top: 14px; transform: rotate(-45deg); }
-        }
-        
-        .side-menu {
-            @include m.tab {
-                display: block;
-                position: fixed;
-                top: 0;
-                right: 0;
-                width: 80%;
-                max-width: 300px;
-                height: 100vh;
-                background-color: #fff;
-                color: #111; // オーバーレイメニュー内の文字色
-                z-index: 1001;
-                padding: 80px 40px;
-                flex-direction: column;
-                
-                .menu-list {
-                    flex-direction: column;
-                    gap: 30px;
-                    li a {
-                        writing-mode: horizontal-tb; // SPでは横書きに戻す
-                        font-size: 1.1rem;
-                        border-left: none;
-                    }
-                }
-                
-                .header-contact {
-                    writing-mode: horizontal-tb;
-                    margin-left: 0;
-                    margin-top: 40px;
-                    p {
-                        margin-left: 0;
-                        margin-bottom: 10px;
-                    }
-                }
-            }
-        }
+  }
+  &.open #mask {
+    @include m.tab {
+      display: block;
     }
-
-    #mask {
-        display: none;
-        @include m.tab {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background: rgba(0,0,0,0.6);
-            z-index: 1000;
-        }
-    }
-    &.open #mask {
-        @include m.tab { display: block; }
-    }
+  }
 }
