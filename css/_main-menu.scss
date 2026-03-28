@@ -5,86 +5,95 @@
 // ============================================================
 
 #menu {
-    background-color: var(--color-bg-light); // 薄い和風背景を想定
-    background-image: url('../img/backgroundimage01.webp'); // 背景テクスチャがあれば
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; // パララックス効果
-    // paddingは.wrapperで担保するため削除
+  background-color: var(--color-bg-light); // 薄い和風背景を想定
+  background-image: url("../img/backgroundimage01.webp"); // 背景テクスチャがあれば
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; // パララックス効果
+  // paddingは.wrapperで担保するため削除
 
-    .sec-header {
-        .sec-title {
-            color: var(--color-main);
-        }
+  .sec-header {
+    margin: 0 auto;
+    padding-top: 5rem;
+
+    .sec-title {
+      color: var(--color-main);
     }
 
-    .menu-list {
-        display: flex;
-        justify-content: space-between;
-        gap: 40px;
-        margin-top: 60px;
-
-        @include m.tab {
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .menu-item {
-            width: 31%;
-            background-color: transparent;
-            text-align: left;
-            transition: transform 0.3s;
-
-            @include m.tab {
-                width: 80%;
-                max-width: 450px;
-                margin-bottom: 40px;
-            }
-
-            @include m.sp {
-                width: 100%;
-            }
-
-            &:hover {
-                transform: translateY(-5px);
-            }
-
-            img {
-                width: 100%;
-                height: 280px;
-                object-fit: cover;
-                margin-bottom: 25px;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            }
-
-            .menu-item-text {
-                padding: 0 10px;
-
-                .menu-title {
-                    font-size: 2rem; // 小見出し 32px
-                    font-weight: 700;
-                    color: var(--color-text);
-                    margin-bottom: 1rem;
-                    letter-spacing: 0.1em;
-                }
-
-                .menu-price {
-                    font-family: serif;
-                    font-weight: bold;
-                    color: var(--color-text);
-                    margin-bottom: 2rem;
-                    font-size: 1.25rem;
-                    padding-bottom: 1rem;
-                    border-bottom: 1px solid rgba(0,0,0,0.1);
-                }
-
-                .menu-desc {
-                    font-size: 1rem;
-                    line-height: 2.2;
-                    color: var(--color-text);
-                    letter-spacing: 0.05em;
-                }
-            }
-        }
+    .sec-subtitle {
+        font-size: 2rem;
+        font-family: Noto;
     }
+  }
+
+  .menu-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+
+    @include m.tab {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .menu-item {
+      width: 31%;
+      background-color: transparent;
+      text-align: left;
+
+      @include m.tab {
+        width: 80%;
+        max-width: 450px;
+        margin-bottom: 40px;
+      }
+
+      @include m.sp {
+        width: 100%;
+      }
+
+      img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        margin-bottom: 25px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .menu-item-text {
+        padding: 0 10px;
+
+        .menu-title {
+          font-size: 1.2rem; // 小見出し 32px
+          font-weight: normal;
+          color: var(--color-text);
+          margin-bottom: 1rem;
+          letter-spacing: 0.1em;
+        }
+
+        .menu-meal {
+          padding: 1.5rem 0;
+          letter-spacing: 1;
+
+          .number {
+            font-size: 2.5rem;
+          }
+        }
+
+        .menu-price {
+          font-family: serif;
+          color: var(--color-text);
+          margin-bottom: 2rem;
+          font-size: 1.25rem;
+          padding-bottom: 1rem;
+        }
+
+        .menu-desc {
+          font-size: 1rem;
+          line-height: 2.2;
+          color: var(--color-text);
+          letter-spacing: 0.05em;
+        }
+      }
+    }
+  }
 }
