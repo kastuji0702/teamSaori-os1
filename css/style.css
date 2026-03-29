@@ -2,7 +2,6 @@
   --color-main: #2b3a2e;
   --color-text: #111111;
   --color-text-light: #ffffff;
-  --color-accent: #cfae70;
   --color-bg-light: #f5f5f0;
   --font-base: "Noto Serif JP", serif;
 }
@@ -19,6 +18,7 @@ html {
 body {
   width: 100%;
   font-size: 16px;
+  font-family: var(--font-base);
   margin: 0;
   background-color: #fff;
   overflow-x: hidden;
@@ -81,7 +81,6 @@ img {
 }
 
 .sec-subtitle {
-  font-family: sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
@@ -137,7 +136,6 @@ img {
 }
 
 .en-title {
-  font-family: sans-serif;
   font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.2em;
@@ -678,157 +676,66 @@ img {
 }
 
 #occasion {
-  background-color: #111;
-  color: #fff;
-  padding: 5rem 0;
+  padding-top: 80px;
+  background-color: #111111;
+  color: var(--color-text-light);
 }
-@media (max-width: 390px) {
-  #occasion {
-    padding: 2rem 0;
-  }
+#occasion .sec-header {
+  background-image: url(../img/Occasions-main.png);
+  height: 90vh;
+  margin-bottom: 0;
+  padding-right: 5%;
 }
-#occasion .wrapper {
-  padding-top: 0;
-  padding-bottom: 0;
+#occasion .sec-header .sec-title {
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px);
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  font-size: 5rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: auto;
+  text-align: left;
+  height: auto;
 }
-#occasion .occasion-list {
+#occasion .sec-header .sec-title span {
+  display: inline-block;
+  margin-top: 5rem;
+}
+#occasion .sec-header .sec-subtitle {
+  padding-top: 15px;
+  text-align: right;
+}
+#occasion .occasion-item-right {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
-#occasion .occasion-list .occasion-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-  min-height: 40vh;
+#occasion .title-box {
+  width: 20%;
 }
-@media (max-width: 768px) {
-  #occasion .occasion-list .occasion-item {
-    -webkit-box-orient: vertical !important;
-    -webkit-box-direction: normal !important;
-        -ms-flex-direction: column !important;
-            flex-direction: column !important;
-    min-height: auto;
-  }
+#occasion .text-box {
+  width: 30%;
 }
-#occasion .occasion-list .occasion-item .img-box {
-  width: 60%;
-  position: relative;
-}
-@media (max-width: 768px) {
-  #occasion .occasion-list .occasion-item .img-box {
-    width: 100%;
-    height: 300px;
-  }
-}
-#occasion .occasion-list .occasion-item .img-box img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-@media (max-width: 768px) {
-  #occasion .occasion-list .occasion-item .img-box img {
-    position: static;
-  }
-}
-#occasion .occasion-list .occasion-item .text-box {
+#occasion .img-box {
   width: 40%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 80px 40px;
-  gap: 50px;
 }
-@media (max-width: 768px) {
-  #occasion .occasion-list .occasion-item .text-box {
-    width: 100%;
-    padding: 60px 40px;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    text-align: center;
-    gap: 20px;
-  }
-}
-#occasion .occasion-list .occasion-item .text-box .vertical-title {
-  letter-spacing: 0.3em;
-  font-size: 3rem;
-  margin-bottom: 3rem;
-}
-@media (max-width: 768px) {
-  #occasion .occasion-list .occasion-item .text-box .vertical-title {
-    -webkit-writing-mode: horizontal-tb;
-        -ms-writing-mode: lr-tb;
-            writing-mode: horizontal-tb;
-  }
-}
-#occasion .occasion-list .occasion-item .text-box .en-title {
+#occasion .vertical-title {
   -webkit-writing-mode: vertical-rl;
       -ms-writing-mode: tb-rl;
           writing-mode: vertical-rl;
-  margin: 0;
-  letter-spacing: 0.2em;
-  font-size: 1rem;
+  font-size: 5rem;
+  padding-left: 10px;
 }
-@media (max-width: 768px) {
-  #occasion .occasion-list .occasion-item .text-box .en-title {
-    -webkit-writing-mode: horizontal-tb;
-        -ms-writing-mode: lr-tb;
-            writing-mode: horizontal-tb;
-    margin-bottom: 1.5rem;
-  }
-}
-#occasion .occasion-list .occasion-item .text-box .desc {
-  -webkit-writing-mode: vertical-rl;
-      -ms-writing-mode: tb-rl;
-          writing-mode: vertical-rl;
-  font-size: 0.95rem;
-  line-height: 2.2;
-  letter-spacing: 0.1em;
-  color: #ddd;
-  margin: 0;
-}
-@media (max-width: 768px) {
-  #occasion .occasion-list .occasion-item .text-box .desc {
-    -webkit-writing-mode: horizontal-tb;
-        -ms-writing-mode: lr-tb;
-            writing-mode: horizontal-tb;
-    text-align: left;
-  }
-}
-#occasion .occasion-list .right-img {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-#occasion .occasion-list .left-img {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
+#occasion .shift-line {
+  display: inline-block;
+  -webkit-transform: translateX(40px);
+          transform: translateX(40px);
 }
 
 #greeting {
