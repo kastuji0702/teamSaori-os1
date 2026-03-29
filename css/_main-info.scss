@@ -15,17 +15,8 @@
         max-width: 1000px;
         margin: 0 auto;
 
-        @include m.tab {
-            flex-direction: column;
-            gap: 40px;
-        }
-
         .info-table-wrap {
             width: 50%;
-
-            @include m.tab {
-                width: 100%;
-            }
 
             .info-table {
                 width: 100%;
@@ -54,10 +45,6 @@
         .info-map-wrap {
             width: 50%;
             position: relative;
-
-            @include m.tab {
-                width: 100%;
-            }
 
             .shop-img {
                 width: 100%;

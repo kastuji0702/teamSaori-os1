@@ -12,36 +12,56 @@
     background-size: cover;
     background-blend-mode: overlay;
 
-    @include m.sp {
-        padding: 2rem 0; // SP: 32px
-    }
-
     .greeting-content {
         display: flex;
+        flex-direction: row-reverse;
         justify-content: center;
         align-items: center;
-        gap: 60px;
-        max-width: 800px;
+        gap: 15px;
         margin: 0 auto;
 
-        @include m.sp {
-            flex-direction: column;
-            gap: 40px;
-        }
+        & .vertical-title {
+            font-size: 3rem;
 
-        .vertical-title {
-            font-size: 2.5rem;
-            
-            @include m.sp {
-                font-size: 2rem;
+            span {
+                font-size: 1.5rem;
+                margin-top: 7.5rem; /* 縦書きなので「下」への余白になる */
+                display: block;
             }
+        & .vertical-text{
+            font-size: 1rem;
+            writing-mode: vertical-rl;
+
+        }
         }
 
-        .text-wrap {
-            // SPでも縦書きを維持する
-            font-size: 1.1rem;
-            line-height: 2.2;
-            letter-spacing: 0.15em;
+        & .vertical-text {
+            font-size: 1rem;
+        }
+
+        .shop-map {
+            width: 40%;
+            height: auto;
+        }
+
+        .english{
+        &-list {
+            width: 40%;
+            height: auto;
+
+            &-item {
+                max-width: 800px;
+                padding: 10px 0;
+
+                h3 {
+                    font-size: 1.2rem;
+                }
+
+                p {
+                    font-size: 1rem;
+                }
+            }
+            }
         }
     }
 }
