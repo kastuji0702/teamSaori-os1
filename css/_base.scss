@@ -10,12 +10,14 @@
   --color-text-light: #ffffff;
   --color-bg-light: #f5f5f0;
   --font-base: "Noto Serif JP", serif;
+  font-weight: 400;
 }
 
 html {
     width: 100%;
     color: var(--color-text);
     font-family: var(--font-base);
+    font-weight: var(--font-weight);
     line-height: 1.8;
     letter-spacing: 0.1em;
     scroll-behavior: smooth;
@@ -61,8 +63,7 @@ img {
 
 // セクション余白（PC:上下80px, SP:上下32px）
 .wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 5%;
     padding: 5rem 24px; // 80px (5rem)
 
     @include m.sp {
@@ -83,7 +84,7 @@ img {
 // 日本語 見出し：48px(bold) / 見出し下の余白：48px
 .sec-title {
     font-size: 3rem;
-    font-weight: 700;
+    font-weight: 400;
     margin-bottom: 3rem;
     letter-spacing: 0.15em;
     @include m.sp {
@@ -95,7 +96,7 @@ img {
 // 英語 見出し：24px(bold) / 見出し下の余白：24px
 .sec-subtitle {
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 400;
     margin-bottom: 1.5rem;
     letter-spacing: 0.2em;
     @include m.sp {
@@ -109,7 +110,7 @@ img {
     writing-mode: vertical-rl;
     text-orientation: upright;
     font-size: 3rem;
-    font-weight: 700;
+    font-weight: 400;
     line-height: 1.4;
     letter-spacing: 0.2em;
     @include m.sp {
@@ -132,7 +133,7 @@ img {
 // 日本語 小見出し：32px(bold)
 .jp-subheading {
     font-size: 2rem;
-    font-weight: 700;
+    font-weight: 400;
     line-height: 1.5;
     @include m.sp {
         font-size: 1.5rem;
@@ -142,7 +143,7 @@ img {
 // 英語 小見出し：16px(bold)
 .en-title {
     font-size: 1rem;
-    font-weight: 700;
+    font-weight: 400;
     letter-spacing: 0.2em;
     margin-top: 10px;
 }

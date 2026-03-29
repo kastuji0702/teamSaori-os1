@@ -1,15 +1,18 @@
+@charset "UTF-8";
 :root {
   --color-main: #2b3a2e;
   --color-text: #111111;
   --color-text-light: #ffffff;
   --color-bg-light: #f5f5f0;
   --font-base: "Noto Serif JP", serif;
+  font-weight: 400;
 }
 
 html {
   width: 100%;
   color: var(--color-text);
   font-family: var(--font-base);
+  font-weight: var(--font-weight);
   line-height: 1.8;
   letter-spacing: 0.1em;
   scroll-behavior: smooth;
@@ -52,8 +55,7 @@ img {
 }
 
 .wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 5%;
   padding: 5rem 24px;
 }
 @media (max-width: 390px) {
@@ -69,7 +71,7 @@ img {
 
 .sec-title {
   font-size: 3rem;
-  font-weight: 700;
+  font-weight: 400;
   margin-bottom: 3rem;
   letter-spacing: 0.15em;
 }
@@ -82,7 +84,7 @@ img {
 
 .sec-subtitle {
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 400;
   margin-bottom: 1.5rem;
   letter-spacing: 0.2em;
 }
@@ -99,7 +101,7 @@ img {
           writing-mode: vertical-rl;
   text-orientation: upright;
   font-size: 3rem;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.4;
   letter-spacing: 0.2em;
 }
@@ -126,7 +128,7 @@ img {
 
 .jp-subheading {
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.5;
 }
 @media (max-width: 390px) {
@@ -137,7 +139,7 @@ img {
 
 .en-title {
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 0.2em;
   margin-top: 10px;
 }
@@ -676,13 +678,14 @@ img {
 }
 
 #occasion {
-  padding-top: 80px;
+  padding: 80px 0;
   background-color: #111111;
   color: var(--color-text-light);
 }
 #occasion .sec-header {
   background-image: url(../img/Occasions-main.png);
   height: 90vh;
+  width: 100vw;
   margin-bottom: 0;
   padding-right: 5%;
 }
@@ -716,26 +719,80 @@ img {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
+#occasion .occasion-item-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
 #occasion .title-box {
   width: 20%;
+  padding-left: 5%;
+  margin-top: -50px;
 }
-#occasion .text-box {
-  width: 30%;
-}
-#occasion .img-box {
-  width: 40%;
-}
-#occasion .vertical-title {
+#occasion .title-box .vertical-title {
   -webkit-writing-mode: vertical-rl;
       -ms-writing-mode: tb-rl;
           writing-mode: vertical-rl;
-  font-size: 5rem;
-  padding-left: 10px;
+  font-size: 6rem;
 }
-#occasion .shift-line {
+#occasion .title-box .shift-line-right {
   display: inline-block;
-  -webkit-transform: translateX(40px);
-          transform: translateX(40px);
+  -webkit-transform: translateX(3rem);
+          transform: translateX(3rem);
+}
+#occasion .title-box .shift-line-left {
+  display: inline-block;
+  -webkit-transform: translateX(-3rem);
+          transform: translateX(-3rem);
+}
+#occasion .box-left {
+  width: 70%;
+  padding-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5%;
+}
+#occasion .box-right {
+  width: 70%;
+  padding-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  gap: 5%;
+}
+#occasion .desc {
+  width: 45%;
+}
+#occasion .img-occasion {
+  width: 50%;
+  height: auto;
+  aspect-ratio: 16/10;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 #greeting {
@@ -746,50 +803,63 @@ img {
   background-size: cover;
   background-blend-mode: overlay;
 }
-@media (max-width: 390px) {
-  #greeting {
-    padding: 2rem 0;
-  }
-}
 #greeting .greeting-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 60px;
-  max-width: 800px;
+  gap: 15px;
   margin: 0 auto;
 }
-@media (max-width: 390px) {
-  #greeting .greeting-content {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    gap: 40px;
-  }
-}
 #greeting .greeting-content .vertical-title {
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
-@media (max-width: 390px) {
-  #greeting .greeting-content .vertical-title {
-    font-size: 2rem;
-  }
+#greeting .greeting-content .vertical-title span {
+  font-size: 1.5rem;
+  margin-top: 7.5rem; /* 縦書きなので「下」への余白になる */
+  display: block;
 }
-#greeting .greeting-content .text-wrap {
-  font-size: 1.1rem;
-  line-height: 2.2;
-  letter-spacing: 0.15em;
+#greeting .greeting-content .vertical-title .vertical-text {
+  font-size: 1rem;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+}
+#greeting .greeting-content .vertical-text {
+  font-size: 1rem;
+}
+#greeting .greeting-content .shop-map {
+  width: 40%;
+  height: auto;
+}
+#greeting .greeting-content .english-list {
+  width: 40%;
+  height: auto;
+}
+#greeting .greeting-content .english-list-item {
+  max-width: 800px;
+  padding: 10px 0;
+}
+#greeting .greeting-content .english-list-item h3 {
+  font-size: 1.2rem;
+}
+#greeting .greeting-content .english-list-item p {
+  font-size: 1rem;
 }
 
 #faq {
   background-color: var(--color-bg-light);
+  width: 100%;
+  padding: 100px 0;
 }
 #faq .faq-list {
   max-width: 800px;
@@ -853,22 +923,8 @@ img {
   max-width: 1000px;
   margin: 0 auto;
 }
-@media (max-width: 768px) {
-  #info .info-content {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    gap: 40px;
-  }
-}
 #info .info-content .info-table-wrap {
   width: 50%;
-}
-@media (max-width: 768px) {
-  #info .info-content .info-table-wrap {
-    width: 100%;
-  }
 }
 #info .info-content .info-table-wrap .info-table {
   width: 100%;
@@ -892,11 +948,6 @@ img {
 #info .info-content .info-map-wrap {
   width: 50%;
   position: relative;
-}
-@media (max-width: 768px) {
-  #info .info-content .info-map-wrap {
-    width: 100%;
-  }
 }
 #info .info-content .info-map-wrap .shop-img {
   width: 100%;

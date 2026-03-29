@@ -5,18 +5,19 @@
 // ============================================================
 
 #occasion {
-    padding-top: 80px;
+    padding: 80px 0;
     background-color: #111111;
     color: var(--color-text-light);
 
     .sec-header {
         background-image: url(../img/Occasions-main.png);
         height: 90vh;
+        width: 100vw;
         margin-bottom: 0;
         padding-right: 5%;
 
         .sec-title {
-            transform: translateY(-40px); 
+            transform: translateY(-40px);
             writing-mode: vertical-rl;
             font-size: 5rem;
             width: fit-content;
@@ -35,36 +36,72 @@
             text-align: right;
         }
     }
+
     .occasion-item {
-        &-right{
+        &-right {
             display: flex;
             justify-content: space-between;
         }
-    }
-    
-    .title-box{
-       width: 20%;
+
+        &-left {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+        }
     }
 
-    .text-box{
-        width: 30%;
-    }
+    .title-box {
+        width: 20%;
+        padding-left: 5%;
+        margin-top: -50px;
 
- .img-box{
-        width: 40%;
-    }
-
-    .vertical-title {
+        & .vertical-title {
             writing-mode: vertical-rl;
-            font-size: 5rem;
-            padding-left: 10px;
+            font-size: 6rem;
+        }
+
+        .shift-line {
+            &-right {
+                display: inline-block;
+                transform: translateX(3rem);
+            }
+        &-left {
+            display: inline-block;
+            transform: translateX(-3rem);
+        }
+    }
+}
+
+    .box{
+    &-left {
+        width: 70%;
+        padding-top: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 5%; 
     }
 
-    .shift-line {
-        display: inline-block;
-        transform: translateX(40px);        
+    &-right {
+        width: 70%;
+        padding-top: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row-reverse;
+        gap: 5%; 
     }
-   
 
+    } 
 
+    .desc {
+        width: 45%; 
+    }
+
+    .img-occasion {
+        width: 50%;
+        height: auto; 
+        aspect-ratio: 16 / 10; 
+        object-fit: cover; 
+    }
 }
