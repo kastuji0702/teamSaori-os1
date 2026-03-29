@@ -5,9 +5,10 @@
 // ============================================================
 
 #header {
+  max-width: 1200px;
   position: absolute;
   top: 0;
-  left: 0;
+  left: 8%;
   width: 100%;
   z-index: 100;
   display: flex;
@@ -43,6 +44,10 @@
       display: flex;
       gap: 20px;
 
+      .header-home{
+        display: none;
+      }
+
       li a {
         writing-mode: vertical-rl;
         text-orientation: upright;
@@ -65,10 +70,12 @@
           }
         }
 
-        .en {
-          display: inline-block;
-          transform: rotate(90deg);
-          margin-top: -16px;
+        .en-wrap {
+          .en {
+            display: inline-block;
+            transform: rotate(90deg);
+            margin-top: -16px;
+          }
         }
 
         &:hover {
@@ -81,14 +88,12 @@
 
     .header-contact {
       position: absolute;
-      bottom: 40px;
+      bottom: -130px;
       left: 40px;
       writing-mode: horizontal-tb;
       text-orientation: initial;
       font-size: 0.85rem;
       letter-spacing: 0.1em;
-      top: 120px;
-      left: 40px;
 
       .tel-no {
         font-family: sans-serif;
