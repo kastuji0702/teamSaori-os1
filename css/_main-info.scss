@@ -41,26 +41,24 @@
                 }
             }
         }
+    }
 
         .info-map-wrap {
-            width: 50%;
-            position: relative;
+            margin: 0 auto;
+            width: 70%;
+            display: flex;
+            justify-content: space-between;
 
             .shop-img {
-                width: 100%;
-                height: 100%;
+                width: 30vw;
+                height: 30vw;
                 object-fit: cover;
-                border-radius: 4px;
             }
 
-            // Google Map埋め込みではなく画像を使っている場合
             .map-embed {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                // モックアップ通りアイコンなどを配置
+                width: 30vw;
+                height: 30vw;
+
             }
         }
     }
-}
