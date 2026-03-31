@@ -13,57 +13,90 @@
     background-blend-mode: overlay;
 
     .greeting-content {
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: space-between;
-        align-items: center;
-        gap: 15px;
+        max-width: 1200px;
         margin: 0 auto;
-
-        & .vertical-title {
-            font-size: 3rem;
-            padding-left: 2rem;
-
-            & span {
-                font-size: 1.5rem;
-                display: inline-block;
-                text-orientation: mixed;
-                transform: translateX(-3rem); 
+        
+        .greeting-top {
+            position: relative;
+            padding: 100px 0;
+            margin-bottom: 10%;
+            
+            .img-left {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 46.5%;
+            }
+            
+            .img-right {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 46.5%;
             }
 
-        & .vertical-text{
-            font-size: 1rem;
-            writing-mode: vertical-rl;
-        }
-        }
+            .vertical-title {
+                  font-size: 3rem;
+                  padding-left: 2rem;
+                   writing-mode: vertical-rl;
+                  justify-self: end;
+      
+                  & span {
+                      font-size: 1.5rem;
+                      display: inline-block;
+                      text-orientation: mixed;
+                      transform: translateX(-3rem); 
+                  }
+      
+            }
 
-        & .vertical-text {
-            font-size: 1rem;
-        }
+            .greeting-text {
+                position: relative;
+                top: 50%;
+                left: 10%;
+                width: 80%;
+                padding: 4% 4% 2% 4%;
+                border: 1px solid rgba(255,255,255,0.6);
+                display: flex;
+                flex-direction: row-reverse;
+                gap: 2rem;
+                align-items: start;
 
-        .shop-map {
-            width: 25%;
-            height: auto;
-        }
-
-        .english{
-        &-list {
-            width: 40%;
-            height: auto;
-
-            &-item {
-                max-width: 800px;
-                padding: 10px 0;
-
-                h3 {
-                    font-size: 1.2rem;
+                &::before {
+                 content: "";
+                 position: absolute;
+                 top: -20px;
+                 left: -20px;
+                 right: -20px;
+                 bottom: -20px;
+                 border: 1px solid rgba(255,255,255,0.6);
+                }
+                
+                .text-wrapper {
+                .japanese {
+                    .section-text {
+                        padding-bottom: 2%;
+                    }
                 }
 
-                p {
-                    font-size: 1rem;
+                .english {
+                    .section-text {
+                        padding-bottom: 2%;
+                    }
+                }
                 }
             }
+        }
+
+        .greeting-down {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5rem;
+
+            @include m.tab {
+                gap: 0rem;
             }
         }
+
     }
 }
