@@ -1,7 +1,7 @@
 @use "mixin" as m;
 
 // ============================================================
-// 結びセクション (_main-greeting.scss)
+// コンセプトセクション (_main-concept.scss)
 // ============================================================
 
 #greeting {
@@ -15,23 +15,25 @@
     .greeting-content {
         display: flex;
         flex-direction: row-reverse;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         gap: 15px;
         margin: 0 auto;
 
         & .vertical-title {
             font-size: 3rem;
+            padding-left: 2rem;
 
-            span {
+            & span {
                 font-size: 1.5rem;
-                margin-top: 7.5rem; /* 縦書きなので「下」への余白になる */
-                display: block;
+                display: inline-block;
+                text-orientation: mixed;
+                transform: translateX(-3rem); 
             }
+
         & .vertical-text{
             font-size: 1rem;
             writing-mode: vertical-rl;
-
         }
         }
 
@@ -40,7 +42,7 @@
         }
 
         .shop-map {
-            width: 40%;
+            width: 25%;
             height: auto;
         }
 
