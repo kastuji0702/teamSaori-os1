@@ -483,6 +483,48 @@ img {
   background-blend-mode: overlay;
 }
 #greeting .greeting-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+#greeting .greeting-content .greeting-top {
+  position: relative;
+  padding: 100px 0;
+  margin-bottom: 10%;
+}
+#greeting .greeting-content .greeting-top .img-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 46.5%;
+}
+#greeting .greeting-content .greeting-top .img-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 46.5%;
+}
+#greeting .greeting-content .greeting-top .vertical-title {
+  font-size: 3rem;
+  padding-left: 2rem;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  justify-self: end;
+}
+#greeting .greeting-content .greeting-top .vertical-title span {
+  font-size: 1.5rem;
+  display: inline-block;
+  text-orientation: mixed;
+  -webkit-transform: translateX(-3rem);
+          transform: translateX(-3rem);
+}
+#greeting .greeting-content .greeting-top .greeting-text {
+  position: relative;
+  top: 50%;
+  left: 10%;
+  width: 80%;
+  padding: 4% 4% 2% 4%;
+  border: 1px solid rgba(255, 255, 255, 0.6);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -490,52 +532,35 @@ img {
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 15px;
-  margin: 0 auto;
+  gap: 2rem;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
 }
-#greeting .greeting-content .vertical-title {
-  font-size: 3rem;
-  padding-left: 2rem;
+#greeting .greeting-content .greeting-top .greeting-text::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
 }
-#greeting .greeting-content .vertical-title span {
-  font-size: 1.5rem;
-  display: inline-block;
-  text-orientation: mixed;
-  -webkit-transform: translateX(-3rem);
-          transform: translateX(-3rem);
+#greeting .greeting-content .greeting-top .greeting-text .text-wrapper .japanese .section-text {
+  padding-bottom: 2%;
 }
-#greeting .greeting-content .vertical-title .vertical-text {
-  font-size: 1rem;
-  -webkit-writing-mode: vertical-rl;
-      -ms-writing-mode: tb-rl;
-          writing-mode: vertical-rl;
+#greeting .greeting-content .greeting-top .greeting-text .text-wrapper .english .section-text {
+  padding-bottom: 2%;
 }
-#greeting .greeting-content .vertical-text {
-  font-size: 1rem;
+#greeting .greeting-content .greeting-down {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5rem;
 }
-#greeting .greeting-content .shop-map {
-  width: 25%;
-  height: auto;
-}
-#greeting .greeting-content .english-list {
-  width: 40%;
-  height: auto;
-}
-#greeting .greeting-content .english-list-item {
-  max-width: 800px;
-  padding: 10px 0;
-}
-#greeting .greeting-content .english-list-item h3 {
-  font-size: 1.2rem;
-}
-#greeting .greeting-content .english-list-item p {
-  font-size: 1rem;
+@media (max-width: 768px) {
+  #greeting .greeting-content .greeting-down {
+    gap: 0rem;
+  }
 }
 
 #menu {
@@ -557,6 +582,8 @@ img {
   font-family: Noto;
 }
 #menu .menu-list {
+  max-width: 1200px;
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
