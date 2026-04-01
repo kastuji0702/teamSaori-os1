@@ -42,40 +42,31 @@
 
     .menu-list {
       display: flex;
-      gap: 20px;
 
-      .header-home{
+      .header-home {
         display: none;
       }
 
       li a {
-        writing-mode: vertical-rl;
-        text-orientation: upright;
-        font-size: 0.9rem;
-        border-left: 1px solid transparent; // ホバーエフェクト用
-        transition: 0.3s;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
         position: relative;
+        height: 400px;
 
         .jp {
-          letter-spacing: 0.2em;
-          padding-bottom: 150px;
-
-          &::after {
-            content: "";
-            position: absolute;
-            left: 50%;
-            width: 1px;
-            height: 70px; 
-            background: #fff;
-          }
+          writing-mode: vertical-rl;
+          text-orientation: upright;
+          font-size: 0.9rem;
+          letter-spacing: 0.5em;
         }
 
-        .en-wrap {
-          .en {
-            display: inline-block;
-            transform: rotate(90deg);
-            margin-top: -16px;
-          }
+        .en {
+          display: inline-block; 
+          text-orientation: mixed;
+          transform-origin: left top;
+          writing-mode: vertical-rl;
         }
 
         &:hover {
@@ -88,7 +79,7 @@
 
     .header-contact {
       position: absolute;
-      bottom: -130px;
+      bottom: -300px;
       left: 40px;
       writing-mode: horizontal-tb;
       text-orientation: initial;
@@ -106,12 +97,12 @@
         align-items: center;
 
         .map {
-            display: flex;
-            font-size: 1.5rem;
+          display: flex;
+          font-size: 1.5rem;
 
-            .icon {
-                align-items: center;
-            }
+          .icon {
+            align-items: center;
+          }
         }
 
         .sns {
