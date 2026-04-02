@@ -25,7 +25,11 @@
             text-align: left;
             height: auto;
 
-            span {
+            &-small{
+                font-size: 3.5rem;
+            }
+
+            &-jp{
                 display: inline-block;
                 margin-top: 5rem;
             }

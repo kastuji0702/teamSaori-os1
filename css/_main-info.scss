@@ -1,19 +1,20 @@
 @use "mixin" as m;
+@use "base" as *;
 
 // ============================================================
 // 店舗情報セクション (_main-info.scss)
 // ============================================================
 
 #info {
-    background-color: #fff;
+    background-color: #fff; 
+    @extend .wrapper;
 
     .info-content {
         display: flex;
         justify-content: space-between;
         align-items: stretch;
         gap: 60px;
-        max-width: 1000px;
-        margin: 0 auto;
+       
 
         .info-table-wrap {
             width: 50%;
