@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --color-main: #2b3a2e;
   --color-text: #111111;
@@ -53,12 +54,11 @@ img {
   display: block;
 }
 
-.wrapper {
-  margin: 0 5%;
+.wrapper, #info, .faq, .policy, #concept .concept-content {
   padding: 5rem 24px;
 }
 @media (max-width: 390px) {
-  .wrapper {
+  .wrapper, #info, .faq, .policy, #concept .concept-content {
     padding: 2rem 16px;
   }
 }
@@ -690,7 +690,10 @@ img {
   text-align: left;
   height: auto;
 }
-#occasion .sec-header .sec-title span {
+#occasion .sec-header .sec-title-small {
+  font-size: 3.5rem;
+}
+#occasion .sec-header .sec-title-jp {
   display: inline-block;
   margin-top: 5rem;
 }
@@ -804,8 +807,6 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 15px;
-  margin: 0 auto;
 }
 #concept .concept-content .vertical-title {
   font-size: 3rem;
@@ -846,54 +847,208 @@ img {
   font-size: 1rem;
 }
 
-#faq {
-  background-color: var(--color-bg-light);
+.policy {
+  color: var(--color-text-light);
+  background-image: url(../img/Policy.jpg);
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.policy__title {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+.policy__title-jp {
+  font-size: 3rem;
+  font-weight: 400;
+}
+.policy__title-en {
+  font-size: 2rem;
+  font-weight: 400;
+}
+.policy__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 5%;
+  max-width: 1000px;
+}
+.policy__content-jp {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+.policy__content-en {
+  padding-top: 1rem;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+/* 基本設定 */
+.faq .faq-container {
   width: 100%;
-  padding: 100px 0;
-}
-#faq .faq-list {
   max-width: 800px;
-  margin: 0 auto;
 }
-#faq .faq-list .faq-item {
-  background-color: #fff;
-  margin-bottom: 20px;
-  padding: 30px;
-  border-radius: 4px;
-  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
-          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+.faq {
+  /* ヘッダー部分 */
 }
-@media (max-width: 390px) {
-  #faq .faq-list .faq-item {
-    padding: 20px;
-  }
+.faq .faq-header {
+  text-align: center;
+  margin-bottom: 40px;
 }
-#faq .faq-list .faq-item dt {
-  font-weight: bold;
-  color: var(--color-text);
-  font-size: 1.1rem;
-  margin-bottom: 15px;
-  position: relative;
-  padding-left: 1.5em;
-}
-#faq .faq-list .faq-item dt::before {
-  content: "Q.";
-  position: absolute;
-  left: 0;
-  color: var(--color-text);
-}
-#faq .faq-list .faq-item dd {
-  font-size: 0.95rem;
-  line-height: 1.8;
+.faq .faq-header h1 {
+  font-size: 2.5rem;
+  font-weight: 400;
   margin: 0;
-  padding-left: 1.5em;
-  position: relative;
+  letter-spacing: 0.1em;
 }
-#faq .faq-list .faq-item dd::before {
-  content: "A.";
+.faq .faq-header .en-title {
+  font-size: 1.2rem;
+  letter-spacing: 0.3em;
+  margin-top: 5px;
+  text-transform: uppercase;
+}
+.faq {
+  /* FAQ リスト */
+}
+.faq .faq-list {
+  border-top: 1px solid #333;
+}
+.faq .faq-item {
+  border-bottom: 1px solid #333;
+}
+.faq {
+  /* 質問部分 (Button) */
+}
+.faq .faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 25px 10px;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  font-size: 1rem;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+.faq .faq-question:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+.faq .q-prefix, .faq .a-prefix {
+  font-size: 1.2rem;
+  margin-right: 20px;
+  width: 20px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+.faq .faq-question .text {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  line-height: 1.6;
+}
+.faq .en-text {
+  font-size: 0.9rem;
+  display: block;
+  letter-spacing: 0.05em;
+  margin-top: 4px;
+}
+.faq {
+  /* プラス・マイナス アイコン */
+}
+.faq .icon {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin-left: 20px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+.faq .icon::before, .faq .icon::after {
+  content: "";
   position: absolute;
+  background-color: #333;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+.faq {
+  /* 横棒 */
+}
+.faq .icon::before {
+  width: 100%;
+  height: 1px;
+  top: 50%;
   left: 0;
-  color: var(--color-text);
+}
+.faq {
+  /* 縦棒 (プラスの時だけ表示) */
+}
+.faq .icon::after {
+  width: 1px;
+  height: 100%;
+  left: 50%;
+  top: 0;
+}
+.faq {
+  /* 開いている時のアイコン (マイナスにする) */
+}
+.faq .faq-item.active .icon::after {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  opacity: 0;
+}
+.faq {
+  /* 回答部分 */
+}
+.faq .faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.4s ease-out;
+  transition: max-height 0.4s ease-out;
+}
+.faq .answer-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 10px 25px 10px;
+  line-height: 1.8;
+}
+.faq {
+  /* アクティブ状態 (開いた時) */
+}
+.faq .faq-item.active .faq-answer {
+  max-height: 500px; /* 十分な高さを設定 */
 }
 
 #info {
@@ -910,8 +1065,6 @@ img {
       -ms-flex-align: stretch;
           align-items: stretch;
   gap: 60px;
-  max-width: 1000px;
-  margin: 0 auto;
 }
 #info .info-content .info-table-wrap {
   width: 50%;

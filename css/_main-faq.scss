@@ -1,60 +1,141 @@
 @use "mixin" as m;
+@use "base" as *;
 
 // ============================================================
 // よくあるご質問セクション (_main-faq.scss)
 // ============================================================
 
-#faq {
-    background-color: var(--color-bg-light);
+/* 基本設定 */
+.faq {
+    @extend .wrapper;
+
+
+.faq-container {
     width: 100%;
-    padding: 100px 0;
+    max-width: 800px;
+}
 
-    .faq-list {
-        max-width: 800px;
-        margin: 0 auto;
-        
-        // アコーディオン形式ではなくシンプルなリスト形式
-        .faq-item {
-            background-color: #fff;
-            margin-bottom: 20px;
-            padding: 30px;
-            border-radius: 4px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+/* ヘッダー部分 */
+.faq-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
 
-            @include m.sp {
-                padding: 20px;
-            }
+.faq-header h1 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin: 0;
+    letter-spacing: 0.1em;
+}
 
-            dt {
-                font-weight: bold;
-                color: var(--color-text);
-                font-size: 1.1rem;
-                margin-bottom: 15px;
-                position: relative;
-                padding-left: 1.5em;
+.faq-header .en-title {
+    font-size: 1.2rem;
+    letter-spacing: 0.3em;
+    margin-top: 5px;
+    text-transform: uppercase;
+}
 
-                &::before {
-                    content: "Q.";
-                    position: absolute;
-                    left: 0;
-                    color: var(--color-text);
-                }
-            }
+/* FAQ リスト */
+.faq-list {
+    border-top: 1px solid #333;
+}
 
-            dd {
-                font-size: 0.95rem;
-                line-height: 1.8;
-                margin: 0;
-                padding-left: 1.5em;
-                position: relative;
+.faq-item {
+    border-bottom: 1px solid #333;
+}
 
-                &::before {
-                    content: "A.";
-                    position: absolute;
-                    left: 0;
-                    color: var(--color-text);
-                }
-            }
-        }
-    }
+/* 質問部分 (Button) */
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: flex-start;
+    padding: 25px 10px;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.faq-question:hover {
+    background-color: rgba(0,0,0,0.02);
+}
+
+.q-prefix, .a-prefix {
+    font-size: 1.2rem;
+    margin-right: 20px;
+    width: 20px;
+    flex-shrink: 0;
+}
+
+.faq-question .text {
+    flex-grow: 1;
+    line-height: 1.6;
+}
+
+.en-text {
+    font-size: 0.9rem;
+    display: block;
+    letter-spacing: 0.05em;
+    margin-top: 4px;
+}
+
+/* プラス・マイナス アイコン */
+.icon {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin-left: 20px;
+    flex-shrink: 0;
+    align-self: center;
+}
+
+.icon::before, .icon::after {
+    content: '';
+    position: absolute;
+    background-color: #333;
+    transition: transform 0.3s ease;
+}
+
+/* 横棒 */
+.icon::before {
+    width: 100%;
+    height: 1px;
+    top: 50%;
+    left: 0;
+}
+
+/* 縦棒 (プラスの時だけ表示) */
+.icon::after {
+    width: 1px;
+    height: 100%;
+    left: 50%;
+    top: 0;
+}
+
+/* 開いている時のアイコン (マイナスにする) */
+.faq-item.active .icon::after {
+    transform: rotate(90deg);
+    opacity: 0;
+}
+
+/* 回答部分 */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+}
+
+.answer-content {
+    display: flex;
+    padding: 0 10px 25px 10px;
+    line-height: 1.8;
+}
+
+/* アクティブ状態 (開いた時) */
+.faq-item.active .faq-answer {
+    max-height: 500px; /* 十分な高さを設定 */
+}
 }

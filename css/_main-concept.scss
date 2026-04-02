@@ -1,4 +1,5 @@
 @use "mixin" as m;
+@use "base" as *;
 
 // ============================================================
 // コンセプトセクション (_main-concept.scss)
@@ -17,8 +18,7 @@
         flex-direction: row-reverse;
         justify-content: space-between;
         align-items: center;
-        gap: 15px;
-        margin: 0 auto;
+        @extend .wrapper;
 
         & .vertical-title {
             font-size: 3rem;

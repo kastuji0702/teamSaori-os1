@@ -63,7 +63,6 @@ img {
 
 // セクション余白（PC:上下80px, SP:上下32px）
 .wrapper {
-    margin: 0 5%;
     padding: 5rem 24px; // 80px (5rem)
 
     @include m.sp {
