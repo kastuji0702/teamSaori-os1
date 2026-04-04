@@ -383,8 +383,8 @@ img {
   #header.open .side-menu .menu-list li a .en::before {
     background: var(--color-text);
   }
-  #header.open .side-menu .menu-list li a:hover {
-    border-left-color: #333;
+  #header.open .side-menu .menu-list li a:hover, #header.open .side-menu .menu-list li a:active {
+    background-color: rgba(0, 0, 0, 0.05);
   }
   #header.open .side-menu .header-contact {
     -webkit-writing-mode: horizontal-tb;
