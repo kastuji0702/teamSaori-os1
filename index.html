@@ -1,583 +1,622 @@
 <!doctype html>
 <html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>鉄板焼き | サイトタイトル</title>
+    <meta
+      name="description"
+      content="上質な空間と最高級の鉄板焼きを提供する大人の隠れ家。"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="img/logo.png" />
+    <!-- リセットCSS -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- サイトのCSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <title>鉄板焼き | サイトタイトル</title>
-  <meta name="description" content="上質な空間と最高級の鉄板焼きを提供する大人の隠れ家。" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="shortcut icon" href="img/logo.png" />
-  <!-- リセットCSS -->
-  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet" />
-  <!-- サイトのCSS -->
-  <link rel="stylesheet" href="css/style.css" />
-</head>
+  <body>
+    <!-- ========== HEADER ========== -->
+    <header id="header">
+      <!-- ロゴ -->
+      <div class="logo">
+        <a href="#"><img src="img\logo.png" alt="ロゴ" /></a>
+      </div>
 
-<body>
-  <!-- ========== HEADER ========== -->
-  <header id="header">
-    <!-- ロゴ -->
-    <div class="logo">
-      <a href="#"><img src="img\logo.png" alt="ロゴ" /></a>
-    </div>
+      <!-- 横置きまたはサイドメニュー -->
+      <nav class="side-menu">
+        <ul class="menu-list">
+          <li class="header-home">
+            <a href="#header">
+              <span class="jp">ホーム</span>
+              <span class="en">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="#greeting">
+              <span class="jp">ごあいさつ</span>
+              <span class="en">Greeting</span>
+            </a>
+          </li>
+          <li>
+            <a href="#menu">
+              <span class="jp">メニュー</span>
+              <span class="en">Menu</span>
+            </a>
+          </li>
+          <li>
+            <a href="#occasion">
+              <span class="jp">ご利用シーン</span>
+              <span class="en">Occasion</span>
+            </a>
+          </li>
 
-    <!-- 横置きまたはサイドメニュー -->
-    <nav class="side-menu">
-      <ul class="menu-list">
-        <li class="header-home">
-          <a href="#header">
-            <span class="jp">ホーム</span>
-            <span class="en">Home</span>
-          </a>
-        </li>
+          <li>
+            <a href="#info">
+              <span class="jp">インフォメーション</span>
+              <span class="en">Information</span>
+            </a>
+          </li>
 
-        <li>
-          <a href="#greeting">
-            <span class="jp">ごあいさつ</span>
-            <span class="en">Greeting</span>
-          </a>
-        </li>
-        <li>
-          <a href="#menu">
-            <span class="jp">メニュー</span>
-            <span class="en">Menu</span>
-          </a>
-        </li>
-        <li>
-          <a href="#occasion">
-            <span class="jp">ご利用シーン</span>
-            <span class="en">Occasion</span>
-          </a>
-        </li>
+          <li>
+            <a href="#faq">
+              <span class="jp">よくあるご質問</span>
+              <span class="en">FAQ</span>
+            </a>
+          </li>
+          <li>
+            <a href="#policy">
+              <span class="jp">注意事項</span>
+              <span class="en">Policy</span>
+            </a>
+          </li>
+          <li>
+            <a href="#info">
+              <span class="jp">アクセス</span>
+              <span class="en">Access</span>
+            </a>
+          </li>
+        </ul>
 
-        <li>
-          <a href="#info">
-            <span class="jp">インフォメーション</span>
-            <span class="en">Information</span>
-          </a>
-        </li>
+        <div class="header-contact">
+          <p class="label">ご予約・お問い合わせ</p>
 
-        <li>
-          <a href="#faq">
-            <span class="jp">よくあるご質問</span>
-            <span class="en">FAQ</span>
-          </a>
-        </li>
-        <li>
-          <a href="#policy">
-            <span class="jp">注意事項</span>
-            <span class="en">Policy</span>
-          </a>
-        </li>
-        <li>
-          <a href="#info">
-            <span class="jp">アクセス</span>
-            <span class="en">Access</span>
-          </a>
-        </li>
-      </ul>
+          <p class="tel">
+            <span>Tel：</span>
+            <a class="tel-no" href="tel:000-0000-0000">00-0000-0000</a>
+          </p>
 
-      <div class="header-contact">
-        <p class="label">ご予約・お問い合わせ</p>
+          <div class="header-info">
+            <a href="#" class="map">
+              <span class="icon"><img src="img/bxs_map.png" alt="" /></span>
+              <span>Map / Shop info</span>
+            </a>
 
-        <p class="tel">
-          <span>Tel：</span>
-          <a class="tel-no" href="tel:000-0000-0000">00-0000-0000</a>
-        </p>
+            <div class="sns">
+              <a href="#"><img src="img/instagram-icon.png" alt="" /></a>
+              <a href="#"><img src="img/facebook-icon.png" alt="" /></a>
+              <a href="#"><img src="img/x-twitter-icon.png" alt="" /></a>
+            </div>
+          </div>
+        </div>
+      </nav>
 
-        <div class="header-info">
-          <a href="#" class="map">
-            <span class="icon"><img src="img/bxs_map.png" alt="" /></span>
-            <span>Map / Shop info</span>
-          </a>
+      <!--ハンバーガーアイコン（SP用）-->
+      <div class="toggle-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div id="mask"></div>
+    </header>
 
-          <div class="sns">
-            <a href="#"><img src="img/instagram-icon.png" alt="" /></a>
-            <a href="#"><img src="img/facebook-icon.png" alt="" /></a>
-            <a href="#"><img src="img/x-twitter-icon.png" alt="" /></a>
+    <!-- ========== MAIN ========== -->
+    <main>
+      <!-- Hero Section -->
+      <div id="hero">
+        <div class="hero-top">
+          <img
+            src="img/fastviewimage01.webp"
+            alt="シェフが肉を切る様子"
+            class="bg-img"
+          />
+        </div>
+
+        <div class="hero-bottom">
+          <img src="img/fastviewimage02.webp" alt="炎" class="bg-img" />
+          <div class="hero-subtext">
+            <p class="vertical-text">
+              静寂の中で、四季を味わう。<br />炭火の香りとともに広がる、旬の恵み。<br />日本各地から届く海の幸、山の幸を、<br />職人の技で一皿へと仕立てます。<br />大切な人と過ごす、上質なひとときを。
+            </p>
           </div>
         </div>
       </div>
-    </nav>
 
-    <!--ハンバーガーアイコン（SP用）-->
-    <div class="toggle-btn">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <div id="mask"></div>
-  </header>
+      <!-- Greeting Section -->
+      <section id="greeting">
+        <div class="greeting-content">
+          <div class="greeting-top">
+            <div class="img img-left">
+              <img src="img/greetingimage01.webp" alt="" class="img-1" />
+            </div>
 
-  <!-- ========== MAIN ========== -->
-  <main>
-    <!-- Hero Section -->
-    <div id="hero">
-      <div class="hero-top">
-        <img src="img/fastviewimage01.webp" alt="シェフが肉を切る様子" class="bg-img" />
-      </div>
+            <div class="img img-right">
+              <img src="img/greetingimage02.webp" alt="" class="img-2" />
+            </div>
 
-      <div class="hero-bottom">
-        <img src="img/fastviewimage02.webp" alt="炎" class="bg-img" />
-        <div class="hero-subtext">
+            <div class="greeting-text">
+              <h2 class="vertical-title">ごあいさつ<span>Greeting</span></h2>
+              <div class="text-wrapper">
+                <ul class="japanese">
+                  <p class="section-text">
+                    綴～TUZURI～は、<br />
+                    四季折々の食材を楽しむ和食店でございます。
+                  </p>
+                  <p class="section-text">
+                    日本各地より取り寄せた海の幸、山の幸を用い、<br />
+                    素材の持ち味を大切にしたお料理をコース仕立てでご提供しております。
+                  </p>
+                  <p class="section-text">
+                    お料理に合わせてお楽しみいただけるよう、<br />
+                    全国より選りすぐりの日本酒やお酒も豊富に取り揃えております。
+                  </p>
+                  <p class="section-text">
+                    店内は、職人の技を間近で感じられるカウンター席のほか、<br />
+                    ゆったりとお過ごしいただける個室もご用意しております。
+                  </p>
+                  <p class="section-text">
+                    記念日のお食事や大切なご会食、接待やご友人との集まりなど、<br />
+                    さまざまな場面でご利用いただけましたら幸いです。
+                  </p>
+                </ul>
+                <ul class="english">
+                  <p class="section-text">
+                    Our restaurant offers a refined Japanese dining experience
+                    centered on seasonal ingredients.
+                  </p>
+                  <p class="section-text">
+                    Carefully selected seafood and mountain delicacies from
+                    across Japan are prepared as a thoughtfully crafted course
+                    meal.
+                  </p>
+                  <p class="section-text">
+                    A curated selection of sake and fine beverages complements
+                    the cuisine.
+                  </p>
+                  <p class="section-text">
+                    Guests may enjoy the chef’s craftsmanship at the counter or
+                    relax in the comfort of our private dining rooms.
+                  </p>
+                  <p class="section-text">
+                    Ideal for anniversaries, business dinners, and special
+                    occasions.
+                  </p>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="greeting-down">
+            <img src="img/greetingimage03.webp" alt="" />
+            <img src="img/greetingimage04.webp" alt="" />
+            <img src="img/greetingimage05.webp" alt="" />
+            <img src="img/greetingimage06.webp" alt="" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Menu Section -->
+      <section id="menu">
+        <div class="sec-header">
+          <h2 class="sec-title">お品書き/ コース</h2>
+          <p class="sec-subtitle">Menu / Course</p>
+        </div>
+        <ul class="menu-list">
+          <li class="menu-item">
+            <img src="img/menuimage01.webp" alt="01コース" />
+            <div class="menu-item-text">
+              <h3 class="menu-title">01 旬の恵みを、七皿で味わう</h3>
+              <p class="menu-english">Signature Kaiseki Course</p>
+              <p class="menu-meal"><span class="number">7</span>種</p>
+              <p class="menu-price">11,000円(税別)</p>
+              <p class="menu-desc">
+                季節の小鉢三種盛<br />本日の出汁椀<br />鮮魚二種盛<br />本日の炭火焼き<br />季節の酢の物<br />土鍋ご飯・香の物・味噌汁<br />本日の甘味
+              </p>
+            </div>
+          </li>
+          <li class="menu-item">
+            <img src="img/menuimage02.jpg" alt="02コース" />
+            <div class="menu-item-text">
+              <h3 class="menu-title">02 旬と技が織りなす、十皿の贅沢</h3>
+              <p class="menu-english">Signature Kaiseki Course</p>
+              <p class="menu-meal"><span class="number">10</span>種</p>
+              <p class="menu-price">20,000円(税別)</p>
+              <p class="menu-desc">
+                季節の一品<br />旬菜盛り合わせ<br />本日の出汁椀<br />鮮魚三種盛<br />本日の炭火焼き<br />本日の逸品<br />季節の酢の物<br />土鍋ご飯・香の物・味噌汁<br />季節のお椀<br />本日の甘味
+              </p>
+            </div>
+          </li>
+          <li class="menu-item">
+            <img src="img/menuimage03.jpg" alt="03コース" />
+            <div class="menu-item-text">
+              <h3 class="menu-title">03 料理と響き合う、日本酒の一杯</h3>
+              <p class="menu-english">Sake Pairing Experience</p>
+              <p class="menu-meal"><span class="number">3~5</span>種</p>
+              <p class="menu-price">5,000円~15,000円(税別)</p>
+              <p class="menu-desc">
+                料理に合わせて、全国より選び抜いた<br />日本酒をご提案いたします。<br />一皿ごとに変化する味わいとともに<br />料理と酒が織りなす<br />特別なマリアージュをお楽しみください。
+              </p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Occasion Section -->
+      <section id="occasion">
+        <div class="sec-header">
+          <h2 class="sec-title">
+            大切<span class="sec-title-small">な</span><br /><span
+              class="sec-title-jp"
+              >ひととき</span
+            >
+          </h2>
+          <p class="sec-subtitle">Precious Moments</p>
+        </div>
+
+        <div class="occasion-list">
+          <div class="occasion-item-right">
+            <div class="title-box">
+              <h3 class="vertical-title">
+                商<span class="shift-line-right">談</span>
+              </h3>
+              <p class="en-title">Business</p>
+            </div>
+            <div class="box-left">
+              <p class="desc">
+                大切なお取引先との席にも、<br />落ち着いてお過ごしいただける空間をご用意しております。<br />丁寧に焼き上げる焼鳥と、<br />料理に寄り添うお酒を味わいながら、<br />ゆったりと会話をお楽しみください。
+              </p>
+              <img class="img-occasion" src="img/Occasions01.jpg" alt="商談" />
+            </div>
+          </div>
+
+          <div class="occasion-item-left">
+            <div class="title-box">
+              <h3 class="vertical-title">
+                祝<span class="shift-line-left">席</span>
+              </h3>
+              <p class="en-title">Anniversary</p>
+            </div>
+            <div class="box-right">
+              <p class="desc">
+                誕生日や記念日など、特別な日を彩る一席としてもご利用いただけます。焼鳥と厳選したお酒を囲みながら、大切な方とのひとときを、
+                心ゆくまでお楽しみください。
+              </p>
+              <img class="img-occasion" src="img/Occasions02.jpg" alt="祝席" />
+            </div>
+          </div>
+
+          <div class="occasion-item-right">
+            <div class="title-box">
+              <h3 class="vertical-title">
+                会<span class="shift-line-right">合</span>
+              </h3>
+              <p class="en-title">Gathering</p>
+            </div>
+            <div class="box-left">
+              <p class="desc">
+                ご友人とのお集まりや、<br />気の合う仲間との語らいの席にも。<br />肩肘張らず楽しめる焼鳥とお酒を囲みながら、和やかで心地よい時間をお過ごしください。
+              </p>
+              <img class="img-occasion" src="img/Occasions03.png" alt="会合" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Concept Section -->
+      <section id="concept">
+        <div class="concept-content">
+          <h2 class="vertical-title">ご案内<span>Information</span></h2>
           <p class="vertical-text">
-            静寂の中で、四季を味わう。<br />炭火の香りとともに広がる、旬の恵み。<br />日本各地から届く海の幸、山の幸を、<br />職人の技で一皿へと仕立てます。<br />大切な人と過ごす、上質なひとときを。
+            海外からのお客様にも安心して<br />
+            お食事をお楽しみいただけるよう、<br />
+            英語のメニューのご用意や、<br />
+            クレジットカードでのお支払いにも<br />
+            対応しております。<br />
+            店内は全面禁煙となっており、<br />
+            落ち着いた空間を保つため、<br />
+            ご利用は大人のお客様を中心に<br />
+            ご案内しております。
+          </p>
+          <img src="./img/seatsimage.webp" alt="図" class="shop-map" />
+          <div class="english-list">
+            <div class="english-list-item">
+              <h3>English Menu Available</h3>
+              <p>An English menu is available for your convenience.</p>
+            </div>
+            <div class="english-list-item">
+              <h3>Credit Cards Accepted</h3>
+              <p>We accept major credit cards.</p>
+            </div>
+            <div class="english-list-item">
+              <h3>Non Smoking</h3>
+              <p>Our restaurant is entirely non-smoking.</p>
+            </div>
+            <div class="english-list-item">
+              <h3>Adults Only</h3>
+              <p>We provide a quiet dining experience for adult guests.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section id="faq" class="faq">
+        <div class="sec-header">
+          <h2 class="sec-title">よくあるご質問</h2>
+          <p class="sec-subtitle">FAQ</p>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span class="q-prefix">Q</span>
+              <span class="text">
+                英語メニューはありますか？<br />
+                <span class="en-text">Do you have an English menu?</span>
+              </span>
+              <span class="icon"></span>
+            </button>
+            <div class="faq-answer">
+              <div class="answer-content">
+                <span class="a-prefix">A</span>
+                <span class="text">
+                  はい、英語メニューをご用意しております。<br />
+                  海外からのお客様にも安心してお食事をお楽しみいただけます。<br />
+                  <span class="en-text"
+                    >Yes, we provide an English menu.<br />International guests
+                    can enjoy their dining experience with ease.</span
+                  >
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span class="q-prefix">Q</span>
+              <span class="text">
+                予約は必要ですか？<br />
+                <span class="en-text">Is reservation required?</span>
+              </span>
+              <span class="icon"></span>
+            </button>
+            <div class="faq-answer">
+              <div class="answer-content">
+                <span class="a-prefix">A</span>
+                <span class="text">
+                  （回答の内容をここに入力してください）
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span class="q-prefix">Q</span>
+              <span class="text">
+                クレジットカードは利用できますか？<br />
+                <span class="en-text">Do you accept credit cards?</span>
+              </span>
+              <span class="icon"></span>
+            </button>
+            <div class="faq-answer">
+              <div class="answer-content">
+                <span class="a-prefix">A</span>
+                <span class="text">
+                  （回答の内容をここに入力してください）
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span class="q-prefix">Q</span>
+              <span class="text">
+                ドレスコードはありますか？<br />
+                <span class="en-text">Is there a dress code?</span>
+              </span>
+              <span class="icon"></span>
+            </button>
+            <div class="faq-answer">
+              <div class="answer-content">
+                <span class="a-prefix">A</span>
+                <span class="text">
+                  （回答の内容をここに入力してください）
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span class="q-prefix">Q</span>
+              <span class="text">
+                子どもは入店できますか？<br />
+                <span class="en-text">Are children allowed?</span>
+              </span>
+              <span class="icon"></span>
+            </button>
+            <div class="faq-answer">
+              <div class="answer-content">
+                <span class="a-prefix">A</span>
+                <span class="text">
+                  （回答の内容をここに入力してください）
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span class="q-prefix">Q</span>
+              <span class="text">
+                お店は駅からどのくらいですか？<br />
+                <span class="en-text"
+                  >How far is the restaurant from the station?</span
+                >
+              </span>
+              <span class="icon"></span>
+            </button>
+            <div class="faq-answer">
+              <div class="answer-content">
+                <span class="a-prefix">A</span>
+                <span class="text">
+                  （回答の内容をここに入力してください）
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="policy" id="policy">
+        <div class="policy__title">
+          <h2 class="policy__title-jp">ご利用について</h2>
+          <p class="policy__title-en">Dining Policy</p>
+        </div>
+        <div class="policy__content">
+          <p class="policy__content-jp">
+            店内の落ち着いた雰囲気を大切にするため、
+            20歳未満のお客様のご入店はご遠慮いただいております。
+            また、キャンセルポリシーへのご理解、香りの強い香水のご配慮、店内禁煙へのご協力を
+            お願い申し上げます。
+          </p>
+          <p class="policy__content-en">
+            To maintain a calm dining atmosphere, guests under the age of 20 are
+            not permitted. We kindly ask for your understanding of our
+            cancellation policy, consideration regarding strong fragrances, and
+            cooperation with our non-smoking policy.
           </p>
         </div>
-      </div>
-    </div>
+      </section>
 
-    <!-- Greeting Section -->
-    <section id="greeting">
-      <div class="greeting-content">
-        <div class="greeting-top">
-          <div class="img img-left">
-            <img src="img/greetingimage01.webp" alt="" class="img-1" />
+      <!-- Info Section -->
+      <section id="info">
+        <div class="sec-header">
+          <h2 class="sec-title">店舗情報</h2>
+          <p class="sec-subtitle">SHOP INFO</p>
+        </div>
+        <div class="info-content">
+          <div class="info-table-wrap">
+            <table class="info-table">
+              <tr>
+                <th>店舗名</th>
+                <td>鉄板焼き 〇〇</td>
+              </tr>
+              <tr>
+                <th>住所</th>
+                <td>〒000-0000<br />東京都〇〇区〇〇1-2-3</td>
+              </tr>
+              <tr>
+                <th>電話番号</th>
+                <td>000-000-0000</td>
+              </tr>
+              <tr>
+                <th>営業時間</th>
+                <td>17:00 - 23:00 (L.O. 22:00)</td>
+              </tr>
+              <tr>
+                <th>定休日</th>
+                <td>日曜日・祝日</td>
+              </tr>
+            </table>
           </div>
+          <div class="info-table-wrap">
+            <table class="info-table">
+              <tr>
+                <th>SHOP NAME</th>
+                <td>〇〇</td>
+              </tr>
+              <tr>
+                <th>ADDRESS</th>
+                <td>〒000-0000<br />TOKYOTO 〇〇KU 〇〇 1-2-3</td>
+              </tr>
+              <tr>
+                <th>OPEN</th>
+                <td>17:00 - 23:00 (L.O. 22:00)</td>
+              </tr>
 
-          <div class="img img-right">
-            <img src="img/greetingimage02.webp" alt="" class="img-2" />
-          </div>
-
-          
-          <div class="greeting-text">
-            <h2 class="vertical-title">ごあいさつ<span>Greeting</span></h2>
-            <div class="text-wrapper">
-            <ul class="japanese">
-            <p class="section-text">
-              綴～TUZURI～は、<br />
-              四季折々の食材を楽しむ和食店でございます。
-            </p>
-            <p class="section-text">
-              日本各地より取り寄せた海の幸、山の幸を用い、<br />
-              素材の持ち味を大切にしたお料理をコース仕立てでご提供しております。
-            </p>
-            <p class="section-text">
-              お料理に合わせてお楽しみいただけるよう、<br />
-              全国より選りすぐりの日本酒やお酒も豊富に取り揃えております。
-            </p>
-            <p class="section-text">
-              店内は、職人の技を間近で感じられるカウンター席のほか、<br />
-              ゆったりとお過ごしいただける個室もご用意しております。
-            </p>
-            <p class="section-text">
-              記念日のお食事や大切なご会食、接待やご友人との集まりなど、<br />
-              さまざまな場面でご利用いただけましたら幸いです。
-            </p>
-            </ul>
-            <ul class="english">
-              <p class="section-text">
-                Our restaurant offers a refined Japanese dining experience centered on seasonal ingredients.
-              </p>
-              <p class="section-text">
-                Carefully selected seafood and mountain delicacies from across Japan are prepared as a thoughtfully crafted course meal.
-              </p>
-              <p class="section-text">
-                A curated selection of sake and fine beverages complements the cuisine.
-              </p>
-              <p class="section-text">
-                Guests may enjoy the chef’s craftsmanship at the counter or relax in the comfort of our private dining rooms.
-              </p>
-              <p class="section-text">
-                Ideal for anniversaries, business dinners, and special occasions.
-              </p>
-            </ul>
-            </div>
+              <tr>
+                <th>PHONE</th>
+                <td>000-000-0000</td>
+              </tr>
+              <tr>
+                <th>定休日</th>
+                <td>日曜日・祝日</td>
+              </tr>
+            </table>
           </div>
         </div>
-        <div class="greeting-down">
-          <img src="img/greetingimage03.webp" alt="">
-          <img src="img/greetingimage04.webp" alt="">
-          <img src="img/greetingimage05.webp" alt="">
-          <img src="img/greetingimage06.webp" alt="">
+        <div class="info-map-wrap wrapper">
+          <img
+            src="img/Shopinformationimage.png"
+            alt="店舗外観・地図"
+            class="shop-img"
+          />
+          <iframe
+            class="map-embed"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.2321092921!2d139.76316327644804!3d35.67128637259058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188be68e21d35f%3A0x91fb4ae4762f83be!2z6YqA5bqn5LiJ6LaK!5e0!3m2!1sja!2sjp!4v1774885918112!5m2!1sja!2sjp"
+            width="800"
+            height="600"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <!-- Menu Section -->
-    <section id="menu">
-      <div class="sec-header">
-        <h2 class="sec-title">お品書き/ コース</h2>
-        <p class="sec-subtitle">Menu / Course</p>
-      </div>
-      <ul class="menu-list">
-        <li class="menu-item">
-          <img src="img/menuimage01.webp" alt="01コース" />
-          <div class="menu-item-text">
-            <h3 class="menu-title">01 旬の恵みを、七皿で味わう</h3>
-            <p class="menu-english">Signature Kaiseki Course</p>
-            <p class="menu-meal"><span class="number">7</span>種</p>
-            <p class="menu-price">11,000円(税別)</p>
-            <p class="menu-desc">
-              季節の小鉢三種盛<br />本日の出汁椀<br />鮮魚二種盛<br />本日の炭火焼き<br />季節の酢の物<br />土鍋ご飯・香の物・味噌汁<br />本日の甘味
-            </p>
+    <!-- ========== FOOTER ========== -->
+    <footer id="footer">
+      <div class="footer-inner wrapper">
+        <div class="footer-left">
+          <div class="footer-logo">
+            <img src="img/logo.webp" alt="ロゴ" />
           </div>
-        </li>
-        <li class="menu-item">
-          <img src="img/menuimage02.jpg" alt="02コース" />
-          <div class="menu-item-text">
-            <h3 class="menu-title">02 旬と技が織りなす、十皿の贅沢</h3>
-            <p class="menu-english">Signature Kaiseki Course</p>
-            <p class="menu-meal"><span class="number">10</span>種</p>
-            <p class="menu-price">20,000円(税別)</p>
-            <p class="menu-desc">
-              季節の一品<br />旬菜盛り合わせ<br />本日の出汁椀<br />鮮魚三種盛<br />本日の炭火焼き<br />本日の逸品<br />季節の酢の物<br />土鍋ご飯・香の物・味噌汁<br />季節のお椀<br />本日の甘味
-            </p>
-          </div>
-        </li>
-        <li class="menu-item">
-          <img src="img/menuimage03.jpg" alt="03コース" />
-          <div class="menu-item-text">
-            <h3 class="menu-title">03 料理と響き合う、日本酒の一杯</h3>
-            <p class="menu-english">Sake Pairing Experience</p>
-            <p class="menu-meal"><span class="number">3~5</span>種</p>
-            <p class="menu-price">5,000円~15,000円(税別)</p>
-            <p class="menu-desc">
-              料理に合わせて、全国より選び抜いた<br />日本酒をご提案いたします。<br />一皿ごとに変化する味わいとともに<br />料理と酒が織りなす<br />特別なマリアージュをお楽しみください。
-            </p>
-          </div>
-        </li>
-      </ul>
-    </section>
-
-    <!-- Occasion Section -->
-    <section id="occasion">
-      <div class="sec-header">
-        <h2 class="sec-title">大切<span class="sec-title-small">な</span><br><span class="sec-title-jp">ひととき</span></h2>
-        <p class="sec-subtitle">Precious Moments</p>
-      </div>
-
-      <div class="occasion-list">
-        <div class="occasion-item-right">
-          <div class="title-box">
-            <h3 class="vertical-title">商<span class="shift-line-right">談</span></h3>
-            <p class="en-title">Business</p>
-          </div>
-          <div class="box-left">
-            <p class="desc">
-              大切なお取引先との席にも、<br>落ち着いてお過ごしいただける空間をご用意しております。<br>丁寧に焼き上げる焼鳥と、<br>料理に寄り添うお酒を味わいながら、<br>ゆったりと会話をお楽しみください。
-            </p>
-            <img class="img-occasion" src="img/Occasions01.jpg" alt="商談" />
-          </div>
+          <p class="footer-address">
+            〒000-0000 東京都〇〇区〇〇1-2-3<br />TEL: 000-000-0000
+          </p>
         </div>
-
-        <div class="occasion-item-left">
-          <div class="title-box">
-            <h3 class="vertical-title">祝<span class="shift-line-left">席</span></h3>
-            <p class="en-title">Anniversary</p>
-          </div>
-          <div class="box-right">
-            <p class="desc">
-              誕生日や記念日など、特別な日を彩る一席としてもご利用いただけます。焼鳥と厳選したお酒を囲みながら、大切な方とのひとときを、
-              心ゆくまでお楽しみください。
-            </p>
-            <img class="img-occasion" src="img/Occasions02.jpg" alt="祝席" />
-          </div>
-        </div>
-
-        <div class="occasion-item-right">
-          <div class="title-box">
-            <h3 class="vertical-title">会<span class="shift-line-right">合</span></h3>
-            <p class="en-title">Gathering</p>
-          </div>
-          <div class="box-left">
-            <p class="desc">
-              ご友人とのお集まりや、<br>気の合う仲間との語らいの席にも。<br>肩肘張らず楽しめる焼鳥とお酒を囲みながら、和やかで心地よい時間をお過ごしください。
-            </p>
-            <img class="img-occasion" src="img/Occasions03.png" alt="会合" />
-          </div>
-        </div>
-    </section>
-
-    <!-- Concept Section -->
-    <section id="concept">
-      <div class="concept-content">
-        <h2 class="vertical-title">ご案内<span>Information</span></h2>
-        <p class="vertical-text">
-          海外からのお客様にも安心して<br />
-          お食事をお楽しみいただけるよう、<br />
-          英語のメニューのご用意や、<br />
-          クレジットカードでのお支払いにも<br />
-          対応しております。<br />
-          店内は全面禁煙となっており、<br />
-          落ち着いた空間を保つため、<br />
-          ご利用は大人のお客様を中心に<br />
-          ご案内しております。
-        </p>
-        <img src="./img/seatsimage.webp" alt="図" class="shop-map">
-        <div class="english-list">
-          <div class="english-list-item">
-            <h3>English Menu Available</h3>
-            <p>An English menu is available for your convenience.</p>
-          </div>
-          <div class="english-list-item">
-            <h3>Credit Cards Accepted</h3>
-            <p>We accept major credit cards.</p>
-          </div>
-          <div class="english-list-item">
-            <h3>Non Smoking</h3>
-            <p>Our restaurant is entirely non-smoking.</p>
-          </div>
-          <div class="english-list-item">
-            <h3>Adults Only</h3>
-            <p>We provide a quiet dining experience for adult guests.</p>
+        <div class="footer-right">
+          <ul class="footer-menu">
+            <li><a href="#concept">コンセプト</a></li>
+            <li><a href="#menu">お品書き</a></li>
+            <li><a href="#occasion">ご用途</a></li>
+            <li><a href="#faq">よくあるご質問</a></li>
+            <li><a href="#info">店舗情報</a></li>
+          </ul>
+          <div class="sns-icons">
+            <a href="#"><img src="img/facebook-icon.png" alt="Facebook" /></a>
+            <a href="#"><img src="img/instagram-icon.png" alt="Instagram" /></a>
+            <a href="#"><img src="img/x-twitter-icon.png" alt="X" /></a>
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq" class="faq">
-      <div class="sec-header">
-        <h2 class="sec-title">よくあるご質問</h2>
-        <p class="sec-subtitle">FAQ</p>
+      <div class="copyright">
+        <small>&copy; 2026 鉄板焼き 〇〇 All Rights Reserved.</small>
       </div>
-    <div class="faq-list">
-        <div class="faq-item">
-            <button class="faq-question">
-                <span class="q-prefix">Q</span>
-                <span class="text">
-                    英語メニューはありますか？<br>
-                    <span class="en-text">Do you have an English menu?</span>
-                </span>
-                <span class="icon"></span>
-            </button>
-            <div class="faq-answer">
-                <div class="answer-content">
-                    <span class="a-prefix">A</span>
-                    <span class="text">
-                        はい、英語メニューをご用意しております。<br>
-                        海外からのお客様にも安心してお食事をお楽しみいただけます。<br>
-                        <span class="en-text">Yes, we provide an English menu.<br>International guests can enjoy their dining experience with ease.</span>
-                    </span>
-                </div>
-            </div>
-        </div>
+    </footer>
 
-        <div class="faq-item">
-            <button class="faq-question">
-                <span class="q-prefix">Q</span>
-                <span class="text">
-                    予約は必要ですか？<br>
-                    <span class="en-text">Is reservation required?</span>
-                </span>
-                <span class="icon"></span>
-            </button>
-            <div class="faq-answer">
-                <div class="answer-content">
-                    <span class="a-prefix">A</span>
-                    <span class="text">
-                        （回答の内容をここに入力してください）
-                    </span>
-                </div>
-            </div>
-        </div>
+    <!-- ページトップへ戻るボタン（削除済み） -->
 
-        <div class="faq-item">
-            <button class="faq-question">
-                <span class="q-prefix">Q</span>
-                <span class="text">
-                    クレジットカードは利用できますか？<br>
-                    <span class="en-text">Do you accept credit cards?</span>
-                </span>
-                <span class="icon"></span>
-            </button>
-            <div class="faq-answer">
-                <div class="answer-content">
-                    <span class="a-prefix">A</span>
-                    <span class="text">
-                        （回答の内容をここに入力してください）
-                    </span>
-                </div>
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <button class="faq-question">
-                <span class="q-prefix">Q</span>
-                <span class="text">
-                    ドレスコードはありますか？<br>
-                    <span class="en-text">Is there a dress code?</span>
-                </span>
-                <span class="icon"></span>
-            </button>
-            <div class="faq-answer">
-                <div class="answer-content">
-                    <span class="a-prefix">A</span>
-                    <span class="text">
-                        （回答の内容をここに入力してください）
-                    </span>
-                </div>
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <button class="faq-question">
-                <span class="q-prefix">Q</span>
-                <span class="text">
-                    子どもは入店できますか？<br>
-                    <span class="en-text">Are children allowed?</span>
-                </span>
-                <span class="icon"></span>
-            </button>
-            <div class="faq-answer">
-                <div class="answer-content">
-                    <span class="a-prefix">A</span>
-                    <span class="text">
-                        （回答の内容をここに入力してください）
-                    </span>
-                </div>
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <button class="faq-question">
-                <span class="q-prefix">Q</span>
-                <span class="text">
-                    お店は駅からどのくらいですか？<br>
-                    <span class="en-text">How far is the restaurant from the station?</span>
-                </span>
-                <span class="icon"></span>
-            </button>
-            <div class="faq-answer">
-                <div class="answer-content">
-                    <span class="a-prefix">A</span>
-                    <span class="text">
-                        （回答の内容をここに入力してください）
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
-    </section>
-
-    <section class="policy" id="policy">
-      <div class="policy__title">
-        <h2 class="policy__title-jp">ご利用について</h2>
-        <p class="policy__title-en">Dining Policy</p>
-      </div>
-      <div class="policy__content">
-        <p class="policy__content-jp">店内の落ち着いた雰囲気を大切にするため、
-          20歳未満のお客様のご入店はご遠慮いただいております。
-          また、キャンセルポリシーへのご理解、香りの強い香水のご配慮、店内禁煙へのご協力を
-          お願い申し上げます。</p>
-        <p class="policy__content-en">To maintain a calm dining atmosphere, 
-          guests under the age of 20 are not permitted.
-          We kindly ask for your understanding of our cancellation policy, 
-          consideration regarding strong fragrances, and cooperation with our 
-          non-smoking policy.</p>
-      </div>
-    </section>
-
-    <!-- Info Section -->
-    <section id="info">
-      <div class="sec-header">
-        <h2 class="sec-title">店舗情報</h2>
-        <p class="sec-subtitle">SHOP INFO</p>
-      </div>
-      <div class="info-content">
-        <div class="info-table-wrap">
-          <table class="info-table">
-            <tr>
-              <th>店舗名</th>
-              <td>鉄板焼き 〇〇</td>
-            </tr>
-            <tr>
-              <th>住所</th>
-              <td>〒000-0000<br />東京都〇〇区〇〇1-2-3</td>
-            </tr>
-            <tr>
-              <th>電話番号</th>
-              <td>000-000-0000</td>
-            </tr>
-            <tr>
-              <th>営業時間</th>
-              <td>17:00 - 23:00 (L.O. 22:00)</td>
-            </tr>
-            <tr>
-              <th>定休日</th>
-              <td>日曜日・祝日</td>
-            </tr>
-          </table>
-        </div>
-        <div class="info-table-wrap">
-          <table class="info-table">
-            <tr>
-              <th>SHOP NAME</th>
-              <td> 〇〇</td>
-            </tr>
-            <tr>
-              <th>ADDRESS</th>
-              <td>〒000-0000<br />TOKYOTO 〇〇KU 〇〇 1-2-3</td>
-            </tr>
-            <tr>
-              <th>OPEN</th>
-              <td>17:00 - 23:00 (L.O. 22:00)</td>
-            </tr>
-
-            <tr>
-              <th>PHONE</th>
-              <td>000-000-0000</td>
-            </tr>
-            <tr>
-              <th>定休日</th>
-              <td>日曜日・祝日</td>
-            </tr>
-          </table>
-        </div>
-      </div>
-      <div class="info-map-wrap wrapper">
-        <img src="img/Shopinformationimage.png" alt="店舗外観・地図" class="shop-img" />
-        <iframe class="map-embed"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.2321092921!2d139.76316327644804!3d35.67128637259058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188be68e21d35f%3A0x91fb4ae4762f83be!2z6YqA5bqn5LiJ6LaK!5e0!3m2!1sja!2sjp!4v1774885918112!5m2!1sja!2sjp"
-          width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-
-
-
-    </section>
-  </main>
-
-  <!-- ========== FOOTER ========== -->
-  <footer id="footer">
-    <div class="footer-inner wrapper">
-      <div class="footer-left">
-        <div class="footer-logo">
-          <img src="img/logo.webp" alt="ロゴ" />
-        </div>
-        <p class="footer-address">
-          〒000-0000 東京都〇〇区〇〇1-2-3<br />TEL: 000-000-0000
-        </p>
-      </div>
-      <div class="footer-right">
-        <ul class="footer-menu">
-          <li><a href="#concept">コンセプト</a></li>
-          <li><a href="#menu">お品書き</a></li>
-          <li><a href="#occasion">ご用途</a></li>
-          <li><a href="#faq">よくあるご質問</a></li>
-          <li><a href="#info">店舗情報</a></li>
-        </ul>
-        <div class="sns-icons">
-          <a href="#"><img src="img/facebook-icon.png" alt="Facebook" /></a>
-          <a href="#"><img src="img/instagram-icon.png" alt="Instagram" /></a>
-          <a href="#"><img src="img/x-twitter-icon.png" alt="X" /></a>
-        </div>
-      </div>
-    </div>
-    <div class="copyright">
-      <small>&copy; 2026 鉄板焼き 〇〇 All Rights Reserved.</small>
-    </div>
-  </footer>
-
-  <!-- ページトップへ戻るボタン（削除済み） -->
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="js/main.js"></script>
-</body>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>

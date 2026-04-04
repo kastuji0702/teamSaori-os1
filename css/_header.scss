@@ -47,7 +47,7 @@
         display: none;
 
         @include m.tab {
-          display: block; 
+          display: block;
         }
       }
 
@@ -215,8 +215,9 @@
               background: var(--color-text);
             }
 
-            &:hover {
-              border-left-color: #333;
+            &:hover,
+            &:active {
+              background-color: rgba(0, 0, 0, 0.05);
             }
           }
         }

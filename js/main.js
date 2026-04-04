@@ -21,8 +21,14 @@ document.addEventListener("DOMContentLoaded", () => {
     header.classList.toggle("open");
   });
 
-  mask.addEventListener("click", () => {
-    header.classList.remove("open");
+  // メニュー内リンククリックで閉じる
+  const menuLinks = document.querySelectorAll(".side-menu a");
+
+  header.classList.contains("open")
+
+  menuLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      header.classList.remove("open");
+    });
   });
-  
 });
