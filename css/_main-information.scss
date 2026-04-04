@@ -2,10 +2,10 @@
 @use "base" as *;
 
 // ============================================================
-// コンセプトセクション (_main-concept.scss)
+// コンセプトセクション (_main-information.scss)
 // ============================================================
 
-#concept {
+#information {
     background-color: var(--color-main);
     color: var(--color-text-light);
     padding: 5rem 0; // PC: 80px
@@ -13,7 +13,7 @@
     background-size: cover;
     background-blend-mode: overlay;
 
-    .concept-content {
+    .information-content {
         display: flex;
         flex-direction: row-reverse;
         justify-content: space-between;
