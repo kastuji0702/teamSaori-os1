@@ -2,24 +2,25 @@
 @use "base" as *;
 
 // ============================================================
-// 店舗情報セクション (_main-info.scss)
+// 店舗情報セクション (_main-access.scss)
 // ============================================================
 
-#info {
+#access {
     background-color: #fff; 
     @extend .wrapper;
 
-    .info-content {
+    .access-content {
         display: flex;
         justify-content: space-between;
         align-items: stretch;
-        gap: 60px;
+        width: 90%;
+        margin: 0 auto;
        
 
-        .info-table-wrap {
-            width: 50%;
+        .access-table-wrap {
+            width: 47.5%;
 
-            .info-table {
+            .access-table {
                 width: 100%;
                 border-collapse: collapse;
 
@@ -44,7 +45,7 @@
         }
     }
 
-        .info-map-wrap {
+        .access-map-wrap {
             margin: 0 auto;
             width: 70%;
             display: flex;

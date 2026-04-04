@@ -1,4 +1,5 @@
 @use "mixin" as m;
+@use "base" as *;
 
 // ============================================================
 // メニュー・お品書きセクション (_main-menu.scss)
@@ -9,12 +10,12 @@
   background-image: url("../img/backgroundimage01.webp"); // 背景テクスチャがあれば
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; // パララックス効果
+  background-attachment: fixed; 
+  @extend .wrapper; // パララックス効果
   // paddingは.wrapperで担保するため削除
 
   .sec-header {
     margin: 0 auto;
-    padding-top: 5rem;
 
     .sec-title {
       color: var(--color-main);

@@ -1,18 +1,21 @@
 @use "mixin" as m;
+@use "base" as *;
 
 // ============================================================
 // ご用途（大切なひとときを）セクション (_main-occasion.scss)
 // ============================================================
 
-#occasion {
-    padding: 80px 0;
+.occasion {
     background-color: #111111;
     color: var(--color-text-light);
+    width: 100%;
+    padding-top:80px;
 
     .sec-header {
         background-image: url(../img/Occasions-main.png);
-        height: 90vh;
-        width: 100vw;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
         margin-bottom: 0;
         padding-right: 5%;
 
@@ -24,88 +27,119 @@
             margin-left: auto;
             text-align: left;
             height: auto;
-
-            &-small{
-                font-size: 3.5rem;
+            @include m.tab{
+                font-size: 4rem;
             }
 
-            &-jp{
+            &-small {
+                font-size: 3.5rem;
+                @include m.tab{
+                    font-size: 3rem;
+                }
+            }
+
+            &-jp {
                 display: inline-block;
                 margin-top: 5rem;
+                @include m.tab{
+                    font-size: 3rem;
+                }
             }
         }
 
-        .sec-subtitle {
-            padding-top: 15px;
+        & .sec-subtitle {
+            margin-top: -50px;
             text-align: right;
-        }
-    }
-
-    .occasion-item {
-        &-right {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        &-left {
-            display: flex;
-            flex-direction: row-reverse;
-            justify-content: space-between;
-        }
-    }
-
-    & .title-box {
-        width: 20%;
-        padding-left: 5%;
-        margin-top: -50px;
-
-        & .vertical-title {
-            writing-mode: vertical-rl;
-            font-size: 6rem;
-        }
-
-        & .shift-line {
-            &-right {
-                display: inline-block;
-                transform: translateX(3rem);
+            @include m.tab{
+                font-size: 1rem;
+                
             }
-        &-left {
-            display: inline-block;
-            transform: translateX(-3rem);
         }
     }
-}
 
-    .box{
-    &-left {
-        width: 70%;
-        padding-top: 50px;
-        display: flex;
-        justify-content: space-between;
+    &-list{
+        padding: 0 5%;
+    }
+
+    /* 共通設定 */
+    &-item,
+    &-item-reverse {
+        display: grid;
         align-items: center;
-        gap: 5%; 
+        gap: 30px;
+        margin-bottom: 50px;
+        
+        .item1 {
+            margin-top: -40px;
+            
+            & .vertical-title {
+                writing-mode: vertical-rl;
+                font-size: 6rem;
+                @include m.tab{
+                    font-size: 5rem;
+                }
+            }
+            & .shift-line-right { display: inline-block; transform: translateX(3rem); }
+            & .shift-line-left { display: inline-block; transform: translateX(-3rem); }
+        }
+
+        .item2 {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+        }
+
+        .item3 {
+            width: 100%;
+        }
     }
 
-    &-right {
-        width: 70%;
-        padding-top: 50px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: row-reverse;
-        gap: 5%; 
+    /* occasion-item : 1, 2, 3 の順番 (PC) */
+    &-item {
+        grid-template-columns: 20% 1fr 40%; // ３列の比率
+        
+        .item1 { order: 1; }
+        .item2 { order: 3; }
+        .item3 { order: 2; }
+
+        // スマホ・タブレット表示（縦並び）
+        @include m.tab {
+            grid-template-columns: 1fr 2fr;
+            gap: 20px;
+            
+            .item1 { order: 1; }
+            .item2 { order: 2; }
+            .item3 { 
+                order: 3; 
+                grid-column: 1 / -1; 
+            }
+        }
     }
 
-    } 
+    /* occasion-item-reverse : 3, 2, 1 の順番 (PC) */
+    &-item-reverse {
+        grid-template-columns: 40% 1fr 20%; // ３列の比率
+        
+        .item1 { 
+            order: 3; 
+            justify-self: end; /* グリッド内で右端に寄せる */
+            transform: translateX(5px); 
+        } // titleを一番右へ
+        .item2 { order: 1; } // imgは真ん中
+        .item3 { order: 2; } // descを画面横幅いっぱいに
 
-    .desc {
-        width: 45%; 
-    }
-
-    .img-occasion {
-        width: 50%;
-        height: auto; 
-        aspect-ratio: 16 / 10; 
-        object-fit: cover; 
+        // スマホ・タブレット表示（縦並び）
+        @include m.tab {
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            
+            .item1 { order: 2; }
+            .item2 { order: 1; }
+            .item3 { 
+                order: 3; 
+                grid-column: 1 / -1; 
+            }
+        }
     }
 }
