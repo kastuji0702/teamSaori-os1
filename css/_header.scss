@@ -34,6 +34,7 @@
     display: flex;
     gap: 30px;
     align-items: flex-start;
+    justify-content: flex-end;
     color: #fff; // ヒーロー背景（画像）の上に表示されるため白字
 
     .menu-list {
@@ -104,10 +105,13 @@
       font-size: 0.85rem;
       letter-spacing: 0.1em;
 
+      @include m.tab {
+        bottom: -350%;
+      }
+
       @include m.sp {
         font-size: 0.5rem;
-        position: static;
-        margin-top: 100px;
+        bottom: -750%;
       }
 
       .tel-no {
@@ -128,6 +132,7 @@
           display: block;
           transform: scale(0.5);
           transform-origin: left top;
+          line-height: 1.8rem;
         }
 
         .map {
@@ -189,7 +194,7 @@
   // SP用メニュー展開時
   &.open {
     .toggle-btn span {
-      background-color: #333; // 背景が白のオーバーレイ用
+      background-color: #fff; // 背景が白のオーバーレイ用
       &:nth-child(1) {
         top: 14px;
         transform: rotate(45deg);
@@ -203,6 +208,13 @@
       }
     }
 
+    .logo {
+      position: fixed;
+      top: 50px;
+      left: 50px;
+      z-index: 1002;
+    }
+
     .side-menu {
       @include m.tab {
         display: block;
@@ -210,10 +222,9 @@
         top: 0;
         right: 0;
         width: 100%;
-        max-width: 450px;
         height: 100vh;
-        background-color: #eaeaea;
-        color: #111; // オーバーレイメニュー内の文字色
+        background-color: #5e5d5d;
+        color: #fff; // オーバーレイメニュー内の文字色
         z-index: 1001;
         padding: 80px 40px;
         flex-direction: column;
