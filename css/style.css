@@ -183,16 +183,16 @@ img {
           align-items: flex-start;
   color: #fff;
 }
-@media (max-width: 768px) {
-  #header .side-menu {
-    display: none;
-  }
-}
 #header .side-menu .menu-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 1.2rem;
+}
+@media (max-width: 768px) {
+  #header .side-menu .menu-list {
+    display: none;
+  }
 }
 #header .side-menu .menu-list .header-home {
   display: none;
@@ -264,12 +264,24 @@ img {
   font-size: 0.85rem;
   letter-spacing: 0.1em;
 }
+@media (max-width: 390px) {
+  #header .side-menu .header-contact {
+    font-size: 0.5rem;
+    position: static;
+    margin-top: 100px;
+  }
+}
 #header .side-menu .header-contact .tel-no {
   font-family: sans-serif;
   font-size: 1.8rem;
   letter-spacing: 0.1em;
 }
-#header .side-menu .header-contact .header-info {
+@media (max-width: 390px) {
+  #header .side-menu .header-contact .tel-no {
+    font-size: 0.9rem;
+  }
+}
+#header .side-menu .header-contact .header-access {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -277,23 +289,32 @@ img {
       -ms-flex-align: center;
           align-items: center;
 }
-#header .side-menu .header-contact .header-info .map {
+@media (max-width: 390px) {
+  #header .side-menu .header-contact .header-access {
+    display: block;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    -webkit-transform-origin: left top;
+            transform-origin: left top;
+  }
+}
+#header .side-menu .header-contact .header-access .map {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   font-size: 1.5rem;
 }
-#header .side-menu .header-contact .header-info .map .icon {
+#header .side-menu .header-contact .header-access .map .icon {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
-#header .side-menu .header-contact .header-info .sns {
+#header .side-menu .header-contact .header-access .sns {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-#header .side-menu .header-contact .header-info .sns img {
+#header .side-menu .header-contact .header-access .sns img {
   width: 100%;
   height: auto;
 }
@@ -436,12 +457,12 @@ img {
 }
 @media (max-width: 768px) {
   #hero .hero-top, #hero .hero-bottom {
-    height: 50vh;
+    height: 100vh;
   }
 }
 #hero .hero-top .bg-img, #hero .hero-bottom .bg-img {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   -o-object-fit: cover;
      object-fit: cover;
   position: absolute;
