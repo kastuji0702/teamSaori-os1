@@ -20,6 +20,7 @@
 
   .logo {
     width: 100px; // ロゴのサイズ
+
     @include m.sp {
       width: 45px;
     }
@@ -35,13 +36,13 @@
     align-items: flex-start;
     color: #fff; // ヒーロー背景（画像）の上に表示されるため白字
 
-    @include m.tab {
-      display: none; // タブレット以下は非表示（ハンバーガーに切り替え）
-    }
-
     .menu-list {
       display: flex;
       gap: 1.2rem;
+
+      @include m.tab {
+        display: none;
+      }
 
       .header-home {
         display: none;
@@ -103,15 +104,31 @@
       font-size: 0.85rem;
       letter-spacing: 0.1em;
 
+      @include m.sp {
+        font-size: 0.5rem;
+        position: static;
+        margin-top: 100px;
+      }
+
       .tel-no {
         font-family: sans-serif;
         font-size: 1.8rem;
         letter-spacing: 0.1em;
+
+        @include m.sp {
+          font-size: 0.9rem;
+        }
       }
 
-      .header-info {
+      .header-access {
         display: flex;
         align-items: center;
+
+        @include m.sp {
+          display: block;
+          transform: scale(0.5);
+          transform-origin: left top;
+        }
 
         .map {
           display: flex;
