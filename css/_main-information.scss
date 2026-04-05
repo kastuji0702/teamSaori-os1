@@ -8,48 +8,79 @@
 #information {
     background-color: var(--color-main);
     color: var(--color-text-light);
-    padding: 5rem 0; // PC: 80px
     background-image: url('../img/backgroundimage02.webp'); // 和風テクスチャ
     background-size: cover;
     background-blend-mode: overlay;
 
     .information-content {
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: space-between;
-        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
         @extend .wrapper;
+
+        @include m.tab {
+            grid-template-columns: 1fr;
+        }
+            
+
+        &-detail{
+            display: flex;
+            flex-direction: row-reverse;
+            order: 3;
+
+            @include m.tab {
+                order: 1;
+            }
+        }
 
         & .vertical-title {
             font-size: 3rem;
             padding-left: 2rem;
+            @include m.tab {
+                width: 20%;
+                font-size: 2rem;
+            }
 
             & span {
                 font-size: 1.5rem;
                 display: inline-block;
                 text-orientation: mixed;
                 transform: translateX(-3rem); 
+                @include m.sp {
+                    transform: translateX(0);
+                }
             }
-
+        }
         & .vertical-text{
             font-size: 1rem;
             writing-mode: vertical-rl;
+            
+                
+            @include m.tab {
+                width: 80%;
+                margin: 0 auto;
+                line-height: 3;
             }
         }
 
-        & .vertical-text {
+        .section-text{
             font-size: 1rem;
-            }
+        }
 
-        .shop-map {
-            width: 25%;
-            height: auto;
+        &-map{
+            order: 2;
+            width: 100%;
+            @include m.tab {
+                order: 2;
             }
+        }
 
-        .english{
-        &-list {
-            width: 40%;
-            height: auto;
+
+
+        .english-list {
+            order: 1;
+            @include m.tab {
+                order: 3;
+            }
 
             &-item {
                 max-width: 800px;
@@ -57,12 +88,11 @@
 
                 h3 {
                     font-size: 1.2rem;
-            }
+                }
 
-            p {
+                p {
                     font-size: 1rem;
                 }
-            }
             }
         }
     }

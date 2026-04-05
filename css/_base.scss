@@ -86,9 +86,9 @@ img {
     font-weight: 400;
     margin-bottom: 3rem;
     letter-spacing: 0.15em;
-    @include m.sp {
+    @include m.tab {
         font-size: 2rem;
-        margin-bottom: 2rem;
+        margin-bottom: 0;
     }
 }
 
@@ -98,7 +98,7 @@ img {
     font-weight: 400;
     margin-bottom: 1.5rem;
     letter-spacing: 0.2em;
-    @include m.sp {
+    @include m.tab {
         font-size: 1.25rem;
         margin-bottom: 1rem;
     }
