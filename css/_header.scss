@@ -210,14 +210,22 @@
 
     .logo {
       position: fixed;
-      top: 50px;
+      top: 15px;
       left: 50px;
       z-index: 1002;
+      width: 70px;
+
+      @include m.sp {
+        width: 50px; 
+      }
     }
 
     .side-menu {
       @include m.tab {
-        display: block;
+        display: flex; 
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center;
         position: fixed;
         top: 0;
         right: 0;
@@ -227,11 +235,11 @@
         color: #fff; // オーバーレイメニュー内の文字色
         z-index: 1001;
         padding: 80px 40px;
-        flex-direction: column;
 
         .menu-list {
-          flex-direction: row; // ←変更
-          flex-wrap: wrap; // ←折り返し（これ大事）
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
           gap: 20px;
 
           li a {
@@ -240,7 +248,7 @@
             border-left: none;
 
             .en::before {
-              background: var(--color-text);
+              background: #fff;
             }
 
             &:hover,

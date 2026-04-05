@@ -377,13 +377,31 @@ img {
 }
 #header.open .logo {
   position: fixed;
-  top: 50px;
+  top: 15px;
   left: 50px;
   z-index: 1002;
+  width: 70px;
+}
+@media (max-width: 390px) {
+  #header.open .logo {
+    width: 50px;
+  }
 }
 @media (max-width: 768px) {
   #header.open .side-menu {
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     position: fixed;
     top: 0;
     right: 0;
@@ -393,12 +411,11 @@ img {
     color: #fff;
     z-index: 1001;
     padding: 80px 40px;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
   }
   #header.open .side-menu .menu-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -415,7 +432,7 @@ img {
     border-left: none;
   }
   #header.open .side-menu .menu-list li a .en::before {
-    background: var(--color-text);
+    background: #fff;
   }
   #header.open .side-menu .menu-list li a:hover, #header.open .side-menu .menu-list li a:active {
     background-color: rgba(0, 0, 0, 0.05);
@@ -541,7 +558,6 @@ img {
   background-color: var(--color-main);
   color: var(--color-text-light);
   padding: 5rem 0;
-  background-image: url("../img/backgroundimage02.webp");
   background-size: cover;
   background-blend-mode: overlay;
 }
@@ -554,17 +570,43 @@ img {
   padding: 100px 0;
   margin-bottom: 10%;
 }
+@media (max-width: 390px) {
+  #greeting .greeting-content .greeting-top {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 40px 0;
+  }
+}
 #greeting .greeting-content .greeting-top .img-left {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 46.5%;
+  top: -10%;
+  left: -13%;
+  width: 58.5%;
+  z-index: -100;
+}
+@media (max-width: 768px) {
+  #greeting .greeting-content .greeting-top .img-left {
+    position: static;
+    width: 100%;
+  }
 }
 #greeting .greeting-content .greeting-top .img-right {
   position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 46.5%;
+  bottom: -10%;
+  right: -13%;
+  width: 58.5%;
+  z-index: -100;
+}
+@media (max-width: 768px) {
+  #greeting .greeting-content .greeting-top .img-right {
+    position: static;
+    width: 100%;
+  }
 }
 #greeting .greeting-content .greeting-top .vertical-title {
   font-size: 3rem;
@@ -599,6 +641,7 @@ img {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: start;
+  z-index: 10;
 }
 #greeting .greeting-content .greeting-top .greeting-text::before {
   content: "";
@@ -1312,7 +1355,16 @@ img {
   height: 100vh;
 }
 #footer .logo {
-  width: 100px;
+  width: 80px;
+  height: 80px;
+  top: 0;
+  left: 5%;
+}
+@media (max-width: 390px) {
+  #footer .logo {
+    position: absolute;
+    top: 30px;
+  }
 }
 #footer .logo img {
   width: 100%;
@@ -1347,6 +1399,8 @@ img {
 @media (max-width: 390px) {
   #footer .side-menu .menu-list {
     gap: 0.5rem;
+    position: absolute;
+    top: 30px;
   }
 }
 #footer .side-menu .menu-list li a {
@@ -1403,6 +1457,7 @@ img {
 @media (max-width: 390px) {
   #footer .side-menu .footer-contact {
     font-size: 0.5rem;
+    bottom: -580px;
   }
 }
 #footer .side-menu .footer-contact .tel-no {
@@ -1434,10 +1489,7 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 8px;
+  gap: 10px;
   font-size: 16px;
 }
 #footer .side-menu .footer-contact .footer-access .sns {
