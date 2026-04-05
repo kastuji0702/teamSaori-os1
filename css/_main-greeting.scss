@@ -1,102 +1,119 @@
 @use "mixin" as m;
 
 // ============================================================
-// コンセプトセクション (_main-concept.scss)
+// ごあいさつセクション (_main-greeting.scss)
 // ============================================================
 
 #greeting {
-    background-color: var(--color-main);
-    color: var(--color-text-light);
-    padding: 5rem 0; // PC: 80px
-    background-image: url('../img/backgroundimage02.webp'); // 和風テクスチャ
-    background-size: cover;
-    background-blend-mode: overlay;
+  background-color: var(--color-main);
+  color: var(--color-text-light);
+  padding: 5rem 0; // PC: 80px
+  // background-image: url("../img/backgroundimage02.webp"); 
+  background-size: cover;
+  background-blend-mode: overlay;
 
-    .greeting-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        
-        .greeting-top {
-            position: relative;
-            padding: 100px 0;
-            margin-bottom: 10%;
-            
-            .img-left {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 46.5%;
-            }
-            
-            .img-right {
-                position: absolute;
-                bottom: 0;
-                right: 0;
-                width: 46.5%;
-            }
+  .greeting-content {
+    max-width: 1200px;
+    margin: 0 auto;
 
-            .vertical-title {
-                  font-size: 3rem;
-                  padding-left: 2rem;
-                   writing-mode: vertical-rl;
-                  justify-self: end;
-      
-                  & span {
-                      font-size: 1.5rem;
-                      display: inline-block;
-                      text-orientation: mixed;
-                      transform: translateX(-3rem); 
-                  }
-      
-            }
+    .greeting-top {
+      position: relative;
+      padding: 100px 0;
+      margin-bottom: 10%;
 
-            .greeting-text {
-                position: relative;
-                top: 50%;
-                left: 10%;
-                width: 80%;
-                padding: 4% 4% 2% 4%;
-                border: 1px solid rgba(255,255,255,0.6);
-                display: flex;
-                flex-direction: row-reverse;
-                gap: 2rem;
-                align-items: start;
+      @include m.sp {
+        display: flex;
+        flex-direction: column;
+        padding: 40px 0;
+      }
 
-                &::before {
-                 content: "";
-                 position: absolute;
-                 top: -20px;
-                 left: -20px;
-                 right: -20px;
-                 bottom: -20px;
-                 border: 1px solid rgba(255,255,255,0.6);
-                }
-                
-                .text-wrapper {
-                .japanese {
-                    .section-text {
-                        padding-bottom: 2%;
-                    }
-                }
+      .img-left {
+        position: absolute;
+        top: -10%;
+        left: -13%;
+        width: 58.5%;
+        z-index: -100;
 
-                .english {
-                    .section-text {
-                        padding-bottom: 2%;
-                    }
-                }
-                }
-            }
+        @include m.tab {
+          position: static;
+          width: 100%;
+        }
+      }
+
+      .img-right {
+        position: absolute;
+        bottom: -10%;
+        right: -13%;
+        width: 58.5%;
+        z-index: -100;
+
+        @include m.tab {
+          position: static;
+          width: 100%;
+        }
+      }
+
+      .vertical-title {
+        font-size: 3rem;
+        padding-left: 2rem;
+        writing-mode: vertical-rl;
+        justify-self: end;
+
+        & span {
+          font-size: 1.5rem;
+          display: inline-block;
+          text-orientation: mixed;
+          transform: translateX(-3rem);
+        }
+      }
+
+      .greeting-text {
+        position: relative;
+        top: 50%;
+        left: 10%;
+        width: 80%;
+        padding: 4% 4% 2% 4%;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 2rem;
+        align-items: start;
+        z-index: 10;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: -20px;
+          left: -20px;
+          right: -20px;
+          bottom: -20px;
+          border: 1px solid rgba(255, 255, 255, 0.6);
         }
 
-        .greeting-down {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 5rem;
-
-            @include m.tab {
-                gap: 0rem;
+        .text-wrapper {
+          .japanese {
+            .section-text {
+              padding-bottom: 2%;
             }
-        }
+          }
 
+          .english {
+            .section-text {
+              padding-bottom: 2%;
+            }
+          }
+        }
+      }
     }
+
+    .greeting-down {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 5rem;
+
+      @include m.tab {
+        gap: 0rem;
+      }
+    }
+  }
 }
