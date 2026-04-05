@@ -258,7 +258,7 @@ img {
 }
 #header .side-menu .header-contact {
   position: absolute;
-  bottom: -200px;
+  bottom: -100px;
   left: 10%;
   -webkit-writing-mode: horizontal-tb;
       -ms-writing-mode: lr-tb;
@@ -269,13 +269,13 @@ img {
 }
 @media (max-width: 768px) {
   #header .side-menu .header-contact {
-    bottom: -350%;
+    bottom: -400px;
   }
 }
 @media (max-width: 390px) {
   #header .side-menu .header-contact {
     font-size: 0.5rem;
-    bottom: -750%;
+    bottom: -500px;
   }
 }
 #header .side-menu .header-contact .tel-no {
@@ -964,7 +964,6 @@ img {
 #information {
   background-color: var(--color-main);
   color: var(--color-text-light);
-  background-image: url("../img/backgroundimage02.webp");
   background-size: cover;
   background-blend-mode: overlay;
 }
@@ -1440,7 +1439,7 @@ img {
   top: 0;
   left: 5%;
 }
-@media (max-width: 390px) {
+@media (max-width: 768px) {
   #footer .logo {
     position: absolute;
     top: 30px;
@@ -1474,13 +1473,13 @@ img {
 @media (max-width: 768px) {
   #footer .side-menu .menu-list {
     gap: 0.8rem;
+    top: 10px;
   }
 }
 @media (max-width: 390px) {
   #footer .side-menu .menu-list {
     gap: 0.5rem;
-    position: absolute;
-    top: 30px;
+    top: 10px;
   }
 }
 #footer .side-menu .menu-list li a {
@@ -1530,14 +1529,20 @@ img {
 #footer .side-menu .footer-contact {
   position: absolute;
   left: 0;
-  bottom: -500px;
+  bottom: -425px;
   font-size: 16px;
   letter-spacing: 0.1em;
 }
+@media (max-width: 768px) {
+  #footer .side-menu .footer-contact {
+    bottom: -450px;
+    font-size: 0.5rem;
+  }
+}
 @media (max-width: 390px) {
   #footer .side-menu .footer-contact {
+    bottom: -500px;
     font-size: 0.5rem;
-    bottom: -580px;
   }
 }
 #footer .side-menu .footer-contact .tel-no {

@@ -98,7 +98,7 @@
 
     .header-contact {
       position: absolute;
-      bottom: -200px;
+      bottom: -100px;
       left: 10%;
       writing-mode: horizontal-tb;
       text-orientation: initial;
@@ -106,12 +106,12 @@
       letter-spacing: 0.1em;
 
       @include m.tab {
-        bottom: -350%;
+        bottom: -400px;
       }
 
       @include m.sp {
         font-size: 0.5rem;
-        bottom: -750%;
+        bottom: -500px;
       }
 
       .tel-no {
