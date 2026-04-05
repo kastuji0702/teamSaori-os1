@@ -9,32 +9,48 @@
     background-color: #fff; 
     @extend .wrapper;
 
+    & .sec-header{
+     @include m.tab {
+        margin-bottom: 20px;
+     }           
+    }
+
     .access-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: stretch;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5%;
         width: 90%;
         margin: 0 auto;
+        @include m.tab {
+            grid-template-columns: 1fr;
+            gap: 50px;
+        }
        
 
-        .access-table-wrap {
-            width: 47.5%;
+        .access-table-wrap-1,
+        .access-table-wrap-2 {
+            width: 100%;
 
             .access-table {
                 width: 100%;
                 border-collapse: collapse;
+                table-layout: fixed;
 
                 th, td {
-                    padding: 20px 10px;
+                    padding: 20px 5px;
                     border-bottom: 1px solid #ddd;
                     text-align: left;
                     font-size: 0.95rem;
+                    overflow-wrap: break-word;
+                    word-break: break-word;
+                    @include m.tab {
+                        font-size: 0.875rem;
+                    }
                 }
 
                 th {
                     font-weight: bold;
-                    color: var(--color-main);
-                    width: 30%;
+                    width: 35%;
                     white-space: nowrap;
                 }
 
@@ -45,21 +61,42 @@
         }
     }
 
-        .access-map-wrap {
-            margin: 0 auto;
-            width: 70%;
-            display: flex;
-            justify-content: space-between;
+    @include m.tab {
+        .access-table-wrap-1{order: 1;}
+        .access-table-wrap-2{order: 3;}
+        .access-map-wrap-1{order: 2;}
+        .access-map-wrap-2{order: 4;}
+    }
+
+        .access-map-wrap-1,
+        .access-map-wrap-2 {
+            margin: 50px auto;
+            width: 80%;
+            @include m.tab {
+                margin: 0 auto;
+                width: 100%;
+            }
 
             .shop-img {
                 width: 30vw;
                 height: 30vw;
-                object-fit: cover;
+                @include m.tab {
+                    width: 100%;
+                    height: auto;
+                    aspect-ratio: 16 / 9;
+                    object-fit: cover;
+                }
             }
 
             .map-embed {
                 width: 30vw;
                 height: 30vw;
+                @include m.tab {
+                    width: 100%;
+                    height: auto;
+                    aspect-ratio: 16 / 9;
+                    object-fit: cover;
+                }
 
             }
         }
