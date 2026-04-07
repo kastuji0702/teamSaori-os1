@@ -24,6 +24,7 @@
     @include m.sp {
       width: 45px;
     }
+
     img {
       width: 100%;
     }
@@ -98,7 +99,7 @@
 
     .header-contact {
       position: absolute;
-      bottom: -100px;
+      bottom: -200px;
       left: 10%;
       writing-mode: horizontal-tb;
       text-orientation: initial;
@@ -106,12 +107,12 @@
       letter-spacing: 0.1em;
 
       @include m.tab {
-        bottom: -400px;
+        bottom: -350%;
       }
 
       @include m.sp {
         font-size: 0.5rem;
-        bottom: -500px;
+        bottom: -750%;
       }
 
       .tel-no {
@@ -182,9 +183,11 @@
       &:nth-child(1) {
         top: 4px;
       }
+
       &:nth-child(2) {
         top: 14px;
       }
+
       &:nth-child(3) {
         top: 24px;
       }
@@ -195,13 +198,16 @@
   &.open {
     .toggle-btn span {
       background-color: #fff; // 背景が白のオーバーレイ用
+
       &:nth-child(1) {
         top: 14px;
         transform: rotate(45deg);
       }
+
       &:nth-child(2) {
         opacity: 0;
       }
+
       &:nth-child(3) {
         top: 14px;
         transform: rotate(-45deg);
@@ -216,15 +222,15 @@
       width: 70px;
 
       @include m.sp {
-        width: 50px; 
+        width: 50px;
       }
     }
 
     .side-menu {
       @include m.tab {
-        display: flex; 
+        display: flex;
         flex-direction: column;
-        justify-content: center; 
+        justify-content: center;
         align-items: center;
         position: fixed;
         top: 0;
@@ -262,6 +268,7 @@
           writing-mode: horizontal-tb;
           margin-left: 0;
           margin-top: 40px;
+
           p {
             margin-left: 0;
             margin-bottom: 10px;
@@ -273,6 +280,7 @@
 
   #mask {
     display: none;
+
     @include m.tab {
       position: fixed;
       top: 0;
@@ -283,9 +291,48 @@
       z-index: 1000;
     }
   }
+
   &.open #mask {
     @include m.tab {
       display: block;
     }
   }
+}
+
+.fixed-btn {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 10px;
+
+  /* 画像2のようなグレー */
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+
+
+
+  /* 背景と重なった際に白黒を反転させるプロパティ */
+  mix-blend-mode: difference;
+
+  /* フォント設定 */
+  writing-mode: vertical-rl; 
+  font-family: 'Cormorant Garamond', serif; 
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--color-text-light); 
+  text-transform: capitalize; 
+  letter-spacing: 0.1em; 
+
+}
+
+/* ホバー時は少しだけ広がる動きを入れてリッチに */
+.fixed-btn:hover {
+  opacity: 0.6;
+  padding-right: 25px;
 }

@@ -74,7 +74,7 @@
     // 下部のテキスト（洗練された空間で〜）
     .hero-bottom .hero-subtext {
         position: absolute;
-        bottom: 10%;
+        bottom: 5%;
         left: 10%;
         z-index: 3;
         color: #fff;
@@ -87,7 +87,7 @@
 
         .vertical-text {
             font-size: 1.1rem;
-            letter-spacing: 0.2em;
+            letter-spacing: 0.4em;
         }
     }
 }

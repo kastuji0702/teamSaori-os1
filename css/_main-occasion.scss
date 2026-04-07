@@ -11,18 +11,18 @@
     width: 100%;
     padding:80px 0 50px;
 
-    .sec-header {
+    &-header {
         background-image: url(../img/Occasions-main.png);
         background-size: cover;
-        background-repeat: no-repeat;
         width: 100%;
-        padding-right: 5%;
+        height: 100%;
+        padding:0 60px;
 
-        .sec-title {
+        & .sec-title {
             transform: translateY(-40px);
             writing-mode: vertical-rl;
-            font-size: 5rem;
-            width: fit-content;
+            font-size: 8rem;
+            line-height: 1.2;
             margin-left: auto;
             text-align: left;
             height: auto;
@@ -31,7 +31,7 @@
             }
 
             &-small {
-                font-size: 3.5rem;
+                font-size: 4.875rem;
                 @include m.tab{
                     font-size: 3rem;
                 }
@@ -40,6 +40,7 @@
             &-jp {
                 display: inline-block;
                 margin-top: 5rem;
+                font-size: 6rem;
                 @include m.tab{
                     font-size: 3rem;
                 }
@@ -47,6 +48,7 @@
         }
 
         & .sec-subtitle {
+            font-size: 2rem;
             margin-top: -50px;
             text-align: right;
             @include m.tab{
@@ -57,7 +59,7 @@
     }
 
     &-list{
-        padding: 80px 5% 50px;
+        padding: 80px 0 50px;
     }
 
     /* 共通設定 */
@@ -97,8 +99,10 @@
     /* occasion-item : 1, 2, 3 の順番 (PC) */
     &-item {
         grid-template-columns: 20% 1fr 40%; // ３列の比率
+        padding-left: 60px;
         
-        .item1 { order: 1; }
+        .item1 { order: 1;
+        padding-bottom: 5rem; }
         .item2 { order: 3; }
         .item3 { order: 2; }
 
@@ -119,11 +123,13 @@
     /* occasion-item-reverse : 3, 2, 1 の順番 (PC) */
     &-item-reverse {
         grid-template-columns: 40% 1fr 20%; // ３列の比率
+        padding-right: 60px;
         
         .item1 { 
             order: 3; 
             justify-self: end; /* グリッド内で右端に寄せる */
             transform: translateX(5px); 
+            padding-bottom: 5rem;
         } // titleを一番右へ
         .item2 { order: 1; } // imgは真ん中
         .item3 { order: 2; } // descを画面横幅いっぱいに

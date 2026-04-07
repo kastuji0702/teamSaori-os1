@@ -13,7 +13,7 @@
 
     .information-content {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1.2fr 0.6fr 1.2fr;
         @extend .wrapper;
 
         @include m.tab {
@@ -35,6 +35,7 @@
         & .vertical-title {
             font-size: 3rem;
             padding-left: 2rem;
+            letter-spacing: 0.5em;
             @include m.tab {
                 padding-left: 0;
                 width: 20%;
@@ -45,7 +46,8 @@
             }
 
             & span {
-                font-size: 1.5rem;
+                font-size: 2rem;
+                letter-spacing: 0.5rem;
                 display: inline-block;
                 text-orientation: mixed;
                 transform: translateX(-3rem); 
@@ -58,7 +60,11 @@
             }
         }
         & .vertical-text{
+            margin: 0 auto;
+            padding-top: 3rem;
             font-size: 1rem;
+            line-height: 2.5;
+            letter-spacing: 0.5em;
             writing-mode: vertical-rl;
                 
             @include m.tab {
@@ -68,13 +74,14 @@
             }
         }
 
-        .section-text{
-            font-size: 1rem;
-        }
 
         &-map{
+            padding-top: 3rem;
             order: 2;
-            max-width: 100%;
+            max-width: 300px;
+            width: 100%;
+            margin: auto;
+
             @include m.tab {
                 order: 2;
             }
@@ -84,17 +91,18 @@
 
         .english-list {
             order: 1;
+            width: 100%;
+            padding-top: 3rem;
+            margin: auto;
+
             @include m.tab {
                 order: 3;
             }
 
             &-item {
-                max-width: 800px;
                 padding: 10px 0;
-
-                h3 {
-                    font-size: 1.2rem;
-                }
+                line-height: 1.1;
+                letter-spacing: 0.1em;
 
                 p {
                     font-size: 1rem;

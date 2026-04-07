@@ -5,7 +5,7 @@
   --color-text-light: #ffffff;
   --color-bg-light: #f5f5f0;
   --font-base: "Noto Serif JP", serif;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 html {
@@ -13,8 +13,8 @@ html {
   color: var(--color-text);
   font-family: var(--font-base);
   font-weight: var(--font-weight);
-  line-height: 1.8;
-  letter-spacing: 0.1em;
+  line-height: 2;
+  letter-spacing: 0.2em;
   scroll-behavior: smooth;
 }
 
@@ -22,6 +22,7 @@ body {
   width: 100%;
   font-size: 16px;
   font-family: var(--font-base);
+  line-height: 1.2;
   margin: 0;
   background-color: #fff;
   overflow-x: hidden;
@@ -71,7 +72,6 @@ img {
 .sec-title {
   font-size: 3rem;
   font-weight: 400;
-  margin-bottom: 3rem;
   letter-spacing: 0.15em;
 }
 @media (max-width: 768px) {
@@ -82,10 +82,10 @@ img {
 }
 
 .sec-subtitle {
-  font-size: 1.5rem;
+  font-size: 2em;
   font-weight: 400;
-  margin-bottom: 1.5rem;
   letter-spacing: 0.2em;
+  margin-bottom: 50px;
 }
 @media (max-width: 768px) {
   .sec-subtitle {
@@ -258,7 +258,7 @@ img {
 }
 #header .side-menu .header-contact {
   position: absolute;
-  bottom: -100px;
+  bottom: -200px;
   left: 10%;
   -webkit-writing-mode: horizontal-tb;
       -ms-writing-mode: lr-tb;
@@ -269,13 +269,13 @@ img {
 }
 @media (max-width: 768px) {
   #header .side-menu .header-contact {
-    bottom: -400px;
+    bottom: -350%;
   }
 }
 @media (max-width: 390px) {
   #header .side-menu .header-contact {
     font-size: 0.5rem;
-    bottom: -500px;
+    bottom: -750%;
   }
 }
 #header .side-menu .header-contact .tel-no {
@@ -469,6 +469,48 @@ img {
   }
 }
 
+.fixed-btn {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 1000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 10px;
+  /* 画像2のようなグレー */
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  /* 背景と重なった際に白黒を反転させるプロパティ */
+  mix-blend-mode: difference;
+  /* フォント設定 */
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--color-text-light);
+  text-transform: capitalize;
+  letter-spacing: 0.1em;
+}
+
+/* ホバー時は少しだけ広がる動きを入れてリッチに */
+.fixed-btn:hover {
+  opacity: 0.6;
+  padding-right: 25px;
+}
+
 #hero {
   width: 100%;
   display: -webkit-box;
@@ -537,7 +579,7 @@ img {
 }
 #hero .hero-bottom .hero-subtext {
   position: absolute;
-  bottom: 10%;
+  bottom: 5%;
   left: 10%;
   z-index: 3;
   color: #fff;
@@ -551,7 +593,7 @@ img {
 }
 #hero .hero-bottom .hero-subtext .vertical-text {
   font-size: 1.1rem;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.4em;
 }
 
 #greeting {
@@ -771,60 +813,60 @@ img {
   width: 100%;
   padding: 80px 0 50px;
 }
-.occasion .sec-header {
+.occasion-header {
   background-image: url(../img/Occasions-main.png);
   background-size: cover;
-  background-repeat: no-repeat;
   width: 100%;
-  padding-right: 5%;
+  height: 100%;
+  padding: 0 60px;
 }
-.occasion .sec-header .sec-title {
+.occasion-header .sec-title {
   -webkit-transform: translateY(-40px);
           transform: translateY(-40px);
   -webkit-writing-mode: vertical-rl;
       -ms-writing-mode: tb-rl;
           writing-mode: vertical-rl;
-  font-size: 5rem;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  font-size: 8rem;
+  line-height: 1.2;
   margin-left: auto;
   text-align: left;
   height: auto;
 }
 @media (max-width: 768px) {
-  .occasion .sec-header .sec-title {
+  .occasion-header .sec-title {
     font-size: 4rem;
   }
 }
-.occasion .sec-header .sec-title-small {
-  font-size: 3.5rem;
+.occasion-header .sec-title-small {
+  font-size: 4.875rem;
 }
 @media (max-width: 768px) {
-  .occasion .sec-header .sec-title-small {
+  .occasion-header .sec-title-small {
     font-size: 3rem;
   }
 }
-.occasion .sec-header .sec-title-jp {
+.occasion-header .sec-title-jp {
   display: inline-block;
   margin-top: 5rem;
+  font-size: 6rem;
 }
 @media (max-width: 768px) {
-  .occasion .sec-header .sec-title-jp {
+  .occasion-header .sec-title-jp {
     font-size: 3rem;
   }
 }
-.occasion .sec-header .sec-subtitle {
+.occasion-header .sec-subtitle {
+  font-size: 2rem;
   margin-top: -50px;
   text-align: right;
 }
 @media (max-width: 768px) {
-  .occasion .sec-header .sec-subtitle {
+  .occasion-header .sec-subtitle {
     font-size: 1rem;
   }
 }
 .occasion-list {
-  padding: 80px 5% 50px;
+  padding: 80px 0 50px;
 }
 .occasion {
   /* 共通設定 */
@@ -876,11 +918,13 @@ img {
 }
 .occasion-item {
   grid-template-columns: 20% 1fr 40%;
+  padding-left: 60px;
 }
 .occasion-item .item1 {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
+  padding-bottom: 5rem;
 }
 .occasion-item .item2 {
   -webkit-box-ordinal-group: 4;
@@ -919,6 +963,7 @@ img {
 }
 .occasion-item-reverse {
   grid-template-columns: 40% 1fr 20%;
+  padding-right: 60px;
 }
 .occasion-item-reverse .item1 {
   -webkit-box-ordinal-group: 4;
@@ -927,6 +972,7 @@ img {
   justify-self: end; /* グリッド内で右端に寄せる */
   -webkit-transform: translateX(5px);
           transform: translateX(5px);
+  padding-bottom: 5rem;
 }
 .occasion-item-reverse .item2 {
   -webkit-box-ordinal-group: 2;
@@ -969,7 +1015,7 @@ img {
 }
 #information .information-content {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1.2fr 0.6fr 1.2fr;
 }
 @media (max-width: 768px) {
   #information .information-content {
@@ -1002,6 +1048,7 @@ img {
 #information .information-content .vertical-title {
   font-size: 3rem;
   padding-left: 2rem;
+  letter-spacing: 0.5em;
 }
 @media (max-width: 768px) {
   #information .information-content .vertical-title {
@@ -1016,7 +1063,8 @@ img {
   }
 }
 #information .information-content .vertical-title span {
-  font-size: 1.5rem;
+  font-size: 2rem;
+  letter-spacing: 0.5rem;
   display: inline-block;
   text-orientation: mixed;
   -webkit-transform: translateX(-3rem);
@@ -1035,7 +1083,11 @@ img {
   }
 }
 #information .information-content .vertical-text {
+  margin: 0 auto;
+  padding-top: 3rem;
   font-size: 1rem;
+  line-height: 2.5;
+  letter-spacing: 0.5em;
   -webkit-writing-mode: vertical-rl;
       -ms-writing-mode: tb-rl;
           writing-mode: vertical-rl;
@@ -1047,14 +1099,14 @@ img {
     margin: 0 auto;
   }
 }
-#information .information-content .section-text {
-  font-size: 1rem;
-}
 #information .information-content-map {
+  padding-top: 3rem;
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
-  max-width: 100%;
+  max-width: 300px;
+  width: 100%;
+  margin: auto;
 }
 @media (max-width: 768px) {
   #information .information-content-map {
@@ -1067,6 +1119,9 @@ img {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
+  width: 100%;
+  padding-top: 3rem;
+  margin: auto;
 }
 @media (max-width: 768px) {
   #information .information-content .english-list {
@@ -1076,11 +1131,9 @@ img {
   }
 }
 #information .information-content .english-list-item {
-  max-width: 800px;
   padding: 10px 0;
-}
-#information .information-content .english-list-item h3 {
-  font-size: 1.2rem;
+  line-height: 1.1;
+  letter-spacing: 0.1em;
 }
 #information .information-content .english-list-item p {
   font-size: 1rem;
@@ -1125,6 +1178,7 @@ img {
 .policy__title-en {
   font-size: 2rem;
   font-weight: 400;
+  line-height: 1;
 }
 @media (max-width: 768px) {
   .policy__title-en {
@@ -1145,12 +1199,15 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-align: center;
   margin: 0 5%;
   max-width: 1000px;
+  letter-spacing: 0.25em;
+  line-height: 1.5;
 }
 .policy__content-jp {
-  font-size: 1.25rem;
   font-weight: 400;
+  font-size: 1.25rem;
 }
 @media (max-width: 768px) {
   .policy__content-jp {
@@ -1185,6 +1242,8 @@ img {
 }
 .faq .faq-list {
   border-top: 1px solid #333;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 .faq .faq-item {
   border-bottom: 1px solid #333;
@@ -1312,10 +1371,10 @@ img {
   }
 }
 #access .access-content {
+  max-width: 1200px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 5%;
-  width: 90%;
   margin: 0 auto;
 }
 @media (max-width: 768px) {
@@ -1326,40 +1385,74 @@ img {
 }
 #access .access-content .access-table-wrap-1,
 #access .access-content .access-table-wrap-2 {
+  max-width: 1000px;
   width: 100%;
 }
 #access .access-content .access-table-wrap-1 .access-table,
 #access .access-content .access-table-wrap-2 .access-table {
   width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
+  margin: 0 auto;
+  display: block;
+  /* ブラウザが自動生成する tbody が縮んでしまうのを防ぐため、明示的に100%を指定 */
+}
+#access .access-content .access-table-wrap-1 .access-table tbody,
+#access .access-content .access-table-wrap-2 .access-table tbody {
+  display: block;
+  width: 100%;
+}
+#access .access-content .access-table-wrap-1 .access-table tr,
+#access .access-content .access-table-wrap-2 .access-table tr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  border-bottom: 1px solid #ddd;
 }
 #access .access-content .access-table-wrap-1 .access-table th, #access .access-content .access-table-wrap-1 .access-table td,
 #access .access-content .access-table-wrap-2 .access-table th,
 #access .access-content .access-table-wrap-2 .access-table td {
-  padding: 20px 5px;
-  border-bottom: 1px solid #ddd;
+  display: block;
+  padding: 20px 0;
   text-align: left;
   font-size: 0.95rem;
-  overflow-wrap: break-word;
-  word-break: break-word;
+  letter-spacing: 0.05em;
 }
 @media (max-width: 768px) {
   #access .access-content .access-table-wrap-1 .access-table th, #access .access-content .access-table-wrap-1 .access-table td,
   #access .access-content .access-table-wrap-2 .access-table th,
   #access .access-content .access-table-wrap-2 .access-table td {
     font-size: 0.875rem;
+    padding: 15px 0;
   }
 }
 #access .access-content .access-table-wrap-1 .access-table th,
 #access .access-content .access-table-wrap-2 .access-table th {
+  width: 30%; /* 項目名の幅を適切に確保 */
   font-weight: bold;
-  width: 35%;
-  white-space: nowrap;
+  padding-right: 20px; /* テキスト間の自然な余白 */
+  -ms-flex-negative: 0;
+      flex-shrink: 0; /* フレックスで潰れるのを防ぐ */
 }
 #access .access-content .access-table-wrap-1 .access-table td,
 #access .access-content .access-table-wrap-2 .access-table td {
-  line-height: 1.6;
+  width: 70%; /* 残りの全体幅をtdが埋めるようにする */
+  line-height: 1.6; /* いい感じの行間に調整 */
+}
+#access .access-content .access-table-wrap-1 {
+  margin-left: 100px;
+}
+@media (max-width: 768px) {
+  #access .access-content .access-table-wrap-1 {
+    margin-left: 0;
+  }
+}
+#access .access-content .access-table-wrap-2 {
+  margin-right: 100px;
+}
+@media (max-width: 768px) {
+  #access .access-content .access-table-wrap-2 {
+    margin-right: 0;
+  }
 }
 @media (max-width: 768px) {
   #access .access-table-wrap-1 {
@@ -1398,7 +1491,9 @@ img {
 #access .access-map-wrap-1 .shop-img,
 #access .access-map-wrap-2 .shop-img {
   width: 30vw;
-  height: 30vw;
+  aspect-ratio: 1.5/1.2;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @media (max-width: 768px) {
   #access .access-map-wrap-1 .shop-img,
@@ -1413,7 +1508,10 @@ img {
 #access .access-map-wrap-1 .map-embed,
 #access .access-map-wrap-2 .map-embed {
   width: 30vw;
-  height: 30vw;
+  height: auto;
+  aspect-ratio: 1.5/1.2;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @media (max-width: 768px) {
   #access .access-map-wrap-1 .map-embed,
@@ -1439,7 +1537,7 @@ img {
   top: 0;
   left: 5%;
 }
-@media (max-width: 768px) {
+@media (max-width: 390px) {
   #footer .logo {
     position: absolute;
     top: 30px;
@@ -1473,13 +1571,13 @@ img {
 @media (max-width: 768px) {
   #footer .side-menu .menu-list {
     gap: 0.8rem;
-    top: 10px;
   }
 }
 @media (max-width: 390px) {
   #footer .side-menu .menu-list {
     gap: 0.5rem;
-    top: 10px;
+    position: absolute;
+    top: 30px;
   }
 }
 #footer .side-menu .menu-list li a {
@@ -1529,20 +1627,14 @@ img {
 #footer .side-menu .footer-contact {
   position: absolute;
   left: 0;
-  bottom: -425px;
+  bottom: -500px;
   font-size: 16px;
   letter-spacing: 0.1em;
 }
-@media (max-width: 768px) {
-  #footer .side-menu .footer-contact {
-    bottom: -450px;
-    font-size: 0.5rem;
-  }
-}
 @media (max-width: 390px) {
   #footer .side-menu .footer-contact {
-    bottom: -500px;
     font-size: 0.5rem;
+    bottom: -580px;
   }
 }
 #footer .side-menu .footer-contact .tel-no {
