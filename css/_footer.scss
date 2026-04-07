@@ -17,7 +17,7 @@
     top: 0;
     left: 5%;
 
-    @include m.tab {
+    @include m.sp {
         position: absolute;
         top: 30px;
     }
@@ -44,12 +44,12 @@
 
       @include m.tab {
         gap: 0.8rem;
-        top: 10px;
       }
 
       @include m.sp {
         gap: 0.5rem;
-        top: 10px;
+        position: absolute;
+        top: 30px;
       }
 
       li a {
@@ -94,18 +94,13 @@
     .footer-contact {
       position: absolute;
       left: 0;
-      bottom: -425px;
+      bottom: -500px;
       font-size: 16px;
       letter-spacing: 0.1em;
 
-      @include m.tab {
-        bottom: -450px;
-        font-size: 0.5rem;
-      }
-
       @include m.sp {
-        bottom: -500px;
         font-size: 0.5rem;
+        bottom: -580px;
       }
 
       .tel-no {

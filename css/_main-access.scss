@@ -16,10 +16,10 @@
     }
 
     .access-content {
+        max-width: 1200px;
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 5%;
-        width: 90%;
         margin: 0 auto;
         @include m.tab {
             grid-template-columns: 1fr;
@@ -29,36 +29,66 @@
 
         .access-table-wrap-1,
         .access-table-wrap-2 {
+            max-width: 1000px;
             width: 100%;
 
             .access-table {
                 width: 100%;
-                border-collapse: collapse;
-                table-layout: fixed;
+                margin: 0 auto;
+                display: block;
+
+                /* ブラウザが自動生成する tbody が縮んでしまうのを防ぐため、明示的に100%を指定 */
+                tbody {
+                    display: block;
+                    width: 100%;
+                }
+
+                tr {
+                    display: flex;
+                    width: 80%;
+                    border-bottom: 1px solid #ddd; 
+                }
 
                 th, td {
-                    padding: 20px 5px;
-                    border-bottom: 1px solid #ddd;
+                    display: block; 
+                    padding: 20px 0;
                     text-align: left;
                     font-size: 0.95rem;
-                    overflow-wrap: break-word;
-                    word-break: break-word;
+                    letter-spacing: 0.05em;
                     @include m.tab {
                         font-size: 0.875rem;
+                        padding: 15px 0;
                     }
                 }
 
                 th {
+                    width: 30%; /* 項目名の幅を適切に確保 */
                     font-weight: bold;
-                    width: 35%;
-                    white-space: nowrap;
+                    padding-right: 20px; /* テキスト間の自然な余白 */
+                    flex-shrink: 0; /* フレックスで潰れるのを防ぐ */
                 }
 
                 td {
-                    line-height: 1.6;
+                    width: 70%; /* 残りの全体幅をtdが埋めるようにする */
+                    line-height: 1.6; /* いい感じの行間に調整 */
                 }
             }
         }
+
+        .access-table-wrap-1{
+            margin-left: 100px;
+            @include m.tab {
+                margin-left: 0;
+            }
+        }
+
+        .access-table-wrap-2{
+            margin-right: 100px;
+            @include m.tab {
+                margin-right: 0;
+            }
+        }
+
     }
 
     @include m.tab {
@@ -79,7 +109,8 @@
 
             .shop-img {
                 width: 30vw;
-                height: 30vw;
+                aspect-ratio: 1.5 / 1.2;
+                object-fit: cover;
                 @include m.tab {
                     width: 100%;
                     height: auto;
@@ -90,7 +121,9 @@
 
             .map-embed {
                 width: 30vw;
-                height: 30vw;
+                height: auto;
+                aspect-ratio: 1.5 / 1.2;
+                object-fit: cover;
                 @include m.tab {
                     width: 100%;
                     height: auto;
