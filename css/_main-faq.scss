@@ -8,6 +8,10 @@
 /* 基本設定 */
 .faq {
     @extend .wrapper;
+    background-image: url(../img/backgroundimage02.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
 
 .faq-container {
@@ -86,7 +90,7 @@
     content: '';
     position: absolute;
     background-color: #333;
-    transition: transform 0.3s ease;
+    transition: transform 1.8s ease;
 }
 
 /* 横棒 */
@@ -115,7 +119,7 @@
 .faq-answer {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease-out;
+    transition: max-height 3.0s ease-out;
 }
 
 .answer-content {

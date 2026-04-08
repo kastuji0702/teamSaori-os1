@@ -258,14 +258,15 @@ img {
 }
 #header .side-menu .header-contact {
   position: absolute;
-  bottom: -200px;
+  bottom: -90px;
   left: 10%;
   -webkit-writing-mode: horizontal-tb;
       -ms-writing-mode: lr-tb;
           writing-mode: horizontal-tb;
   text-orientation: initial;
-  font-size: 0.85rem;
+  font-size: 1.25rem;
   letter-spacing: 0.1em;
+  gap: 10px;
 }
 @media (max-width: 768px) {
   #header .side-menu .header-contact {
@@ -279,8 +280,7 @@ img {
   }
 }
 #header .side-menu .header-contact .tel-no {
-  font-family: sans-serif;
-  font-size: 1.8rem;
+  font-size: 2rem;
   letter-spacing: 0.1em;
 }
 @media (max-width: 390px) {
@@ -310,7 +310,7 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 #header .side-menu .header-contact .header-access .map .icon {
   -webkit-box-align: center;
@@ -321,6 +321,7 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  gap: 10px;
 }
 #header .side-menu .header-contact .header-access .sns img {
   width: 100%;
@@ -487,8 +488,9 @@ img {
       -ms-flex-align: center;
           align-items: center;
   padding: 20px 10px;
+  background-color: var(--color-text-light);
   /* 画像2のようなグレー */
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.5019607843);
   cursor: pointer;
   text-decoration: none;
   /* 背景と重なった際に白黒を反転させるプロパティ */
@@ -500,7 +502,7 @@ img {
   font-family: "Cormorant Garamond", serif;
   font-size: 20px;
   font-weight: 400;
-  color: var(--color-text-light);
+  color: var(--color-text);
   text-transform: capitalize;
   letter-spacing: 0.1em;
 }
@@ -827,7 +829,7 @@ img {
       -ms-writing-mode: tb-rl;
           writing-mode: vertical-rl;
   font-size: 8rem;
-  line-height: 1.2;
+  line-height: 1.1;
   margin-left: auto;
   text-align: left;
   height: auto;
@@ -886,11 +888,16 @@ img {
   -webkit-writing-mode: vertical-rl;
       -ms-writing-mode: tb-rl;
           writing-mode: vertical-rl;
-  font-size: 6rem;
+  font-size: 9rem;
 }
 @media (max-width: 768px) {
   .occasion-item .item1 .vertical-title, .occasion-item-reverse .item1 .vertical-title {
-    font-size: 5rem;
+    font-size: 4rem;
+  }
+}
+@media (max-width: 390px) {
+  .occasion-item .item1 .vertical-title, .occasion-item-reverse .item1 .vertical-title {
+    font-size: 3rem;
   }
 }
 .occasion-item .item1 .shift-line-right, .occasion-item-reverse .item1 .shift-line-right {
@@ -898,10 +905,22 @@ img {
   -webkit-transform: translateX(3rem);
           transform: translateX(3rem);
 }
+@media (max-width: 768px) {
+  .occasion-item .item1 .shift-line-right, .occasion-item-reverse .item1 .shift-line-right {
+    -webkit-transform: translateX(1.5rem);
+            transform: translateX(1.5rem);
+  }
+}
 .occasion-item .item1 .shift-line-left, .occasion-item-reverse .item1 .shift-line-left {
   display: inline-block;
   -webkit-transform: translateX(-3rem);
           transform: translateX(-3rem);
+}
+@media (max-width: 768px) {
+  .occasion-item .item1 .shift-line-left, .occasion-item-reverse .item1 .shift-line-left {
+    -webkit-transform: translateX(-1.5rem);
+            transform: translateX(-1.5rem);
+  }
 }
 .occasion-item .item2, .occasion-item-reverse .item2 {
   width: 100%;
@@ -913,11 +932,17 @@ img {
 .occasion-item .item3, .occasion-item-reverse .item3 {
   width: 100%;
 }
+@media (max-width: 768px) {
+  .occasion-item .item3, .occasion-item-reverse .item3 {
+    line-height: 2;
+    letter-spacing: 0.5rem;
+  }
+}
 .occasion {
   /* occasion-item : 1, 2, 3 の順番 (PC) */
 }
 .occasion-item {
-  grid-template-columns: 20% 1fr 40%;
+  grid-template-columns: 20% 1fr 45%;
   padding-left: 60px;
 }
 .occasion-item .item1 {
@@ -925,6 +950,7 @@ img {
       -ms-flex-order: 1;
           order: 1;
   padding-bottom: 5rem;
+  margin-left: -30px;
 }
 .occasion-item .item2 {
   -webkit-box-ordinal-group: 4;
@@ -935,16 +961,19 @@ img {
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
+  line-height: 2;
 }
 @media (max-width: 768px) {
   .occasion-item {
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 4fr;
     gap: 20px;
+    padding-left: 0;
   }
   .occasion-item .item1 {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
+    margin-left: 0;
   }
   .occasion-item .item2 {
     -webkit-box-ordinal-group: 3;
@@ -962,7 +991,7 @@ img {
   /* occasion-item-reverse : 3, 2, 1 の順番 (PC) */
 }
 .occasion-item-reverse {
-  grid-template-columns: 40% 1fr 20%;
+  grid-template-columns: 45% 1fr 20%;
   padding-right: 60px;
 }
 .occasion-item-reverse .item1 {
@@ -973,6 +1002,7 @@ img {
   -webkit-transform: translateX(5px);
           transform: translateX(5px);
   padding-bottom: 5rem;
+  margin-right: -30px;
 }
 .occasion-item-reverse .item2 {
   -webkit-box-ordinal-group: 2;
@@ -983,16 +1013,19 @@ img {
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
+  line-height: 2;
 }
 @media (max-width: 768px) {
   .occasion-item-reverse {
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 4fr 1fr;
     gap: 40px;
+    padding-right: 5%;
   }
   .occasion-item-reverse .item1 {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;
+    margin-right: 0;
   }
   .occasion-item-reverse .item2 {
     -webkit-box-ordinal-group: 2;
@@ -1016,6 +1049,8 @@ img {
 #information .information-content {
   display: grid;
   grid-template-columns: 1.2fr 0.6fr 1.2fr;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 @media (max-width: 768px) {
   #information .information-content {
@@ -1086,7 +1121,7 @@ img {
   margin: 0 auto;
   padding-top: 3rem;
   font-size: 1rem;
-  line-height: 2.5;
+  line-height: 2;
   letter-spacing: 0.5em;
   -webkit-writing-mode: vertical-rl;
       -ms-writing-mode: tb-rl;
@@ -1095,8 +1130,13 @@ img {
 @media (max-width: 768px) {
   #information .information-content .vertical-text {
     width: 70%;
-    line-height: 200%;
+    line-height: 3;
     margin: 0 auto;
+  }
+}
+@media (max-width: 550px) {
+  #information .information-content .vertical-text {
+    line-height: 2;
   }
 }
 #information .information-content-map {
@@ -1104,8 +1144,7 @@ img {
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
-  max-width: 300px;
-  width: 100%;
+  width: 85%;
   margin: auto;
 }
 @media (max-width: 768px) {
@@ -1113,6 +1152,8 @@ img {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;
+    width: 80%;
+    margin: 0 auto;
   }
 }
 #information .information-content .english-list {
@@ -1128,12 +1169,18 @@ img {
     -webkit-box-ordinal-group: 4;
         -ms-flex-order: 3;
             order: 3;
+    width: 80%;
+    margin: 0 auto;
   }
 }
 #information .information-content .english-list-item {
   padding: 10px 0;
-  line-height: 1.1;
+  line-height: 1.8;
   letter-spacing: 0.1em;
+}
+#information .information-content .english-list-item h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 #information .information-content .english-list-item p {
   font-size: 1rem;
@@ -1159,7 +1206,7 @@ img {
 }
 .policy__title {
   text-align: center;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
 }
 @media (max-width: 768px) {
   .policy__title {
@@ -1204,10 +1251,10 @@ img {
   max-width: 1000px;
   letter-spacing: 0.25em;
   line-height: 1.5;
+  font-weight: lighter;
 }
 .policy__content-jp {
-  font-weight: 400;
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 @media (max-width: 768px) {
   .policy__content-jp {
@@ -1216,8 +1263,7 @@ img {
 }
 .policy__content-en {
   padding-top: 1rem;
-  font-size: 1.25rem;
-  font-weight: 400;
+  font-size: 1rem;
 }
 @media (max-width: 768px) {
   .policy__content-en {
@@ -1226,6 +1272,12 @@ img {
 }
 
 /* 基本設定 */
+.faq {
+  background-image: url(../img/backgroundimage02.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 .faq .faq-container {
   width: 100%;
   max-width: 800px;
@@ -1308,10 +1360,10 @@ img {
   content: "";
   position: absolute;
   background-color: #333;
-  -webkit-transition: -webkit-transform 0.3s ease;
-  transition: -webkit-transform 0.3s ease;
-  transition: transform 0.3s ease;
-  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  -webkit-transition: -webkit-transform 1.8s ease;
+  transition: -webkit-transform 1.8s ease;
+  transition: transform 1.8s ease;
+  transition: transform 1.8s ease, -webkit-transform 1.8s ease;
 }
 .faq {
   /* 横棒 */
@@ -1345,8 +1397,8 @@ img {
 .faq .faq-answer {
   max-height: 0;
   overflow: hidden;
-  -webkit-transition: max-height 0.4s ease-out;
-  transition: max-height 0.4s ease-out;
+  -webkit-transition: max-height 3s ease-out;
+  transition: max-height 3s ease-out;
 }
 .faq .answer-content {
   display: -webkit-box;
@@ -1363,7 +1415,10 @@ img {
 }
 
 #access {
-  background-color: #fff;
+  background-image: url(../img/backgroundimage03.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 @media (max-width: 768px) {
   #access .sec-header {
@@ -1393,6 +1448,7 @@ img {
   width: 100%;
   margin: 0 auto;
   display: block;
+  font-weight: lighter;
   /* ブラウザが自動生成する tbody が縮んでしまうのを防ぐため、明示的に100%を指定 */
 }
 #access .access-content .access-table-wrap-1 .access-table tbody,
@@ -1406,7 +1462,13 @@ img {
   display: -ms-flexbox;
   display: flex;
   width: 80%;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #000000;
+}
+@media (max-width: 768px) {
+  #access .access-content .access-table-wrap-1 .access-table tr,
+  #access .access-content .access-table-wrap-2 .access-table tr {
+    margin: 0 auto;
+  }
 }
 #access .access-content .access-table-wrap-1 .access-table th, #access .access-content .access-table-wrap-1 .access-table td,
 #access .access-content .access-table-wrap-2 .access-table th,
@@ -1427,7 +1489,7 @@ img {
 }
 #access .access-content .access-table-wrap-1 .access-table th,
 #access .access-content .access-table-wrap-2 .access-table th {
-  width: 30%; /* 項目名の幅を適切に確保 */
+  width: 40%; /* 項目名の幅を適切に確保 */
   font-weight: bold;
   padding-right: 20px; /* テキスト間の自然な余白 */
   -ms-flex-negative: 0;
@@ -1435,8 +1497,7 @@ img {
 }
 #access .access-content .access-table-wrap-1 .access-table td,
 #access .access-content .access-table-wrap-2 .access-table td {
-  width: 70%; /* 残りの全体幅をtdが埋めるようにする */
-  line-height: 1.6; /* いい感じの行間に調整 */
+  width: 60%; /* 残りの全体幅をtdが埋めるようにする */
 }
 #access .access-content .access-table-wrap-1 {
   margin-left: 100px;
@@ -1479,7 +1540,7 @@ img {
 #access .access-map-wrap-1,
 #access .access-map-wrap-2 {
   margin: 50px auto;
-  width: 80%;
+  width: 100%;
 }
 @media (max-width: 768px) {
   #access .access-map-wrap-1,
@@ -1490,8 +1551,7 @@ img {
 }
 #access .access-map-wrap-1 .shop-img,
 #access .access-map-wrap-2 .shop-img {
-  width: 30vw;
-  aspect-ratio: 1.5/1.2;
+  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -1507,11 +1567,7 @@ img {
 }
 #access .access-map-wrap-1 .map-embed,
 #access .access-map-wrap-2 .map-embed {
-  width: 30vw;
-  height: auto;
-  aspect-ratio: 1.5/1.2;
-  -o-object-fit: cover;
-     object-fit: cover;
+  width: 100%;
 }
 @media (max-width: 768px) {
   #access .access-map-wrap-1 .map-embed,

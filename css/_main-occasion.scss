@@ -22,7 +22,7 @@
             transform: translateY(-40px);
             writing-mode: vertical-rl;
             font-size: 8rem;
-            line-height: 1.2;
+            line-height: 1.1;
             margin-left: auto;
             text-align: left;
             height: auto;
@@ -75,13 +75,24 @@
             
             & .vertical-title {
                 writing-mode: vertical-rl;
-                font-size: 6rem;
+                font-size: 9rem;
                 @include m.tab{
-                    font-size: 5rem;
+                    font-size: 4rem;
+                }
+                @include m.sp{
+                    font-size: 3rem;
                 }
             }
-            & .shift-line-right { display: inline-block; transform: translateX(3rem); }
-            & .shift-line-left { display: inline-block; transform: translateX(-3rem); }
+            & .shift-line-right { display: inline-block; transform: translateX(3rem); 
+                @include m.tab{
+                    transform: translateX(1.5rem);
+                }
+            }
+            & .shift-line-left { display: inline-block; transform: translateX(-3rem); 
+                @include m.tab{
+                    transform: translateX(-1.5rem);
+                }
+            }
         }
 
         .item2 {
@@ -93,25 +104,35 @@
 
         .item3 {
             width: 100%;
+            @include m.tab{
+                line-height: 2;
+                letter-spacing: 0.5rem;
+            }
         }
     }
 
     /* occasion-item : 1, 2, 3 の順番 (PC) */
     &-item {
-        grid-template-columns: 20% 1fr 40%; // ３列の比率
+        grid-template-columns: 20% 1fr 45%; // ３列の比率
         padding-left: 60px;
         
+        
         .item1 { order: 1;
-        padding-bottom: 5rem; }
-        .item2 { order: 3; }
-        .item3 { order: 2; }
+        padding-bottom: 5rem;
+        margin-left: -30px;    }
+        .item2 { order: 3; 
+        }
+        .item3 { order: 2;
+            line-height: 2; }
 
         // スマホ・タブレット表示（縦並び）
         @include m.tab {
-            grid-template-columns: 1fr 2fr;
+            grid-template-columns: 1fr 4fr;
             gap: 20px;
+            padding-left: 0;
             
-            .item1 { order: 1; }
+            .item1 { order: 1; 
+            margin-left: 0;}
             .item2 { order: 2; }
             .item3 { 
                 order: 3; 
@@ -122,7 +143,7 @@
 
     /* occasion-item-reverse : 3, 2, 1 の順番 (PC) */
     &-item-reverse {
-        grid-template-columns: 40% 1fr 20%; // ３列の比率
+        grid-template-columns: 45% 1fr 20%; // ３列の比率
         padding-right: 60px;
         
         .item1 { 
@@ -130,16 +151,21 @@
             justify-self: end; /* グリッド内で右端に寄せる */
             transform: translateX(5px); 
             padding-bottom: 5rem;
+            margin-right: -30px;
         } // titleを一番右へ
         .item2 { order: 1; } // imgは真ん中
-        .item3 { order: 2; } // descを画面横幅いっぱいに
+        .item3 { order: 2;
+        line-height: 2; } // descを画面横幅いっぱいに
 
         // スマホ・タブレット表示（縦並び）
         @include m.tab {
-            grid-template-columns: 2fr 1fr;
+            grid-template-columns: 4fr 1fr;
             gap: 40px;
+            padding-right: 5%;
             
-            .item1 { order: 2; }
+            .item1 { order: 2; 
+                margin-right: 0;
+            }
             .item2 { order: 1; }
             .item3 { 
                 order: 3; 

@@ -6,7 +6,10 @@
 // ============================================================
 
 #access {
-    background-color: #fff; 
+    background-image: url(../img/backgroundimage03.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     @extend .wrapper;
 
     & .sec-header{
@@ -36,6 +39,7 @@
                 width: 100%;
                 margin: 0 auto;
                 display: block;
+                font-weight: lighter;
 
                 /* ブラウザが自動生成する tbody が縮んでしまうのを防ぐため、明示的に100%を指定 */
                 tbody {
@@ -46,7 +50,10 @@
                 tr {
                     display: flex;
                     width: 80%;
-                    border-bottom: 1px solid #ddd; 
+                    border-bottom: 1px solid #000000; 
+                    @include m.tab {
+                        margin: 0 auto;
+                    }
                 }
 
                 th, td {
@@ -62,15 +69,14 @@
                 }
 
                 th {
-                    width: 30%; /* 項目名の幅を適切に確保 */
+                    width: 40%; /* 項目名の幅を適切に確保 */
                     font-weight: bold;
                     padding-right: 20px; /* テキスト間の自然な余白 */
                     flex-shrink: 0; /* フレックスで潰れるのを防ぐ */
                 }
 
                 td {
-                    width: 70%; /* 残りの全体幅をtdが埋めるようにする */
-                    line-height: 1.6; /* いい感じの行間に調整 */
+                    width: 60%; /* 残りの全体幅をtdが埋めるようにする */
                 }
             }
         }
@@ -101,15 +107,14 @@
         .access-map-wrap-1,
         .access-map-wrap-2 {
             margin: 50px auto;
-            width: 80%;
+            width: 100%;
             @include m.tab {
                 margin: 0 auto;
                 width: 100%;
             }
 
             .shop-img {
-                width: 30vw;
-                aspect-ratio: 1.5 / 1.2;
+                width: 100%;
                 object-fit: cover;
                 @include m.tab {
                     width: 100%;
@@ -120,10 +125,7 @@
             }
 
             .map-embed {
-                width: 30vw;
-                height: auto;
-                aspect-ratio: 1.5 / 1.2;
-                object-fit: cover;
+                width: 100%;
                 @include m.tab {
                     width: 100%;
                     height: auto;
