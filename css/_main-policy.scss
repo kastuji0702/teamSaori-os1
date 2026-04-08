@@ -13,7 +13,7 @@
 
     &__title {
         text-align: center;
-        margin-bottom: 5rem;
+        margin-bottom: 3rem;
         @include m.tab {
             margin-bottom: 2rem;
         }
@@ -45,11 +45,12 @@
         max-width: 1000px ;
         letter-spacing: 0.25em;
         line-height: 1.5;
+        font-weight: lighter;
     
 
     &-jp {
-        font-weight: 400;
-        font-size: 1.25rem;
+
+        font-size: 1rem;
         @include m.tab {
             font-size: 1rem;
         }
@@ -57,8 +58,8 @@
 
     &-en {
         padding-top: 1rem;
-        font-size: 1.25rem;
-        font-weight: 400;
+        font-size: 1rem;
+
         @include m.tab {
             font-size: 0.875rem;
         }
