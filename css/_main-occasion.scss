@@ -39,8 +39,9 @@
 
             &-jp {
                 display: inline-block;
-                margin-top: 5rem;
+                margin-top: 7rem;
                 font-size: 6rem;
+                line-height: 0.9;
                 @include m.tab{
                     font-size: 3rem;
                 }
@@ -49,7 +50,7 @@
 
         & .sec-subtitle {
             font-size: 2rem;
-            margin-top: -50px;
+            margin-top: -15px;
             text-align: right;
             @include m.tab{
                 font-size: 1rem;
@@ -75,7 +76,7 @@
             
             & .vertical-title {
                 writing-mode: vertical-rl;
-                font-size: 9rem;
+                font-size:clamp(4rem, 12vw, 9rem);
                 @include m.tab{
                     font-size: 4rem;
                 }
