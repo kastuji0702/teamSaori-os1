@@ -43,7 +43,7 @@
       .img-right {
         position: absolute;
         bottom: -10%;
-        right: -13%;
+        right: -10%;
         width: 58.5%;
         z-index: -100;
 
@@ -110,6 +110,10 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 5rem;
+
+      & img{
+        box-shadow: 10px 10px 10px #000000;
+      }
 
       @include m.tab {
         gap: 0rem;

@@ -13,6 +13,7 @@
     @extend .wrapper;
 
     & .sec-header{
+        margin-bottom: 0;
      @include m.tab {
         margin-bottom: 20px;
      }           
@@ -41,13 +42,7 @@
                 display: block;
                 font-weight: lighter;
 
-                /* ブラウザが自動生成する tbody が縮んでしまうのを防ぐため、明示的に100%を指定 */
-                tbody {
-                    display: block;
-                    width: 100%;
-                }
-
-                tr {
+                .access-row {
                     display: flex;
                     width: 80%;
                     border-bottom: 1px solid #000000; 
@@ -56,7 +51,7 @@
                     }
                 }
 
-                th, td {
+                dt, dd {
                     display: block; 
                     padding: 20px 0;
                     text-align: left;
@@ -68,15 +63,15 @@
                     }
                 }
 
-                th {
+                dt {
                     width: 40%; /* 項目名の幅を適切に確保 */
                     font-weight: bold;
                     padding-right: 20px; /* テキスト間の自然な余白 */
                     flex-shrink: 0; /* フレックスで潰れるのを防ぐ */
                 }
 
-                td {
-                    width: 60%; /* 残りの全体幅をtdが埋めるようにする */
+                dd {
+                    width: 60%; /* 残りの全体幅をddが埋めるようにする */
                 }
             }
         }
@@ -126,6 +121,7 @@
 
             .map-embed {
                 width: 100%;
+                filter: grayscale(100%);
                 @include m.tab {
                     width: 100%;
                     height: auto;

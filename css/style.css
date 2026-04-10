@@ -143,6 +143,10 @@ img {
   margin-top: 10px;
 }
 
+.text-shadow, #hero .hero-bottom .hero-subtext .vertical-text {
+  text-shadow: -3px 3px 3px #000000;
+}
+
 #header {
   position: absolute;
   top: 0;
@@ -252,13 +256,11 @@ img {
   background: #fff;
 }
 #header .side-menu .menu-list li a:hover {
-  opacity: 0.7;
-  color: var(--color-text-light);
-  border-left-color: var(--color-text-light);
+  opacity: 0.4;
 }
 #header .side-menu .header-contact {
   position: absolute;
-  bottom: -90px;
+  top: 80vh;
   left: 10%;
   -webkit-writing-mode: horizontal-tb;
       -ms-writing-mode: lr-tb;
@@ -266,7 +268,7 @@ img {
   text-orientation: initial;
   font-size: 1.25rem;
   letter-spacing: 0.1em;
-  gap: 10px;
+  line-height: 0.8;
 }
 @media (max-width: 768px) {
   #header .side-menu .header-contact {
@@ -295,6 +297,7 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  gap: 10px;
 }
 @media (max-width: 390px) {
   #header .side-menu .header-contact .header-access {
@@ -311,6 +314,7 @@ img {
   display: -ms-flexbox;
   display: flex;
   font-size: 2rem;
+  gap: 10px;
 }
 #header .side-menu .header-contact .header-access .map .icon {
   -webkit-box-align: center;
@@ -585,7 +589,6 @@ img {
   left: 10%;
   z-index: 3;
   color: #fff;
-  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
 }
 @media (max-width: 390px) {
   #hero .hero-bottom .hero-subtext {
@@ -594,7 +597,7 @@ img {
   }
 }
 #hero .hero-bottom .hero-subtext .vertical-text {
-  font-size: 1.1rem;
+  font-size: 1rem;
   letter-spacing: 0.4em;
 }
 
@@ -642,7 +645,7 @@ img {
 #greeting .greeting-content .greeting-top .img-right {
   position: absolute;
   bottom: -10%;
-  right: -13%;
+  right: -10%;
   width: 58.5%;
   z-index: -100;
 }
@@ -707,6 +710,10 @@ img {
   grid-template-columns: repeat(2, 1fr);
   gap: 5rem;
 }
+#greeting .greeting-content .greeting-down img {
+  -webkit-box-shadow: 10px 10px 10px #000000;
+          box-shadow: 10px 10px 10px #000000;
+}
 @media (max-width: 768px) {
   #greeting .greeting-content .greeting-down {
     gap: 0rem;
@@ -728,7 +735,6 @@ img {
 }
 #menu .sec-header .sec-subtitle {
   font-size: 2rem;
-  font-family: Noto;
 }
 #menu .menu-list {
   max-width: 1200px;
@@ -778,12 +784,8 @@ img {
   -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
-#menu .menu-list .menu-item .menu-item-text {
-  padding: 0 10px;
-}
 #menu .menu-list .menu-item .menu-item-text .menu-title {
   font-size: 1.2rem;
-  font-weight: normal;
   color: var(--color-text);
   margin-bottom: 1rem;
   letter-spacing: 0.1em;
@@ -796,7 +798,6 @@ img {
   font-size: 2.5rem;
 }
 #menu .menu-list .menu-item .menu-item-text .menu-price {
-  font-family: serif;
   color: var(--color-text);
   margin-bottom: 2rem;
   font-size: 1.25rem;
@@ -849,8 +850,9 @@ img {
 }
 .occasion-header .sec-title-jp {
   display: inline-block;
-  margin-top: 5rem;
+  margin-top: 7rem;
   font-size: 6rem;
+  line-height: 0.9;
 }
 @media (max-width: 768px) {
   .occasion-header .sec-title-jp {
@@ -859,7 +861,7 @@ img {
 }
 .occasion-header .sec-subtitle {
   font-size: 2rem;
-  margin-top: -50px;
+  margin-top: -15px;
   text-align: right;
 }
 @media (max-width: 768px) {
@@ -888,7 +890,7 @@ img {
   -webkit-writing-mode: vertical-rl;
       -ms-writing-mode: tb-rl;
           writing-mode: vertical-rl;
-  font-size: 9rem;
+  font-size: clamp(4rem, 12vw, 9rem);
 }
 @media (max-width: 768px) {
   .occasion-item .item1 .vertical-title, .occasion-item-reverse .item1 .vertical-title {
@@ -1420,6 +1422,9 @@ img {
   background-position: center;
   background-repeat: no-repeat;
 }
+#access .sec-header {
+  margin-bottom: 0;
+}
 @media (max-width: 768px) {
   #access .sec-header {
     margin-bottom: 20px;
@@ -1449,15 +1454,9 @@ img {
   margin: 0 auto;
   display: block;
   font-weight: lighter;
-  /* ブラウザが自動生成する tbody が縮んでしまうのを防ぐため、明示的に100%を指定 */
 }
-#access .access-content .access-table-wrap-1 .access-table tbody,
-#access .access-content .access-table-wrap-2 .access-table tbody {
-  display: block;
-  width: 100%;
-}
-#access .access-content .access-table-wrap-1 .access-table tr,
-#access .access-content .access-table-wrap-2 .access-table tr {
+#access .access-content .access-table-wrap-1 .access-table .access-row,
+#access .access-content .access-table-wrap-2 .access-table .access-row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1465,14 +1464,14 @@ img {
   border-bottom: 1px solid #000000;
 }
 @media (max-width: 768px) {
-  #access .access-content .access-table-wrap-1 .access-table tr,
-  #access .access-content .access-table-wrap-2 .access-table tr {
+  #access .access-content .access-table-wrap-1 .access-table .access-row,
+  #access .access-content .access-table-wrap-2 .access-table .access-row {
     margin: 0 auto;
   }
 }
-#access .access-content .access-table-wrap-1 .access-table th, #access .access-content .access-table-wrap-1 .access-table td,
-#access .access-content .access-table-wrap-2 .access-table th,
-#access .access-content .access-table-wrap-2 .access-table td {
+#access .access-content .access-table-wrap-1 .access-table dt, #access .access-content .access-table-wrap-1 .access-table dd,
+#access .access-content .access-table-wrap-2 .access-table dt,
+#access .access-content .access-table-wrap-2 .access-table dd {
   display: block;
   padding: 20px 0;
   text-align: left;
@@ -1480,24 +1479,24 @@ img {
   letter-spacing: 0.05em;
 }
 @media (max-width: 768px) {
-  #access .access-content .access-table-wrap-1 .access-table th, #access .access-content .access-table-wrap-1 .access-table td,
-  #access .access-content .access-table-wrap-2 .access-table th,
-  #access .access-content .access-table-wrap-2 .access-table td {
+  #access .access-content .access-table-wrap-1 .access-table dt, #access .access-content .access-table-wrap-1 .access-table dd,
+  #access .access-content .access-table-wrap-2 .access-table dt,
+  #access .access-content .access-table-wrap-2 .access-table dd {
     font-size: 0.875rem;
     padding: 15px 0;
   }
 }
-#access .access-content .access-table-wrap-1 .access-table th,
-#access .access-content .access-table-wrap-2 .access-table th {
+#access .access-content .access-table-wrap-1 .access-table dt,
+#access .access-content .access-table-wrap-2 .access-table dt {
   width: 40%; /* 項目名の幅を適切に確保 */
   font-weight: bold;
   padding-right: 20px; /* テキスト間の自然な余白 */
   -ms-flex-negative: 0;
       flex-shrink: 0; /* フレックスで潰れるのを防ぐ */
 }
-#access .access-content .access-table-wrap-1 .access-table td,
-#access .access-content .access-table-wrap-2 .access-table td {
-  width: 60%; /* 残りの全体幅をtdが埋めるようにする */
+#access .access-content .access-table-wrap-1 .access-table dd,
+#access .access-content .access-table-wrap-2 .access-table dd {
+  width: 60%; /* 残りの全体幅をddが埋めるようにする */
 }
 #access .access-content .access-table-wrap-1 {
   margin-left: 100px;
@@ -1568,6 +1567,8 @@ img {
 #access .access-map-wrap-1 .map-embed,
 #access .access-map-wrap-2 .map-embed {
   width: 100%;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
 }
 @media (max-width: 768px) {
   #access .access-map-wrap-1 .map-embed,
