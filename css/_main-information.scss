@@ -12,10 +12,10 @@
     background-blend-mode: overlay;
 
     .information-content {
-        display: grid;
-        grid-template-columns: 1.2fr 0.6fr 1.2fr;
-        @extend .wrapper;
         max-width: 1200px;
+        display: grid;
+        grid-template-columns: 1.2fr 1fr 1.2fr;
+        @extend .wrapper;
         margin: 0 auto;
 
         @include m.tab {

@@ -12,11 +12,12 @@
     background-repeat: no-repeat;
     @extend .wrapper;
 
-    & .sec-header{
+    & .sec-header {
         margin-bottom: 0;
-     @include m.tab {
-        margin-bottom: 20px;
-     }           
+
+        @include m.tab {
+            margin-bottom: 20px;
+        }
     }
 
     .access-content {
@@ -25,11 +26,12 @@
         grid-template-columns: 1fr 1fr;
         gap: 5%;
         margin: 0 auto;
+
         @include m.tab {
             grid-template-columns: 1fr;
             gap: 50px;
         }
-       
+
 
         .access-table-wrap-1,
         .access-table-wrap-2 {
@@ -45,18 +47,21 @@
                 .access-row {
                     display: flex;
                     width: 80%;
-                    border-bottom: 1px solid #000000; 
+                    border-bottom: 1px solid #000000;
+
                     @include m.tab {
                         margin: 0 auto;
                     }
                 }
 
-                dt, dd {
-                    display: block; 
+                dt,
+                dd {
+                    display: block;
                     padding: 20px 0;
                     text-align: left;
                     font-size: 0.95rem;
                     letter-spacing: 0.05em;
+
                     @include m.tab {
                         font-size: 0.875rem;
                         padding: 15px 0;
@@ -64,71 +69,116 @@
                 }
 
                 dt {
-                    width: 40%; /* 項目名の幅を適切に確保 */
+                    
+                    /* 項目名の幅を適切に確保 */
                     font-weight: bold;
-                    padding-right: 20px; /* テキスト間の自然な余白 */
-                    flex-shrink: 0; /* フレックスで潰れるのを防ぐ */
-                }
-
-                dd {
-                    width: 60%; /* 残りの全体幅をddが埋めるようにする */
+                    padding-right: 20px;
+                    /* テキスト間の自然な余白 */
+                    flex-shrink: 0;
+                    /* フレックスで潰れるのを防ぐ */
                 }
             }
         }
 
-        .access-table-wrap-1{
-            margin-left: 100px;
+        .access-table-wrap-1 {
+            @media (min-width:1000px) {
+                margin-left: 100px;
+            }
+
             @include m.tab {
                 margin-left: 0;
             }
+            dd{
+                 width: calc(100% - 100px);
+                 @media (min-width:1000px) {
+                    width: calc(100% - 200px);
+                 }
+            }
+            dt{
+                width: 100px;
+                @media (min-width:1000px) {
+                    width: 200px;
+                 }
+            }
         }
 
-        .access-table-wrap-2{
-            margin-right: 100px;
+        .access-table-wrap-2 {
+            @media (min-width:1000px) {
+                margin-right: 100px;
+            }
+
             @include m.tab {
                 margin-right: 0;
+            }
+            dd{ 
+                width: calc(100% - 130px);
+                @media (min-width:1000px) {
+                    width: calc(100% - 200px);
+                 }
+            }
+            dt{
+                width: 130px;
+                @media (min-width:1000px) {
+                    width: 200px;
+                 }
             }
         }
 
     }
 
     @include m.tab {
-        .access-table-wrap-1{order: 1;}
-        .access-table-wrap-2{order: 3;}
-        .access-map-wrap-1{order: 2;}
-        .access-map-wrap-2{order: 4;}
-    }
+        .access-table-wrap-1 {
+            order: 1;
+        }
 
-        .access-map-wrap-1,
+        .access-table-wrap-2 {
+            order: 3;
+        }
+
+        .access-map-wrap-1 {
+            order: 2;
+        }
+
         .access-map-wrap-2 {
-            margin: 50px auto;
-            width: 100%;
-            @include m.tab {
-                margin: 0 auto;
-                width: 100%;
-            }
-
-            .shop-img {
-                width: 100%;
-                object-fit: cover;
-                @include m.tab {
-                    width: 100%;
-                    height: auto;
-                    aspect-ratio: 16 / 9;
-                    object-fit: cover;
-                }
-            }
-
-            .map-embed {
-                width: 100%;
-                filter: grayscale(100%);
-                @include m.tab {
-                    width: 100%;
-                    height: auto;
-                    aspect-ratio: 16 / 9;
-                    object-fit: cover;
-                }
-
-            }
+            order: 4;
         }
     }
+
+    .access-map-wrap-1,
+    .access-map-wrap-2 {
+        margin: 50px auto;
+        width: 100%;
+
+        @include m.tab {
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .shop-img {
+            width: 100%;
+            object-fit: cover;
+
+            @include m.tab {
+                width: 100%;
+                height: auto;
+                aspect-ratio: 16 / 9;
+                object-fit: cover;
+            }
+        }
+
+        .map-embed {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 9;
+            filter: grayscale(100%);
+
+            @include m.tab {
+                width: 100%;
+                height: auto;
+                aspect-ratio: 16 / 9;
+                object-fit: cover;
+            }
+
+        }
+    }
+}
