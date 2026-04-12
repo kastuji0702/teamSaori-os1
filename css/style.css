@@ -651,6 +651,11 @@ img {
   background-size: cover;
   background-blend-mode: overlay;
 }
+@media (max-width: 768px) {
+  #greeting {
+    padding: 2.5rem 0;
+  }
+}
 #greeting .greeting-content {
   max-width: 1200px;
   margin: 0 auto;
@@ -680,11 +685,28 @@ img {
   width: 58.5%;
   z-index: -100;
 }
+#greeting .greeting-content .greeting-top .img-left::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.9)), color-stop(10%, rgba(0, 0, 0, 0.8)), color-stop(20%, rgba(0, 0, 0, 0.3)), color-stop(30%, rgba(0, 0, 0, 0)));
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.8) 10%, rgba(0, 0, 0, 0.3) 20%, rgba(0, 0, 0, 0) 30%);
+  pointer-events: none;
+}
 @media (max-width: 768px) {
   #greeting .greeting-content .greeting-top .img-left {
+    width: 70%;
+    top: -5%;
+  }
+}
+@media (max-width: 390px) {
+  #greeting .greeting-content .greeting-top .img-left {
     position: static;
+    left: 0;
     width: 100%;
     margin-bottom: 6%;
+    position: relative;
+    overflow: hidden;
   }
 }
 #greeting .greeting-content .greeting-top .img-right {
@@ -694,11 +716,28 @@ img {
   width: 58.5%;
   z-index: -100;
 }
+#greeting .greeting-content .greeting-top .img-right::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.9)), color-stop(10%, rgba(0, 0, 0, 0.8)), color-stop(20%, rgba(0, 0, 0, 0.3)), color-stop(30%, rgba(0, 0, 0, 0)));
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.8) 10%, rgba(0, 0, 0, 0.3) 20%, rgba(0, 0, 0, 0) 30%);
+  pointer-events: none;
+}
 @media (max-width: 768px) {
+  #greeting .greeting-content .greeting-top .img-right {
+    width: 70%;
+    bottom: -5%;
+  }
+}
+@media (max-width: 390px) {
   #greeting .greeting-content .greeting-top .img-right {
     position: static;
     width: 100%;
     margin: 6% 0;
+    position: relative;
+    overflow: hidden;
+    left: 0;
   }
 }
 #greeting .greeting-content .greeting-top .vertical-title {
@@ -712,7 +751,7 @@ img {
 @media (max-width: 390px) {
   #greeting .greeting-content .greeting-top .vertical-title {
     font-size: 1.5rem;
-    line-height: 1.1;
+    line-height: 1;
   }
 }
 #greeting .greeting-content .greeting-top .vertical-title span {
@@ -756,7 +795,7 @@ img {
 }
 @media (max-width: 390px) {
   #greeting .greeting-content .greeting-top .greeting-text {
-    gap: 0.2rem;
+    gap: 0rem;
   }
 }
 #greeting .greeting-content .greeting-top .greeting-text::before {
@@ -769,8 +808,20 @@ img {
   border: 1px solid rgba(255, 255, 255, 0.6);
   z-index: 21;
 }
+#greeting .greeting-content .greeting-top .greeting-text .text-wrapper .japanese {
+  padding-bottom: 2rem;
+  letter-spacing: 0.16em;
+}
+@media (max-width: 390px) {
+  #greeting .greeting-content .greeting-top .greeting-text .text-wrapper .japanese {
+    padding-bottom: 0rem;
+  }
+}
 #greeting .greeting-content .greeting-top .greeting-text .text-wrapper .japanese .section-text {
   padding-bottom: 2%;
+}
+#greeting .greeting-content .greeting-top .greeting-text .text-wrapper .english {
+  letter-spacing: 0.16em;
 }
 #greeting .greeting-content .greeting-top .greeting-text .text-wrapper .english .section-text {
   padding-bottom: 2%;
@@ -788,7 +839,8 @@ img {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0px, rgba(0, 0, 0, 0.8) 10px, rgba(0, 0, 0, 0.3) 30px, rgba(0, 0, 0, 0) 80px);
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.9)), color-stop(10%, rgba(0, 0, 0, 0.8)), color-stop(20%, rgba(0, 0, 0, 0.3)), color-stop(30%, rgba(0, 0, 0, 0)));
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.8) 10%, rgba(0, 0, 0, 0.3) 20%, rgba(0, 0, 0, 0) 30%);
 }
 @media (max-width: 768px) {
   #greeting .greeting-content .greeting-down {
