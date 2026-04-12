@@ -17,12 +17,18 @@
         @include m.tab {
             margin-bottom: 2rem;
         }
+        @include m.sp {
+            margin-bottom: 5px;
+        }
 
         &-jp {
             font-size: 3rem;
             font-weight: 400;
             @include m.tab {
                 font-size: 2rem;
+            }
+            @include m.sp {
+                font-size: 1.5rem;
             }
         }
         &-en {
@@ -31,6 +37,9 @@
             line-height: 1.0;
             @include m.tab {
                 font-size: 1.5rem;
+            }
+            @include m.sp {
+                font-size: 1rem;
             }
         }
     }
@@ -46,14 +55,19 @@
         letter-spacing: 0.25em;
         line-height: 1.5;
         font-weight: lighter;
+        @include m.sp {
+            margin: 0;
+        }
     
 
     &-jp {
-
         font-size: 1rem;
         @include m.tab {
             font-size: 1rem;
         }
+        @include m.sp {
+            font-size: 0.875rem;
+            letter-spacing: 0.1em;
     }
 
     &-en {
@@ -63,7 +77,8 @@
         @include m.tab {
             font-size: 0.875rem;
         }
-    }
 }
+    }
   
+}
 }

@@ -23,7 +23,19 @@
     .faq-header {
         text-align: center;
         margin-bottom: 40px;
+        .sec-title{
+            @include m.sp{
+                font-size: 1.5rem;
+            };
+        };
+
+        .sec-subtitle{
+            font-size: 1rem;
+        }
+
     }
+
+
 
 
 
@@ -51,6 +63,15 @@
         font-family: inherit;
         font-size: 1rem;
         transition: background-color 0.3s;
+
+        @include m.tab{
+            padding: 25px;
+        }
+
+        @include m.sp{
+        font-size: 0.9rem;
+        line-height: 1.2;
+        }
     }
 
     .faq-question:hover {
@@ -63,6 +84,9 @@
         margin-right: 20px;
         width: 20px;
         flex-shrink: 0;
+        @include m.sp{
+            margin-right: 1rem;
+        }
     }
 
     .faq-question .text {

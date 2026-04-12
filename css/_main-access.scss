@@ -46,10 +46,11 @@
 
                 .access-row {
                     display: flex;
-                    width: 80%;
+                    width: 100%;
                     border-bottom: 1px solid #000000;
 
                     @include m.tab {
+                        width: 100%;
                         margin: 0 auto;
                     }
                 }
@@ -169,7 +170,7 @@
         .map-embed {
             width: 100%;
             height: auto;
-            aspect-ratio: 16 / 9;
+            aspect-ratio: 5 / 4;
             filter: grayscale(100%);
 
             @include m.tab {

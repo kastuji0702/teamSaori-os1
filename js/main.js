@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-    // ===== FAQ =====
+  // ===== FAQ =====
   $(".faq-question").on("click", function () {
     const item = $(this).closest(".faq-item");
     const answer = item.find(".faq-answer");

@@ -58,6 +58,7 @@
                 }
                 @include m.sp {
                     transform: translateX(0);
+                    font-size: 1rem;
                 }
             }
         }
@@ -71,7 +72,7 @@
                 
             @include m.tab {
                 width: 70%;
-                line-height: 3;
+                line-height: clamp(3em, 0.595vw - 1.571em, 2em);
                 margin: 0 auto;
             }
 
@@ -92,6 +93,9 @@
                 width: 80%;
                 margin: 0 auto;
             }
+            @include m.sp {
+                width: 90%;
+            }
         }
 
 
@@ -104,7 +108,7 @@
 
             @include m.tab {
                 order: 3;
-                width: 80%;
+                width: 100%;
                 margin: 0 auto;
             }
 
@@ -120,6 +124,9 @@
 
                 p {
                     font-size: 1rem;
+                    @include m.sp {
+                        font-size: 1.0rem;
+                    }
                     
                 }
             }

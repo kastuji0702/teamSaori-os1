@@ -67,7 +67,7 @@ img {
     padding: 5rem 24px; // 80px (5rem)
 
     @include m.sp {
-        padding: 2rem 16px; // 32px (2rem)
+        padding: 2rem 1.5rem; // 32px (2rem)
     }
 }
 
@@ -148,5 +148,5 @@ img {
 }
 
 .text-shadow {
-    text-shadow: -3px 3px 3px #000000;
+    text-shadow: 3px 3px 3px #000000;
 }
