@@ -6,55 +6,57 @@
 // ============================================================
 #footer {
   position: relative;
-  padding: 80px 10% 40px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
   background-color: var(--color-main);
-  color: #fff;
-  height: 100vh;
+  padding: 100px 10% 60px;
+
+  @include m.tab {
+    height: 100dvh;
+  }
+
+  @include m.sp {
+    padding: 50px 10% 30px;
+  }
 
   .logo {
-    width: 80px;
-    height: 80px;
-    top: 0;
-    left: 5%;
+    width: 100px; // ロゴのサイズ
 
     @include m.sp {
-        position: absolute;
-        top: 30px;
+      width: 60px;
     }
 
     img {
       width: 100%;
-      height: auto;
-      filter: brightness(0) invert(1);
     }
   }
 
+  // デスクトップ用メニュー（右上固定）
   .side-menu {
     display: flex;
     gap: 30px;
     align-items: flex-start;
-    position: relative;
+    justify-content: flex-end;
+    color: #fff;
 
     .menu-list {
       display: flex;
       gap: 1.2rem;
-      position: absolute;
-      top: -80px;
-      right: 0;
 
-      @include m.tab {
-        gap: 0.8rem;
-      }
-
-      @include m.sp {
-        gap: 0.5rem;
-        position: absolute;
-        top: 30px;
+      .footer-home {
+        @include m.tab {
+          display: block;
+        }
       }
 
       li a {
         display: flex;
         flex-direction: column;
+        justify-content: flex-start;
         align-items: center;
         position: relative;
         min-height: 420px;
@@ -70,12 +72,15 @@
         .en {
           position: absolute;
           top: 19rem;
+          display: inline-block;
+          text-orientation: mixed;
+          transform-origin: left top;
           writing-mode: vertical-rl;
 
           &::before {
             content: "";
             position: absolute;
-            top: -90px;
+            top: -100px;
             left: 50%;
             width: 1px;
             height: 70px;
@@ -84,40 +89,49 @@
         }
 
         &:hover {
-          opacity: 0.7;
-          color: var(--color-text-light);
-          border-left-color: var(--color-text-light);
+          opacity: 0.4;
         }
       }
     }
 
     .footer-contact {
       position: absolute;
-      left: 0;
-      bottom: -500px;
-      font-size: 16px;
+      bottom: 40px;
+      left: 10%;
+      writing-mode: horizontal-tb;
+      text-orientation: initial;
+      font-size: 1.2rem;
       letter-spacing: 0.1em;
+      line-height: 1.2;
+
+      @media (max-width: 970px) {
+        font-size: 0.8rem;
+      }
 
       @include m.sp {
         font-size: 0.5rem;
-        bottom: -580px;
       }
 
       .tel-no {
-        font-family: sans-serif;
-        font-size: 16px;
+        font-size: 2rem;
         letter-spacing: 0.1em;
 
-        @include m.tab {
+        @include m.sp {
           font-size: 0.9rem;
         }
       }
 
       .footer-access {
         display: flex;
-        gap: 20px;
+        align-items: center;
+        gap: 10px;
 
-        @include m.tab {
+        @media (max-width: 970px)  {
+          font-size: 1.2rem;
+        }
+
+        @include m.sp {
+          display: block;
           transform: scale(0.5);
           transform-origin: left top;
           line-height: 1.8rem;
@@ -125,15 +139,30 @@
 
         .map {
           display: flex;
+          font-size: 2rem;
           gap: 10px;
-          font-size: 16px;
+
+          @include m.tab {
+            font-size: 1.6rem;
+            line-height: 1.2rem;
+          }
+
+          .icon {
+            align-items: center;
+
+            @media (max-width: 970px)  {
+              font-size: 1rem;
+            }
+          }
         }
 
         .sns {
           display: flex;
+          gap: 10px;
 
-          @include m.sp {
-            font-size: 1rem;
+          img {
+            width: 100%;
+            height: auto;
           }
         }
       }

@@ -15,6 +15,7 @@
   padding: 30px 10%;
 
   @include m.sp {
+    height: 100vh;
     padding: 20px;
   }
 
@@ -22,7 +23,7 @@
     width: 100px; // ロゴのサイズ
 
     @include m.sp {
-      width: 45px;
+      width: 53px;
     }
 
     img {
@@ -91,8 +92,6 @@
 
         &:hover {
           opacity: 0.4;
-          // color: var(--color-text-light);
-          // border-left-color: var(--color-text-light);
         }
       }
     }
@@ -105,7 +104,7 @@
       text-orientation: initial;
       font-size: 1.25rem;
       letter-spacing: 0.1em;
-      line-height: 0.8;
+      line-height: 1.2;
 
       @include m.tab {
         bottom: -350%;
@@ -129,7 +128,6 @@
         display: flex;
         align-items: center;
         gap: 10px;
-        
 
         @include m.sp {
           display: block;
@@ -142,7 +140,11 @@
           display: flex;
           font-size: 2rem;
           gap: 10px;
-          
+
+          @include m.tab {
+            font-size: 1.6rem;
+            line-height: 1.2rem;
+          }
 
           .icon {
             align-items: center;
@@ -321,20 +323,17 @@
   cursor: pointer;
   text-decoration: none;
 
-
-
   /* 背景と重なった際に白黒を反転させるプロパティ */
   mix-blend-mode: difference;
 
   /* フォント設定 */
-  writing-mode: vertical-rl; 
-  font-family: 'Cormorant Garamond', serif; 
+  writing-mode: vertical-rl;
+  font-family: "Cormorant Garamond", serif;
   font-size: 20px;
   font-weight: 400;
-  color: var(--color-text); 
-  text-transform: capitalize; 
-  letter-spacing: 0.1em; 
-
+  color: var(--color-text);
+  text-transform: capitalize;
+  letter-spacing: 0.1em;
 }
 
 /* ホバー時は少しだけ広がる動きを入れてリッチに */
