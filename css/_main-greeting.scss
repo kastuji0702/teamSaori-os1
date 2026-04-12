@@ -1,4 +1,5 @@
 @use "mixin" as m;
+@use "base" as *;
 
 // ============================================================
 // ごあいさつセクション (_main-greeting.scss)
@@ -8,7 +9,7 @@
   background-color: var(--color-main);
   color: var(--color-text-light);
   padding: 5rem 0; // PC: 80px
-  // background-image: url("../img/backgroundimage02.webp"); 
+  // background-image: url("../img/backgroundimage02.webp");
   background-size: cover;
   background-blend-mode: overlay;
 
@@ -20,6 +21,7 @@
       position: relative;
       padding: 100px 0;
       margin-bottom: 10%;
+      z-index: 0;
 
       @include m.sp {
         display: flex;
@@ -30,26 +32,28 @@
       .img-left {
         position: absolute;
         top: -10%;
-        left: -13%;
+        left: -12.5%;
         width: 58.5%;
         z-index: -100;
 
         @include m.tab {
           position: static;
           width: 100%;
+          margin-bottom: 6%;
         }
       }
 
       .img-right {
         position: absolute;
         bottom: -10%;
-        right: -10%;
+        right: -12.5%;
         width: 58.5%;
         z-index: -100;
 
         @include m.tab {
           position: static;
           width: 100%;
+          margin: 6% 0;
         }
       }
 
@@ -59,11 +63,21 @@
         writing-mode: vertical-rl;
         justify-self: end;
 
+        @include m.sp {
+          font-size: 1.5rem;
+          line-height: 1.1;
+        }
+
         & span {
           font-size: 1.5rem;
           display: inline-block;
           text-orientation: mixed;
           transform: translateX(-3rem);
+
+          @include m.sp {
+            font-size: 1rem;
+            transform: translateX(-1.2rem);
+          }
         }
       }
 
@@ -78,7 +92,15 @@
         flex-direction: row-reverse;
         gap: 2rem;
         align-items: start;
-        z-index: 10;
+        z-index: 20;
+
+        @include m.tab {
+          gap: 1rem;
+        }
+
+        @include m.sp {
+          gap: 0.2rem;
+        }
 
         &::before {
           content: "";
@@ -88,6 +110,7 @@
           right: -20px;
           bottom: -20px;
           border: 1px solid rgba(255, 255, 255, 0.6);
+          z-index: 21;
         }
 
         .text-wrapper {
@@ -111,12 +134,26 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 5rem;
 
-      & img{
-        box-shadow: 10px 10px 10px #000000;
+      .img-wrap {
+        position: relative;
+        overflow: hidden;
+        &::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.9) 0px,
+            rgba(0, 0, 0, 0.8) 10px,
+            rgba(0, 0, 0, 0.3) 30px,
+            rgba(0, 0, 0, 0) 80px
+          );
+        }
       }
 
       @include m.tab {
         gap: 0rem;
+        padding: 0 4%;
       }
     }
   }
