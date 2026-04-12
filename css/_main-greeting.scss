@@ -13,6 +13,10 @@
   background-size: cover;
   background-blend-mode: overlay;
 
+  @include m.tab {
+    padding: 2.5rem 0;
+  }
+
   .greeting-content {
     max-width: 1200px;
     margin: 0 auto;
@@ -36,10 +40,32 @@
         width: 58.5%;
         z-index: -100;
 
+        &::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.9) 0%,
+            rgba(0, 0, 0, 0.8) 10%,
+            rgba(0, 0, 0, 0.3) 20%,
+            rgba(0, 0, 0, 0) 30%
+          );
+          pointer-events: none;
+        }
+
         @include m.tab {
+          width: 70%;
+          top: -5%;
+        }
+
+        @include m.sp {
           position: static;
+          left: 0;
           width: 100%;
           margin-bottom: 6%;
+          position: relative; 
+          overflow: hidden;
         }
       }
 
@@ -50,10 +76,32 @@
         width: 58.5%;
         z-index: -100;
 
+        &::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.9) 0%,
+            rgba(0, 0, 0, 0.8) 10%,
+            rgba(0, 0, 0, 0.3) 20%,
+            rgba(0, 0, 0, 0) 30%
+          );
+          pointer-events: none;
+        }
+
         @include m.tab {
+          width: 70%;
+          bottom: -5%;
+        }
+
+        @include m.sp {
           position: static;
           width: 100%;
           margin: 6% 0;
+          position: relative; 
+          overflow: hidden;
+          left: 0;
         }
       }
 
@@ -65,7 +113,7 @@
 
         @include m.sp {
           font-size: 1.5rem;
-          line-height: 1.1;
+          line-height: 1;
         }
 
         & span {
@@ -99,7 +147,7 @@
         }
 
         @include m.sp {
-          gap: 0.2rem;
+          gap: 0rem;
         }
 
         &::before {
@@ -115,12 +163,19 @@
 
         .text-wrapper {
           .japanese {
+            padding-bottom: 2rem;
+            letter-spacing: 0.16em;
+
+            @include m.sp {
+              padding-bottom: 0rem;
+            }
             .section-text {
               padding-bottom: 2%;
             }
           }
 
           .english {
+            letter-spacing: 0.16em;
             .section-text {
               padding-bottom: 2%;
             }
@@ -143,10 +198,10 @@
           inset: 0;
           background: linear-gradient(
             to top,
-            rgba(0, 0, 0, 0.9) 0px,
-            rgba(0, 0, 0, 0.8) 10px,
-            rgba(0, 0, 0, 0.3) 30px,
-            rgba(0, 0, 0, 0) 80px
+            rgba(0, 0, 0, 0.9) 0%,
+            rgba(0, 0, 0, 0.8) 10%,
+            rgba(0, 0, 0, 0.3) 20%,
+            rgba(0, 0, 0, 0) 30%
           );
         }
       }
