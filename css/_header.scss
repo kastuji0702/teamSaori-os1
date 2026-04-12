@@ -120,6 +120,7 @@
 
       .tel {
         font-size: 16px;
+
         .tel-no {
           font-size: 2rem;
           letter-spacing: 0.1em;
@@ -158,6 +159,7 @@
 
           .icon {
             align-items: center;
+
             @include m.sp {
               width: 18px;
             }
@@ -194,6 +196,7 @@
 
     @include m.tab {
       display: block; // タブレット以下で表示
+      mix-blend-mode: difference; // 解除されたため、メイン背景まで透過して反転が効く
     }
 
     span {
@@ -220,6 +223,10 @@
 
   // SP用メニュー展開時
   &.open {
+    .toggle-btn {
+      mix-blend-mode: normal; // メニュー展開時は反転を解除
+    }
+
     .toggle-btn span {
       background-color: #fff; // 背景が白のオーバーレイ用
 
@@ -309,6 +316,7 @@
 
             .map {
               font-size: 18px;
+
               .icon {
                 width: 22px;
               }
@@ -368,6 +376,11 @@
   color: var(--color-text);
   text-transform: capitalize;
   letter-spacing: 0.1em;
+
+  @include m.sp {
+  font-size: 1rem;
+  padding: 1rem 0;
+  }
 }
 
 /* ホバー時は少しだけ広がる動きを入れてリッチに */
