@@ -6,89 +6,123 @@
 // ============================================================
 
 #hero {
+  width: 100%;
+  // 画面全体を利用し、上と下で2つの画像を分割または連続させる
+  display: flex;
+  flex-direction: column;
+
+  // 写真部分共通スタイル
+  .hero-top,
+  .hero-bottom {
+    position: relative;
     width: 100%;
-    // 画面全体を利用し、上と下で2つの画像を分割または連続させる
-    display: flex;
-    flex-direction: column;
+    height: 100vh; // デスクトップでは2枚で少しスクロールする形に
+    overflow: hidden;
 
-    // 写真部分共通スタイル
-    .hero-top, .hero-bottom {
-        position: relative;
-        width: 100%;
-        height: 100vh; // デスクトップでは2枚で少しスクロールする形に
-        overflow: hidden;
-
-        @include m.tab {
-            height: 100vh;
-        }
-
-        .bg-img {
-            width: 100%;
-            height: 100vh;
-            object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 1;
-            transform: scale(1.05); // 少し拡大してアニメーション等に対応しやすいように
-        }
-
-        // 暗くするためのレイヤー
-        &::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.3); // テキストを読みやすくするための黒グラデーション
-            z-index: 2;
-        }
+    @include m.tab {
+      height: 100vh;
     }
 
-    // 上部のテキスト（上質な肉と鉄板焼き〜）
-    .hero-top .hero-text {
-        position: absolute;
-        top: 50%;
-        left: 20%;
-        transform: translateY(-50%);
-        z-index: 3;
-        color: #fff;
-        text-shadow: 0 4px 15px rgba(0,0,0,0.6);
+    .vertical-text {
+      .char {
+        display: inline-block;
+        opacity: 0;
+        transform: translateX(-30px);
+      }
 
-        @include m.sp {
-            left: 10%; // SPの時は少し左寄りに
-        }
-
-        .vertical-title {
-            font-size: 3rem;
-            
-            // 縦書きの行間や文字間は _base.scss の line-height / letter-spacing で制御
-            // <br>タグが自然に改行（右から左）を処理します
-
-            @include m.sp {
-                font-size: 2rem;
-            }
-        }
+      &.is-active .char {
+        animation: fadeUp 0.9s ease forwards;
+        animation-delay: calc(var(--i) * 0.15s);
+      }
     }
 
-    // 下部のテキスト
-    .hero-bottom .hero-subtext {
-        position: absolute;
-        bottom: 5%;
-        left: 10%;
-        z-index: 3;
-        color: #fff;
-
-        @include m.sp {
-            right: 10%;
-            bottom: 10%;
-        }
-
-        .vertical-text {
-            font-size: 1rem;
-            letter-spacing: 0.4em;
-            @extend .text-shadow;
-        }
+    @keyframes fadeUp {
+      0% {
+        opacity: 0;
+        transform: translateX(-30px);
+        filter: blur(6px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0);
+      }
     }
+
+    .bg-img {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      transform: scale(
+        1.05
+      ); // 少し拡大してアニメーション等に対応しやすいように
+    }
+
+    // 暗くするためのレイヤー
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(
+        0,
+        0,
+        0,
+        0.3
+      ); // テキストを読みやすくするための黒グラデーション
+      z-index: 2;
+    }
+  }
+
+  // 上部のテキスト（上質な肉と鉄板焼き〜）
+  .hero-top .hero-text {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translateY(-50%);
+    z-index: 3;
+    color: #fff;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+
+    @include m.sp {
+      left: 10%; // SPの時は少し左寄りに
+    }
+
+    .vertical-title {
+      font-size: 3rem;
+
+      // 縦書きの行間や文字間は _base.scss の line-height / letter-spacing で制御
+      // <br>タグが自然に改行（右から左）を処理します
+
+      @include m.sp {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  // 下部のテキスト
+  .hero-bottom .hero-subtext {
+    position: absolute;
+    bottom: 5%;
+    left: 10%;
+    z-index: 3;
+    color: #fff;
+
+    @include m.sp {
+      right: 10%;
+      bottom: 10%;
+    }
+
+    .vertical-text {
+      font-size: 1rem;
+      letter-spacing: 0.4em;
+      @extend .text-shadow;
+    }
+  }
 }
