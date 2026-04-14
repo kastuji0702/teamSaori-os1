@@ -14,6 +14,13 @@
     &__title {
         text-align: center;
         margin-bottom: 3rem;
+
+        @include fadeUp();
+
+        .sec-subtitle {
+            @include fadeUp();
+        }
+        
         @include m.tab {
             margin-bottom: 2rem;
         }

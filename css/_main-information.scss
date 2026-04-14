@@ -38,6 +38,9 @@
             font-size: 3rem;
             padding-left: 2rem;
             letter-spacing: 0.5em;
+
+            @include fadeUp();
+
             @include m.tab {
                 padding-left: 0;
                 width: 20%;
@@ -53,6 +56,9 @@
                 display: inline-block;
                 text-orientation: mixed;
                 transform: translateX(-3rem); 
+                
+                @include fadeUp();
+
                 @include m.tab {
                     transform: translateX(-2rem);
                 }
