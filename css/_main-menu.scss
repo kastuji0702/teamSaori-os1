@@ -10,7 +10,7 @@
   background-image: url("../img/backgroundimage01.webp"); // 背景テクスチャがあれば
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; 
+  background-attachment: fixed;
   @extend .wrapper; // パララックス効果
   // paddingは.wrapperで担保するため削除
 
@@ -22,7 +22,7 @@
     }
 
     .sec-subtitle {
-        font-size: 2rem;
+      font-size: 2rem;
     }
   }
 
@@ -62,14 +62,11 @@
       }
 
       .menu-item-text {
-
         .menu-title {
-          font-size: 1.2rem; 
+          font-size: 1.2rem;
           color: var(--color-text);
           margin-bottom: 1rem;
           letter-spacing: 0.1em;
-
-
         }
 
         .menu-meal {
@@ -96,6 +93,22 @@
           padding-bottom: 2rem;
         }
       }
+    }
+    .js-fadeUp {
+      opacity: 0;
+      transform: translateY(100px) scale(0.95);
+      filter: blur(10px);
+      transition:
+        transform 1.4s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 1.2s ease,
+        filter 1.2s ease;
+      will-change: transform, opacity;
+    }
+
+    .js-fadeUp.is-active {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0);
     }
   }
 }

@@ -577,18 +577,67 @@ img {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-#hero .hero-top, #hero .hero-bottom {
+#hero .hero-top,
+#hero .hero-bottom {
   position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
 }
 @media (max-width: 768px) {
-  #hero .hero-top, #hero .hero-bottom {
+  #hero .hero-top,
+  #hero .hero-bottom {
     height: 100vh;
   }
 }
-#hero .hero-top .bg-img, #hero .hero-bottom .bg-img {
+#hero .hero-top .vertical-text .char,
+#hero .hero-bottom .vertical-text .char {
+  display: inline-block;
+  opacity: 0;
+  -webkit-transform: translateX(-30px);
+          transform: translateX(-30px);
+}
+#hero .hero-top .vertical-text.is-active .char,
+#hero .hero-bottom .vertical-text.is-active .char {
+  -webkit-animation: fadeUp 0.9s ease forwards;
+          animation: fadeUp 0.9s ease forwards;
+  -webkit-animation-delay: calc(var(--i) * 0.15s);
+          animation-delay: calc(var(--i) * 0.15s);
+}
+@-webkit-keyframes fadeUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-30px);
+            transform: translateX(-30px);
+    -webkit-filter: blur(6px);
+            filter: blur(6px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    -webkit-filter: blur(0);
+            filter: blur(0);
+  }
+}
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-30px);
+            transform: translateX(-30px);
+    -webkit-filter: blur(6px);
+            filter: blur(6px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    -webkit-filter: blur(0);
+            filter: blur(0);
+  }
+}
+#hero .hero-top .bg-img,
+#hero .hero-bottom .bg-img {
   width: 100%;
   height: 100vh;
   -o-object-fit: cover;
@@ -600,7 +649,8 @@ img {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
 }
-#hero .hero-top::after, #hero .hero-bottom::after {
+#hero .hero-top::after,
+#hero .hero-bottom::after {
   content: "";
   position: absolute;
   top: 0;
@@ -945,6 +995,25 @@ img {
   color: var(--color-text);
   letter-spacing: 0.05em;
   padding-bottom: 2rem;
+}
+#menu .menu-list .js-fadeUp {
+  opacity: 0;
+  -webkit-transform: translateY(100px) scale(0.95);
+          transform: translateY(100px) scale(0.95);
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
+  -webkit-transition: opacity 1.2s ease, -webkit-transform 1.4s cubic-bezier(0.22, 1, 0.36, 1), -webkit-filter 1.2s ease;
+  transition: opacity 1.2s ease, -webkit-transform 1.4s cubic-bezier(0.22, 1, 0.36, 1), -webkit-filter 1.2s ease;
+  transition: transform 1.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 1.2s ease, filter 1.2s ease;
+  transition: transform 1.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 1.2s ease, filter 1.2s ease, -webkit-transform 1.4s cubic-bezier(0.22, 1, 0.36, 1), -webkit-filter 1.2s ease;
+  will-change: transform, opacity;
+}
+#menu .menu-list .js-fadeUp.is-active {
+  opacity: 1;
+  -webkit-transform: translateY(0) scale(1);
+          transform: translateY(0) scale(1);
+  -webkit-filter: blur(0);
+          filter: blur(0);
 }
 
 .occasion {
