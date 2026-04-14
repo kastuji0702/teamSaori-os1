@@ -917,18 +917,6 @@ img {
 #menu .sec-header .sec-title {
   color: var(--color-main);
 }
-#menu .sec-header .js-fadeUp {
-  opacity: 0;
-  -webkit-transform: translateY(100px) scale(0.95);
-          transform: translateY(100px) scale(0.95);
-  -webkit-filter: blur(10px);
-          filter: blur(10px);
-  -webkit-transition: opacity 1.2s ease, -webkit-transform 2.6s cubic-bezier(0.22, 1, 0.36, 1), -webkit-filter 1.2s ease;
-  transition: opacity 1.2s ease, -webkit-transform 2.6s cubic-bezier(0.22, 1, 0.36, 1), -webkit-filter 1.2s ease;
-  transition: transform 2.6s cubic-bezier(0.22, 1, 0.36, 1), opacity 1.2s ease, filter 1.2s ease;
-  transition: transform 2.6s cubic-bezier(0.22, 1, 0.36, 1), opacity 1.2s ease, filter 1.2s ease, -webkit-transform 2.6s cubic-bezier(0.22, 1, 0.36, 1), -webkit-filter 1.2s ease;
-  will-change: transform, opacity;
-}
 #menu .sec-header .js-fadeUp.is-active {
   opacity: 1;
   -webkit-transform: translateY(0) scale(1);

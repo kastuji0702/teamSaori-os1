@@ -80,3 +80,28 @@ $sp_bp: 390px;
     align-items: center; // ← 縦方向の中央寄せ
     justify-content: center; // ← 横方向の中央寄せ
 }
+
+
+//sec-title&sec-subtitleのスライドアップ
+@mixin fadeUp(
+  $y: 100px,
+  $scale: 0.95,
+  $blur: 10px,
+  $duration: 2.6s,
+  $delay: 0s
+) {
+  opacity: 0;
+  transform: translateY($y) scale($scale);
+  filter: blur($blur);
+  will-change: transform, opacity;
+
+  &.is-active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+    transition:
+      transform $duration cubic-bezier(0.22, 1, 0.36, 1) $delay,
+      opacity 1.2s ease $delay,
+      filter 1.2s ease $delay;
+  }
+}

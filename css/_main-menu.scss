@@ -19,43 +19,12 @@
 
     .sec-title {
       color: var(--color-main);
-    }
-    .js-fadeUp {
-      opacity: 0;
-      transform: translateY(100px) scale(0.95);
-      filter: blur(10px);
-      transition:
-        transform 2.6s cubic-bezier(0.22, 1, 0.36, 1),
-        opacity 1.2s ease,
-        filter 1.2s ease;
-      will-change: transform, opacity;
-    }
-
-    .js-fadeUp.is-active {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-      filter: blur(0);
+      @include fadeUp();
     }
 
     .sec-subtitle {
       font-size: 2rem;
-    }
-
-    .js-fadeUp {
-      opacity: 0;
-      transform: translateY(100px) scale(0.95);
-      filter: blur(10px);
-      transition:
-        transform 2.6s cubic-bezier(0.22, 1, 0.36, 1),
-        opacity 1.2s ease,
-        filter 1.2s ease;
-      will-change: transform, opacity;
-    }
-
-    .js-fadeUp.is-active {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-      filter: blur(0);
+      @include fadeUp();
     }
   }
 
