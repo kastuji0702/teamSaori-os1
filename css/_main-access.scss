@@ -20,11 +20,11 @@
     }
 
     .sec-title {
-      @include fadeUp();
+      @include m.fadeUp;
     }
 
     .sec-subtitle {
-      @include fadeUp();
+      @include m.fadeUp;
     }
   }
 

@@ -15,10 +15,10 @@
         text-align: center;
         margin-bottom: 3rem;
 
-        @include fadeUp();
+        // @include m.fadeUp;
 
         .sec-subtitle {
-            @include fadeUp();
+            @include m.fadeUp;
         }
         
         @include m.tab {
