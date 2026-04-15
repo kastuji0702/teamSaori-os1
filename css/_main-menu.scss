@@ -19,12 +19,12 @@
 
     .sec-title {
       color: var(--color-main);
-      @include fadeUp();
+      @include m.fadeUp();
     }
 
     .sec-subtitle {
       font-size: 2rem;
-      @include fadeUp();
+      @include m.fadeUp();
     }
   }
 

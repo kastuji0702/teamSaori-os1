@@ -23,98 +23,20 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ===== HERO（文字アニメ）=====
-  // $(".js-split").each(function () {
-  //   let html = $(this).html();
-  //   let lines = html.split(/<br\s*\/?>/gi);
+  const targets = document.querySelectorAll(".js-split");
 
-  //   let result = "";
-  //   let count = 0;
-
-  //   lines.forEach((line, lineIndex) => {
-  //     line.split("").forEach((char) => {
-  //       if (char.trim() !== "") {
-  //         result += `<span class="char" style="--i:${count}">${char}</span>`;
-  //         count++;
-  //       } else {
-  //         result += char;
-  //       }
-  //     });
-
-  //     if (lineIndex !== lines.length - 1) {
-  //       result += "<br>";
-  //       count += 5;
-  //     }
-  //   });
-
-  //   $(this).html(result);
-
-  //   const observer = new IntersectionObserver((entries) => {
-  //     entries.forEach((entry) => {
-  //       if (entry.isIntersecting) {
-  //         entry.target.classList.add("is-active");
-  //         observer.unobserve(entry.target);
-  //       }
-  //     });
-  //   }, {
-  //     threshold: 0.3,
-  //   });
-
-  //   observer.observe(this);
-  // });
-
-  //1行ごとに表示
-  // $(".js-split").each(function () {
-  //   let html = $(this).html();
-  //   let lines = html.split(/<br\s*\/?>/gi);
-
-  //   let result = "";
-
-  //   lines.forEach((line, lineIndex) => {
-  //     line.split("").forEach((char) => {
-  //       if (char.trim() !== "") {
-  //         result += `<span class="char" style="--i:${lineIndex}">${char}</span>`;
-  //       } else {
-  //         result += char;
-  //       }
-  //     });
-
-  //     if (lineIndex !== lines.length - 1) {
-  //       result += "<br>";
-  //     }
-  //   });
-
-  //   $(this).html(result);
-
-  //   const splitTargets = document.querySelectorAll(".js-split");
-
-  //   const splitObserver = new IntersectionObserver(
-  //     (entries) => {
-  //       entries.forEach((entry) => {
-  //         if (entry.isIntersecting) {
-  //           entry.target.classList.add("is-active");
-  //           splitObserver.unobserve(entry.target);
-  //         }
-  //       });
-  //     },
-  //     {
-  //       threshold: 0.3,
-  //     },
-  //   );
-
-  //   splitTargets.forEach((el) => splitObserver.observe(el));
-  // });
-
-  //5行まとめて表示
-  $(".js-split").each(function () {
-    let html = $(this).html();
+  targets.forEach((el) => {
+    let html = el.innerHTML;
     let lines = html.split(/<br\s*\/?>/gi);
 
     let result = "";
+    let count = 0;
 
     lines.forEach((line, lineIndex) => {
       line.split("").forEach((char) => {
         if (char.trim() !== "") {
-          result += `<span class="char" style="--i:0">${char}</span>`;
+          result += `<span class="char" style="--i:${count}">${char}</span>`;
+          count++;
         } else {
           result += char;
         }
@@ -122,29 +44,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (lineIndex !== lines.length - 1) {
         result += "<br>";
+        count += 5; // 行間の余白（超重要）
       }
     });
 
-    $(this).html(result);
-
-    const splitTargets = document.querySelectorAll(".js-split");
-
-    const splitObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-active");
-            splitObserver.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.3,
-      },
-    );
-
-    splitTargets.forEach((el) => splitObserver.observe(el));
+    el.innerHTML = result;
   });
+
+  // 👇 スクロールで発火
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-active");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.4,
+    }
+  );
+
+  targets.forEach((el) => observer.observe(el));
+
 
   // ===== MENU（ふわっと表示）=====
   const fadeTargets = document.querySelectorAll(".js-fadeUp");
