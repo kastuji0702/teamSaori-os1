@@ -90,9 +90,9 @@
     }
 
     .access-table-wrap-1 {
-      @media (min-width: 1000px) {
-        margin-left: 100px;
-      }
+      // @media (min-width: 1000px) {
+      //   margin-left: 100px;
+      // }
 
       @include m.tab {
         margin-left: 0;
