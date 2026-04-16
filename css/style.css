@@ -1478,6 +1478,11 @@ img {
     margin: 0 auto;
   }
 }
+@media (max-width: 390px) {
+  #information .information-content .english-list {
+    width: 100%;
+  }
+}
 #information .information-content .english-list-item {
   padding: 10px 0;
   line-height: 1.8;
@@ -1487,12 +1492,17 @@ img {
   font-size: 1.2rem;
   font-weight: 700;
 }
+@media (max-width: 390px) {
+  #information .information-content .english-list-item h3 {
+    font-size: 1rem;
+  }
+}
 #information .information-content .english-list-item p {
   font-size: 1rem;
 }
 @media (max-width: 390px) {
   #information .information-content .english-list-item p {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -1550,6 +1560,7 @@ img {
 @media (max-width: 390px) {
   .policy__title-jp {
     font-size: 1.5rem;
+    margin-bottom: 5px;
   }
 }
 .policy__title-en {
@@ -1611,6 +1622,7 @@ img {
 @media (max-width: 390px) {
   .policy__content {
     margin: 0;
+    letter-spacing: 0.1em;
   }
 }
 .policy__content-jp {
@@ -1625,6 +1637,7 @@ img {
   .policy__content-jp {
     font-size: 0.875rem;
     letter-spacing: 0.1em;
+    margin-bottom: 5px;
   }
 }
 .policy__content-jp-en {
