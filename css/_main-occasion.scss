@@ -67,7 +67,7 @@
       margin-top: -15px;
       text-align: right;
 
-      @include m.fade(up, 50px, 2.0s, 0.4s);
+      @include m.fade(up, 50px, 2s, 0.4s);
       @include m.tab {
         font-size: 1rem;
       }
@@ -79,7 +79,6 @@
 
     @include m.sp {
       padding: 80px 0 0;
-
     }
   }
 
@@ -123,6 +122,9 @@
 
       & .en-title {
         @include m.fade(up, 50px, 2.5s, 0.4s);
+        @include m.tab {
+          margin-left: 1rem;
+        }
       }
     }
 
