@@ -39,7 +39,7 @@
       padding-left: 2rem;
       letter-spacing: 0.5em;
 
-      @include m.fade(left, 60px, 1.6s, 0.2s);
+      @include m.fade(left, 60px, 2.0s, 0.4s);
 
       @include m.tab {
         padding-left: 0;

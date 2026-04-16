@@ -733,10 +733,10 @@ img {
 }
 #greeting .greeting-content .greeting-top .greeting-text .vertical-title {
   opacity: 0;
-  -webkit-transition: all 1.6s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
-  transition: all 1.6s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
-  -webkit-transform: translateX(60px);
-          transform: translateX(60px);
+  -webkit-transition: all 2s cubic-bezier(0.22, 1, 0.36, 1) 0.4s;
+  transition: all 2s cubic-bezier(0.22, 1, 0.36, 1) 0.4s;
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
 }
 #greeting .greeting-content .greeting-top .greeting-text .vertical-title.is-active {
   opacity: 1;
@@ -1103,8 +1103,8 @@ img {
   margin-top: -15px;
   text-align: right;
   opacity: 0;
-  -webkit-transition: all 2.5s cubic-bezier(0.22, 1, 0.36, 1) 0.4s;
-  transition: all 2.5s cubic-bezier(0.22, 1, 0.36, 1) 0.4s;
+  -webkit-transition: all 2s cubic-bezier(0.22, 1, 0.36, 1) 0.4s;
+  transition: all 2s cubic-bezier(0.22, 1, 0.36, 1) 0.4s;
   -webkit-transform: translateY(50px);
           transform: translateY(50px);
 }
@@ -1120,6 +1120,11 @@ img {
 }
 .occasion-list {
   padding: 80px 0 50px;
+}
+@media (max-width: 390px) {
+  .occasion-list {
+    padding: 80px 0 0;
+  }
 }
 .occasion {
   /* 共通設定 */
@@ -1201,6 +1206,11 @@ img {
     line-height: 2;
     letter-spacing: 0.2rem;
     font-size: 1rem;
+  }
+}
+@media (max-width: 390px) {
+  .occasion-item .item3, .occasion-item-reverse .item3 {
+    font-size: 0.9rem;
   }
 }
 .occasion {
@@ -1359,8 +1369,8 @@ img {
   padding-left: 2rem;
   letter-spacing: 0.5em;
   opacity: 0;
-  -webkit-transition: all 1.6s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
-  transition: all 1.6s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
+  -webkit-transition: all 2s cubic-bezier(0.22, 1, 0.36, 1) 0.4s;
+  transition: all 2s cubic-bezier(0.22, 1, 0.36, 1) 0.4s;
   -webkit-transform: translateX(60px);
           transform: translateX(60px);
 }
@@ -1926,11 +1936,6 @@ img {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   /* フレックスで潰れるのを防ぐ */
-}
-@media (min-width: 1000px) {
-  #access .access-content .access-table-wrap-1 {
-    margin-left: 100px;
-  }
 }
 @media (max-width: 768px) {
   #access .access-content .access-table-wrap-1 {

@@ -67,7 +67,7 @@
       margin-top: -15px;
       text-align: right;
 
-      @include m.fade(up, 50px, 2.5s, 0.4s);
+      @include m.fade(up, 50px, 2.0s, 0.4s);
       @include m.tab {
         font-size: 1rem;
       }
@@ -76,6 +76,11 @@
 
   &-list {
     padding: 80px 0 50px;
+
+    @include m.sp {
+      padding: 80px 0 0;
+
+    }
   }
 
   /* 共通設定 */
@@ -134,6 +139,10 @@
         line-height: 2;
         letter-spacing: 0.2rem;
         font-size: 1rem;
+      }
+
+      @include m.sp {
+        font-size: 0.9rem;
       }
     }
   }
