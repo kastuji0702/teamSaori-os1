@@ -24,28 +24,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ===== HERO（文字アニメ）=====
   const targets = document.querySelectorAll(".js-split");
-
   targets.forEach((el) => {
     let html = el.innerHTML;
     let lines = html.split(/<br\s*\/?>/gi);
 
     let result = "";
-    let count = 0;
 
-    lines.forEach((line, lineIndex) => {
+    lines.forEach((line) => {
+      let charIndex = 0; // 行ごとにリセット
+
       line.split("").forEach((char) => {
         if (char.trim() !== "") {
-          result += `<span class="char" style="--i:${count}">${char}</span>`;
-          count++;
+          result += `<span class="char" style="--i:${charIndex}">${char}</span>`;
+          charIndex++;
         } else {
           result += char;
         }
       });
 
-      if (lineIndex !== lines.length - 1) {
-        result += "<br>";
-        count += 5; // 行間の余白（超重要）
-      }
+      result += "<br>";
     });
 
     el.innerHTML = result;
@@ -63,13 +60,31 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       threshold: 0.4,
-    }
+    },
   );
 
   targets.forEach((el) => observer.observe(el));
 
+  // ===== H2 縦（ふわっと表示）=====
+  const verticalTargets = document.querySelectorAll(".vertical-title");
 
-  // ===== MENU（ふわっと表示）=====
+  const verticalObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-show");
+          verticalObserver.unobserve(entry.target); // ←一回だけ発火
+        }
+      });
+    },
+    {
+      threshold: 0.3,
+    },
+  );
+
+  verticalTargets.forEach((el) => verticalObserver.observe(el));
+
+  // ===== h2 横（ふわっと表示）=====
   const fadeTargets = document.querySelectorAll(".js-fadeUp");
 
   const fadeObserver = new IntersectionObserver(

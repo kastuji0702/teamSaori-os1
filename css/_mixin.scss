@@ -83,25 +83,27 @@ $sp_bp: 390px;
 
 
 //sec-title&sec-subtitleのスライドアップ
-@mixin fadeUp(
-  $y: 100px,
-  $scale: 0.95,
-  $blur: 10px,
-  $duration: 2.6s,
+@mixin fade(
+  $direction: up,
+  $distance: 40px,
+  $duration: 1.2s,
   $delay: 0s
 ) {
   opacity: 0;
-  transform: translateY($y) scale($scale);
-  filter: blur($blur);
-  will-change: transform, opacity;
+  transition: all $duration cubic-bezier(0.22, 1, 0.36, 1) $delay;
+
+  @if $direction == up {
+    transform: translateY($distance);
+  } @else if $direction == down {
+    transform: translateY(-$distance);
+  } @else if $direction == left {
+    transform: translateX($distance);
+  } @else if $direction == right {
+    transform: translateX(-$distance);
+  }
 
   &.is-active {
     opacity: 1;
-    transform: translateY(0) scale(1);
-    filter: blur(0);
-    transition:
-      transform $duration cubic-bezier(0.22, 1, 0.36, 1) $delay,
-      opacity 1.2s ease $delay,
-      filter 1.2s ease $delay;
+    transform: translate(0, 0);
   }
 }

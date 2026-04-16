@@ -19,12 +19,18 @@
 
     .sec-title {
       color: var(--color-main);
-      @include m.fadeUp();
+       @include m.fade(up, 50px, 1.6s, 0.2s);
     }
 
     .sec-subtitle {
       font-size: 2rem;
-      @include m.fadeUp();
+       @include m.fade(up, 50px, 1.6s, 0.2s);
+    }
+
+    .sec-title.is-active,
+    .sec-subtitle.is-active {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 

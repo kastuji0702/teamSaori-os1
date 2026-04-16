@@ -2,90 +2,86 @@
 @use "base" as *;
 
 .policy {
-    @extend .wrapper;
-    color: var(--color-text-light);
-    background-image: url(../img/Policy.jpg);
-    background-size: cover;
+  @extend .wrapper;
+  color: var(--color-text-light);
+  background-image: url(../img/Policy.jpg);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    @include m.tab {
+      margin-bottom: 2rem;
+    }
+    @include m.sp {
+      margin-bottom: 5px;
+    }
+
+    &-jp {
+      font-size: 3rem;
+      font-weight: 400;
+      @include m.fade(up, 50px, 1.6s, 0.2s);
+
+      @include m.tab {
+        font-size: 2rem;
+      }
+      @include m.sp {
+        font-size: 1.5rem;
+      }
+    }
+    &-en {
+      font-size: 2rem;
+      font-weight: 400;
+      line-height: 1;
+      @include m.fade(up, 50px, 1.6s, 0.2s);
+      
+      @include m.tab {
+        font-size: 1.5rem;
+      }
+      @include m.sp {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  &__content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    &__title {
-        text-align: center;
-        margin-bottom: 3rem;
-
-        @include fadeUp();
-
-        .sec-subtitle {
-            @include fadeUp();
-        }
-        
-        @include m.tab {
-            margin-bottom: 2rem;
-        }
-        @include m.sp {
-            margin-bottom: 5px;
-        }
-
-        &-jp {
-            font-size: 3rem;
-            font-weight: 400;
-            @include m.tab {
-                font-size: 2rem;
-            }
-            @include m.sp {
-                font-size: 1.5rem;
-            }
-        }
-        &-en {
-            font-size: 2rem;
-            font-weight: 400;
-            line-height: 1.0;
-            @include m.tab {
-                font-size: 1.5rem;
-            }
-            @include m.sp {
-                font-size: 1rem;
-            }
-        }
+    text-align: center;
+    margin: 0 5%;
+    max-width: 1000px;
+    letter-spacing: 0.25em;
+    line-height: 1.5;
+    font-weight: lighter;
+    @include m.sp {
+      margin: 0;
     }
-
-    &__content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        margin: 0 5%;
-        max-width: 1000px ;
-        letter-spacing: 0.25em;
-        line-height: 1.5;
-        font-weight: lighter;
-        @include m.sp {
-            margin: 0;
-        }
-    
 
     &-jp {
+      font-size: 1rem;
+      @include m.tab {
         font-size: 1rem;
-        @include m.tab {
-            font-size: 1rem;
-        }
-        @include m.sp {
-            font-size: 0.875rem;
-            letter-spacing: 0.1em;
-    }
+      }
+      @include m.sp {
+        font-size: 0.875rem;
+        letter-spacing: 0.1em;
+      }
 
-    &-en {
+      &-en {
         padding-top: 1rem;
         font-size: 1rem;
 
         @include m.tab {
-            font-size: 0.875rem;
+          font-size: 0.875rem;
         }
-}
+      }
     }
-  
-}
+  }
 }

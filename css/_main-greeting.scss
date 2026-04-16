@@ -33,6 +33,12 @@
         padding: 40px 0;
       }
 
+      .greeting-text {
+        .vertical-title {
+          @include m.fade(left, 60px, 1.6s, 0.2s);
+        }
+      }
+
       .img-left {
         position: absolute;
         top: -10%;
@@ -64,7 +70,7 @@
           left: 0;
           width: 100%;
           margin-bottom: 6%;
-          position: relative; 
+          position: relative;
           overflow: hidden;
         }
       }
@@ -99,7 +105,7 @@
           position: static;
           width: 100%;
           margin: 6% 0;
-          position: relative; 
+          position: relative;
           overflow: hidden;
           left: 0;
         }
