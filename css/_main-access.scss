@@ -20,11 +20,11 @@
     }
 
     .sec-title {
-      @include m.fade(up, 50px, 1.6s, 0.2s);
+      @include m.fade(up, 50px, 2.0s, 0.4s);
     }
 
     .sec-subtitle {
-      @include m.fade(up, 50px, 1.6s, 0.2s);
+      @include m.fade(up, 50px, 2.0s, 0.4s);
     }
   }
 
@@ -34,6 +34,8 @@
     grid-template-columns: 1fr 1fr;
     gap: 5%;
     margin: 0 auto;
+
+    @include m.fade(up, 50px, 2.0s, 0.4s);
 
     @include m.tab {
       grid-template-columns: 1fr;

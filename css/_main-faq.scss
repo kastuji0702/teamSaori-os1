@@ -25,7 +25,7 @@
     margin-bottom: 40px;
 
     .sec-title {
-      @include m.fade(up, 50px, 1.6s, 0.2s);
+      @include m.fade(up, 50px, 2.0s, 0.4s);
 
       @include m.sp {
         font-size: 1.5rem;
@@ -34,7 +34,7 @@
 
     .sec-subtitle {
       font-size: 2rem;
-      @include m.fade(up, 50px, 1.6s, 0.2s);
+      @include m.fade(up, 50px, 2.0s, 0.4s);
     }
   }
 
