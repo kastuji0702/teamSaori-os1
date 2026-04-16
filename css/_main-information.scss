@@ -6,17 +6,56 @@
 // ============================================================
 
 #information {
-    background-color: var(--color-main);
-    color: var(--color-text-light);
-    background-size: cover;
-    background-blend-mode: overlay;
+  background-color: var(--color-main);
+  color: var(--color-text-light);
+  background-size: cover;
+  background-blend-mode: overlay;
 
-    .information-content {
-        max-width: 1200px;
-        display: grid;
-        grid-template-columns: 1.2fr 1fr 1.2fr;
-        @extend .wrapper;
-        margin: 0 auto;
+  .information-content {
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1.2fr;
+    @extend .wrapper;
+    margin: 0 auto;
+
+    @include m.tab {
+      grid-template-columns: 1fr;
+    }
+
+    &-detail {
+      display: flex;
+      flex-direction: row-reverse;
+      order: 3;
+
+      @include m.tab {
+        order: 1;
+        max-width: 100%;
+        justify-content: space-between;
+      }
+    }
+
+    & .vertical-title {
+      font-size: 3rem;
+      padding-left: 2rem;
+      letter-spacing: 0.5em;
+
+      @include m.fade(left, 60px, 1.6s, 0.2s);
+
+      @include m.tab {
+        padding-left: 0;
+        width: 20%;
+        font-size: 2rem;
+      }
+      @include m.sp {
+        width: 10%;
+      }
+
+      & span {
+        font-size: 2rem;
+        letter-spacing: 0.5rem;
+        display: inline-block;
+        text-orientation: mixed;
+        transform: translateX(-3rem);
 
         @media (max-width: 1200px) {
             grid-template-columns: repeat(2 ,1fr)
@@ -24,137 +63,78 @@
         }
 
         @include m.tab {
-            grid-template-columns: 1fr;
+          transform: translateX(-2rem);
         }
-            
-        &-detail{
-            display: flex;
-            flex-direction: row-reverse;
-            order: 3;
-
-            @media (max-width: 1200px) {
-                order: 2;
-                
-            }
-
-            @include m.tab {
-                order: 1;
-                max-width: 100%;
-                justify-content: space-between;
-            }
+        @include m.sp {
+          transform: translateX(0);
+          font-size: 1rem;
         }
-
-        & .vertical-title {
-            font-size: 3rem;
-            padding-left: 2rem;
-            letter-spacing: 0.5em;
-
-            // @include m.fadeUp;
-
-            @media (max-width: 1200px) {
-                padding-left: 3rem;
-            }
-
-            @include m.tab {
-                padding-left: 0;
-                width: 20%;
-                font-size: 2rem;
-            }
-            @include m.sp {
-                width: 10%;
-            }
-
-            & span {
-                font-size: 2rem;
-                letter-spacing: 0.5rem;
-                display: inline-block;
-                text-orientation: mixed;
-                transform: translateX(-3rem); 
-                
-                // @include m.fadeUp;
-
-                @include m.tab {
-                    transform: translateX(-2rem);
-                }
-                @include m.sp {
-                    transform: translateX(0);
-                    font-size: 1rem;
-                }
-            }
-        }
-        & .vertical-text{
-            margin: 0 auto;
-            padding-top: 3rem;
-            font-size: 1rem;
-            line-height: 2;
-            letter-spacing: 0.5em;
-            writing-mode: vertical-rl;
-                
-            @include m.tab {
-                width: 70%;
-                line-height: clamp(3em, 0.595vw - 1.571em, 2em);
-                margin: 0 auto;
-            }
-
-            @media (max-width: 550px) {
-                line-height: 2;
-            }
-        }
-
-
-        &-map{
-            padding-top: 3rem;
-            order: 2;
-            width: 85%;
-            margin: auto;
-            @media (max-width: 1200px) {
-                order: 1;
-            }
-
-            @include m.tab {
-                order: 2;
-                width: 80%;
-                margin: 0 auto;
-            }
-            @include m.sp {
-                width: 90%;
-            }
-        }
-
-
-
-        .english-list {
-            order: 1;
-            width: 100%;
-            padding-top: 3rem;
-            margin: auto;
-            @media (max-width: 1200px) {
-                order: 3;
-            }
-            @include m.tab {
-                
-                width: 100%;
-                margin: 0 auto;
-            }
-
-            &-item {
-                padding: 10px 0;
-                line-height: 1.8;
-                letter-spacing: 0.1em;
-
-                h3{
-                    font-size: 1.2rem;
-                    font-weight: 700;
-                }
-
-                p {
-                    font-size: 1rem;
-                    @include m.sp {
-                        font-size: 1.0rem;
-                    }
-                    
-                }
-            }
-        }
+      }
     }
+    & .vertical-text {
+      margin: 0 auto;
+      padding-top: 3rem;
+      font-size: 1rem;
+      line-height: 2;
+      letter-spacing: 0.5em;
+      writing-mode: vertical-rl;
+
+      @include m.tab {
+        width: 70%;
+        line-height: clamp(3em, 0.595vw - 1.571em, 2em);
+        margin: 0 auto;
+      }
+
+      @media (max-width: 550px) {
+        line-height: 2;
+      }
+    }
+
+    &-map {
+      padding-top: 3rem;
+      order: 2;
+      width: 85%;
+      margin: auto;
+
+      @include m.tab {
+        order: 2;
+        width: 80%;
+        margin: 0 auto;
+      }
+      @include m.sp {
+        width: 90%;
+      }
+    }
+
+    .english-list {
+      order: 1;
+      width: 100%;
+      padding-top: 3rem;
+      margin: auto;
+
+      @include m.tab {
+        order: 3;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      &-item {
+        padding: 10px 0;
+        line-height: 1.8;
+        letter-spacing: 0.1em;
+
+        h3 {
+          font-size: 1.2rem;
+          font-weight: 700;
+        }
+
+        p {
+          font-size: 1rem;
+          @include m.sp {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
 }

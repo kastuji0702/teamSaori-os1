@@ -360,7 +360,7 @@
   flex-direction: column;
   align-items: center;
   padding: 20px 10px;
-  background-color: var(--color-text-light);
+  // background-color: var(--color-text-light);
 
   /* 画像2のようなグレー */
   border: 1px solid #ffffff80;
@@ -369,6 +369,7 @@
 
   /* 背景と重なった際に白黒を反転させるプロパティ */
   mix-blend-mode: difference;
+  background-color: rgba(255, 255, 255, 0.5);
 
   /* フォント設定 */
   writing-mode: vertical-rl;
@@ -383,10 +384,4 @@
   font-size: 1rem;
   padding: 1rem 0;
   }
-}
-
-/* ホバー時は少しだけ広がる動きを入れてリッチに */
-.fixed-btn:hover {
-  opacity: 0.6;
-  padding-right: 25px;
 }
