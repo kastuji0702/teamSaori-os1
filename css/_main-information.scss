@@ -118,6 +118,10 @@
         margin: 0 auto;
       }
 
+      @include m.sp {
+        width: 100%;
+      }
+
       &-item {
         padding: 10px 0;
         line-height: 1.8;
@@ -126,12 +130,16 @@
         h3 {
           font-size: 1.2rem;
           font-weight: 700;
+
+          @include m.sp {
+            font-size: 1rem;
+          }
         }
 
         p {
           font-size: 1rem;
           @include m.sp {
-            font-size: 1rem;
+            font-size: 0.9rem;
           }
         }
       }
