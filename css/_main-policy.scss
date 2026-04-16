@@ -65,7 +65,7 @@
     @include m.fade(up, 50px, 2.2s, 0.2s);
 
     @include m.sp {
-      margin: 0;
+      margin: 0 0;
       letter-spacing: 0.1em;
     }
 

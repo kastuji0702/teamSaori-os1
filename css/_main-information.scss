@@ -39,7 +39,7 @@
       padding-left: 2rem;
       letter-spacing: 0.5em;
 
-      @include m.fade(left, 60px, 2.0s, 0.4s);
+      @include m.fade(left, 60px, 2s, 0.4s);
 
       @include m.tab {
         padding-left: 0;
@@ -58,8 +58,7 @@
         transform: translateX(-3rem);
 
         @media (max-width: 1200px) {
-            grid-template-columns: repeat(2 ,1fr)
-            
+          grid-template-columns: repeat(2, 1fr);
         }
 
         @include m.tab {
@@ -83,6 +82,11 @@
         width: 70%;
         line-height: clamp(3em, 0.595vw - 1.571em, 2em);
         margin: 0 auto;
+      }
+      @media (max-width: 650px) {
+        width: 85%;
+        margin: 0; 
+        margin-left: auto; 
       }
 
       @media (max-width: 550px) {
