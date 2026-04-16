@@ -1,4 +1,3 @@
-
 @use "mixin" as m;
 @use "base" as *;
 
@@ -7,196 +6,221 @@
 // ============================================================
 
 .occasion {
-    background-color: #111111;
-    color: var(--color-text-light);
+  background-color: #111111;
+  color: var(--color-text-light);
+  width: 100%;
+  padding: 0 0 50px;
+
+  &-header {
+    background-image: url(../img/Occasions-main.png);
+    background-size: cover;
     width: 100%;
-    padding:0 0 50px;
+    height: 100%;
+    padding: 80px 60px 0;
+    text-shadow: 4px 4px 6px #000000;
 
-    &-header {
-        background-image: url(../img/Occasions-main.png);
-        background-size: cover;
-        width: 100%;
-        height: 100%;
-        padding:80px 60px 0;
-        text-shadow:4px 4px 6px #000000;
+    & .sec-title {
+      transform: translateY(-40px);
+      writing-mode: vertical-rl;
+      font-size: 8rem;
 
-        & .sec-title {
-            transform: translateY(-40px);
-            writing-mode: vertical-rl;
-            font-size: 8rem;
-            
-            line-height: 0.9;
-            margin-left: auto;
-            text-align: left;
-            height: auto;
+      line-height: 0.9;
+      margin-left: auto;
+      text-align: left;
+      height: auto;
 
-            @include m.tab{
-                font-size: 3rem;
-            }
-            @include m.sp{
-                font-size: 2.2rem;
-            }
+      @include m.tab {
+        font-size: 3rem;
+      }
+      @include m.sp {
+        font-size: 2.2rem;
+      }
 
-            &-small {
-                font-size: 4.875rem;
-                @include m.tab{
-                    font-size: 2.5rem;
-                }
-                @include m.sp{
-                    font-size: 2rem;
-                }
-            }
-
-            &-jp {
-                display: inline-block;
-                margin-top: 7rem;
-                font-size: 6rem;
-                line-height: 0.9;
-                @include m.tab{
-                    margin-top: 5rem;
-                    font-size: 2.5rem;
-                }
-                @include m.sp{
-                    margin-top: 3rem;
-                    font-size: 2rem;
-                }
-            }
-        }
-
-        & .sec-subtitle {
-            font-size: 2rem;
-            margin-top: -15px;
-            text-align: right;
-            @include m.tab{
-                font-size: 1rem;
-                
-            }
-        }
-    }
-
-    &-list{
-        padding: 80px 0 50px;
-    }
-
-    /* 共通設定 */
-    &-item,
-    &-item-reverse {
-        display: grid;
-        align-items: center;
-        gap: 30px;
-        margin-bottom: 50px;
-        
-        .item1 {
-            margin-top: -40px;
-            
-            & .vertical-title {
-                writing-mode: vertical-rl;
-                font-size:clamp(4rem, 12vw, 9rem);
-                @include m.tab{
-                    font-size: 4rem;
-                    padding-left: 1rem;
-                }
-                @include m.sp{
-                    font-size: 3rem;
-                }
-            }
-            & .shift-line-right { display: inline-block; transform: translateX(3rem); 
-                @include m.tab{
-                    transform: translateX(1.5rem);
-                }
-            }
-            & .shift-line-left { display: inline-block; transform: translateX(-3rem); 
-                @include m.tab{
-                    transform: translateX(-1.5rem);
-                }
-            }
-        }
-
-        .item2 {
-            width: 100%;
-            height: auto;
-            aspect-ratio: 16 / 9;
-            object-fit: cover;
-        }
-
-        .item3 {
-            width: 100%;
-            @include m.tab{
-                line-height: 2;
-                letter-spacing: 0.2rem;
-                font-size: 1.0rem;
-            }
-        }
-    }
-
-    /* occasion-item : 1, 2, 3 の順番 (PC) */
-    &-item {
-        grid-template-columns: 15% 1fr 45%; // ３列の比率
-        padding-left: 60px;
-        
-        
-        .item1 { order: 1;
-        padding-bottom: 5rem;
-        margin-left: -30px;    }
-        .item2 { order: 3; 
-        }
-        .item3 { order: 2;
-            line-height: 2; }
-
-        // スマホ・タブレット表示（縦並び）
+      &-small {
+        font-size: 4.875rem;
         @include m.tab {
-            grid-template-columns: 1fr 4fr;
-            gap: 20px;
-            padding-left: 0;
-            
-            .item1 { order: 1; 
-                padding-right: 5%;
-            margin-left: 0;}
-            .item2 { order: 2; }
-            .item3 { 
-                order: 3; 
-                grid-column: 1 / -1; 
-                padding-left: 1rem;
-                padding-right: 1.5rem;
-            }
+          font-size: 2.5rem;
         }
-    }
-
-    /* occasion-item-reverse : 3, 2, 1 の順番 (PC) */
-    &-item-reverse {
-        grid-template-columns: 45% 1fr 15%; // ３列の比率
-        padding-right: 60px;
-        
-        .item1 { 
-            order: 3; 
-            justify-self: end; /* グリッド内で右端に寄せる */
-            transform: translateX(5px); 
-            padding-bottom: 5rem;
-            margin-right: -30px;
-        } // titleを一番右へ
-        .item2 { order: 1; } // imgは真ん中
-        .item3 { order: 2;
-        line-height: 2; } // descを画面横幅いっぱいに
-
-        // スマホ・タブレット表示（縦並び）
-        @include m.tab {
-            grid-template-columns: 4fr 1fr;
-            gap: 40px;
-            padding-right: 5%;
-            
-            .item1 { order: 2; 
-                margin-right: 0;
-            }
-            .item2 { order: 1; }
-            .item3 { 
-                order: 3; 
-                grid-column: 1 / -1; 
-                padding-left: 1rem;
-            }
-        }
-
         @include m.sp {
-         gap: 10px;   
+          font-size: 2rem;
         }
+      }
+
+      &-jp {
+        display: inline-block;
+        margin-top: 7rem;
+        font-size: 6rem;
+        line-height: 0.9;
+        @include m.tab {
+          margin-top: 5rem;
+          font-size: 2.5rem;
+        }
+        @include m.sp {
+          margin-top: 3rem;
+          font-size: 2rem;
+        }
+      }
     }
+
+    & .sec-subtitle {
+      font-size: 2rem;
+      margin-top: -15px;
+      text-align: right;
+
+      @include m.fade(up, 50px, 2.5s, 0.4s);
+      @include m.tab {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  &-list {
+    padding: 80px 0 50px;
+  }
+
+  /* 共通設定 */
+  &-item,
+  &-item-reverse {
+    display: grid;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 50px;
+
+    .item1 {
+      margin-top: -40px;
+
+      & .vertical-title {
+        writing-mode: vertical-rl;
+        font-size: clamp(4rem, 12vw, 9rem);
+
+        @include m.tab {
+          font-size: 4rem;
+          padding-left: 1rem;
+        }
+        @include m.sp {
+          font-size: 3rem;
+        }
+      }
+      & .shift-line-right {
+        display: inline-block;
+        transform: translateX(3rem);
+        @include m.tab {
+          transform: translateX(1.5rem);
+        }
+      }
+      & .shift-line-left {
+        display: inline-block;
+        transform: translateX(-3rem);
+        @include m.tab {
+          transform: translateX(-1.5rem);
+        }
+      }
+
+      & .en-title {
+        @include m.fade(up, 50px, 2.5s, 0.4s);
+      }
+    }
+
+    .item2 {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    .item3 {
+      width: 100%;
+      @include m.tab {
+        line-height: 2;
+        letter-spacing: 0.2rem;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  /* occasion-item : 1, 2, 3 の順番 (PC) */
+  &-item {
+    grid-template-columns: 15% 1fr 45%; // ３列の比率
+    padding-left: 60px;
+
+    .item1 {
+      order: 1;
+      padding-bottom: 5rem;
+      margin-left: -30px;
+    }
+    .item2 {
+      order: 3;
+    }
+    .item3 {
+      order: 2;
+      line-height: 2;
+    }
+
+    // スマホ・タブレット表示（縦並び）
+    @include m.tab {
+      grid-template-columns: 1fr 4fr;
+      gap: 20px;
+      padding-left: 0;
+
+      .item1 {
+        order: 1;
+        padding-right: 5%;
+        margin-left: 0;
+      }
+      .item2 {
+        order: 2;
+      }
+      .item3 {
+        order: 3;
+        grid-column: 1 / -1;
+        padding-left: 1rem;
+        padding-right: 1.5rem;
+      }
+    }
+  }
+
+  /* occasion-item-reverse : 3, 2, 1 の順番 (PC) */
+  &-item-reverse {
+    grid-template-columns: 45% 1fr 15%; // ３列の比率
+    padding-right: 60px;
+
+    .item1 {
+      order: 3;
+      justify-self: end; /* グリッド内で右端に寄せる */
+      transform: translateX(5px);
+      padding-bottom: 5rem;
+      margin-right: -30px;
+    } // titleを一番右へ
+    .item2 {
+      order: 1;
+    } // imgは真ん中
+    .item3 {
+      order: 2;
+      line-height: 2;
+    } // descを画面横幅いっぱいに
+
+    // スマホ・タブレット表示（縦並び）
+    @include m.tab {
+      grid-template-columns: 4fr 1fr;
+      gap: 40px;
+      padding-right: 5%;
+
+      .item1 {
+        order: 2;
+        margin-right: 0;
+      }
+      .item2 {
+        order: 1;
+      }
+      .item3 {
+        order: 3;
+        grid-column: 1 / -1;
+        padding-left: 1rem;
+      }
+    }
+
+    @include m.sp {
+      gap: 10px;
+    }
+  }
 }

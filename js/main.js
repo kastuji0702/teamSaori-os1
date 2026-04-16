@@ -103,4 +103,21 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   fadeTargets.forEach((el) => fadeObserver.observe(el));
+
+  // ===== Occasion img（しゅっと表示）=====
+  const imgTargets = document.querySelectorAll(".img-occasion");
+
+  const imgObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-show");
+        }
+      });
+    },
+    {
+      threshold: 0,
+      rootMargin: "0px 0px -10% 0px",
+    },
+  );
 });
