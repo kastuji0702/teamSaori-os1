@@ -1304,6 +1304,11 @@ img {
   grid-template-columns: 1.2fr 1fr 1.2fr;
   margin: 0 auto;
 }
+@media (max-width: 1200px) {
+  #information .information-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 @media (max-width: 768px) {
   #information .information-content {
     grid-template-columns: 1fr;
@@ -1320,6 +1325,13 @@ img {
   -webkit-box-ordinal-group: 4;
       -ms-flex-order: 3;
           order: 3;
+}
+@media (max-width: 1200px) {
+  #information .information-content-detail {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
 }
 @media (max-width: 768px) {
   #information .information-content-detail {
@@ -1346,6 +1358,11 @@ img {
   opacity: 1;
   -webkit-transform: translate(0, 0);
           transform: translate(0, 0);
+}
+@media (max-width: 1200px) {
+  #information .information-content .vertical-title {
+    padding-left: 3rem;
+  }
 }
 @media (max-width: 768px) {
   #information .information-content .vertical-title {
@@ -1410,6 +1427,13 @@ img {
   width: 85%;
   margin: auto;
 }
+@media (max-width: 1200px) {
+  #information .information-content-map {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+}
 @media (max-width: 768px) {
   #information .information-content-map {
     -webkit-box-ordinal-group: 3;
@@ -1432,11 +1456,15 @@ img {
   padding-top: 3rem;
   margin: auto;
 }
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   #information .information-content .english-list {
     -webkit-box-ordinal-group: 4;
         -ms-flex-order: 3;
             order: 3;
+  }
+}
+@media (max-width: 768px) {
+  #information .information-content .english-list {
     width: 100%;
     margin: 0 auto;
   }
@@ -1480,6 +1508,25 @@ img {
 .policy__title {
   text-align: center;
   margin-bottom: 3rem;
+}
+.policy__title .sec-subtitle {
+  opacity: 0;
+  -webkit-transform: translateY(100px) scale(0.95);
+          transform: translateY(100px) scale(0.95);
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
+  will-change: transform, opacity;
+}
+.policy__title .sec-subtitle.is-active {
+  opacity: 1;
+  -webkit-transform: translateY(0) scale(1);
+          transform: translateY(0) scale(1);
+  -webkit-filter: blur(0);
+          filter: blur(0);
+  -webkit-transition: opacity 1.2s ease 0s, -webkit-transform 2.6s cubic-bezier(0.22, 1, 0.36, 1) 0s, -webkit-filter 1.2s ease 0s;
+  transition: opacity 1.2s ease 0s, -webkit-transform 2.6s cubic-bezier(0.22, 1, 0.36, 1) 0s, -webkit-filter 1.2s ease 0s;
+  transition: transform 2.6s cubic-bezier(0.22, 1, 0.36, 1) 0s, opacity 1.2s ease 0s, filter 1.2s ease 0s;
+  transition: transform 2.6s cubic-bezier(0.22, 1, 0.36, 1) 0s, opacity 1.2s ease 0s, filter 1.2s ease 0s, -webkit-transform 2.6s cubic-bezier(0.22, 1, 0.36, 1) 0s, -webkit-filter 1.2s ease 0s;
 }
 @media (max-width: 768px) {
   .policy__title {
@@ -1596,12 +1643,6 @@ img {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
-.faq .faq-container {
-  width: 100%;
-  max-width: 800px;
-}
-.faq {
   /* ヘッダー部分 */
 }
 .faq .sec-header {
@@ -1637,6 +1678,25 @@ img {
   opacity: 1;
   -webkit-transform: translate(0, 0);
           transform: translate(0, 0);
+}
+.faq .sec-header .js-fadeUp {
+  opacity: 0;
+  -webkit-transform: translateY(100px) scale(0.95);
+          transform: translateY(100px) scale(0.95);
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
+  will-change: transform, opacity;
+}
+.faq .sec-header .js-fadeUp.is-active {
+  opacity: 1;
+  -webkit-transform: translateY(0) scale(1);
+          transform: translateY(0) scale(1);
+  -webkit-filter: blur(0);
+          filter: blur(0);
+  -webkit-transition: opacity 1.2s ease 0s, -webkit-transform 2.6s cubic-bezier(0.22, 1, 0.36, 1) 0s, -webkit-filter 1.2s ease 0s;
+  transition: opacity 1.2s ease 0s, -webkit-transform 2.6s cubic-bezier(0.22, 1, 0.36, 1) 0s, -webkit-filter 1.2s ease 0s;
+  transition: transform 2.6s cubic-bezier(0.22, 1, 0.36, 1) 0s, opacity 1.2s ease 0s, filter 1.2s ease 0s;
+  transition: transform 2.6s cubic-bezier(0.22, 1, 0.36, 1) 0s, opacity 1.2s ease 0s, filter 1.2s ease 0s, -webkit-transform 2.6s cubic-bezier(0.22, 1, 0.36, 1) 0s, -webkit-filter 1.2s ease 0s;
 }
 .faq {
   /* FAQ リスト */

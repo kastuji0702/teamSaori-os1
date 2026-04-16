@@ -57,6 +57,11 @@
         text-orientation: mixed;
         transform: translateX(-3rem);
 
+        @media (max-width: 1200px) {
+            grid-template-columns: repeat(2 ,1fr)
+            
+        }
+
         @include m.tab {
           transform: translateX(-2rem);
         }
