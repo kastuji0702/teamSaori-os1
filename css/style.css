@@ -1027,6 +1027,11 @@ img {
             align-items: center;
   }
 }
+@media (max-width: 390px) {
+  #menu .menu-list {
+    gap: 0px;
+  }
+}
 #menu .menu-list .menu-item {
   width: 31%;
   background-color: transparent;
@@ -1042,6 +1047,7 @@ img {
 @media (max-width: 390px) {
   #menu .menu-list .menu-item {
     width: 100%;
+    margin-bottom: 0px;
   }
 }
 #menu .menu-list .menu-item img {
@@ -1698,6 +1704,7 @@ img {
 @media (max-width: 390px) {
   .policy__title-en {
     font-size: 1rem;
+    margin-bottom: 1rem;
   }
 }
 .policy__content {

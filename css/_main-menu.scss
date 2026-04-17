@@ -70,6 +70,10 @@
       align-items: center;
     }
 
+    @include m.sp {
+      gap: 0px;
+    }
+
     .menu-item {
       width: 31%;
       background-color: transparent;
@@ -83,6 +87,7 @@
 
       @include m.sp {
         width: 100%;
+        margin-bottom: 0px;
       }
 
       & img {
