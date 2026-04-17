@@ -18,7 +18,7 @@
     @extend .wrapper;
     margin: 0 auto;
 
-    @include m.tab {
+    @media (max-width: 1100px) {
       grid-template-columns: 1fr;
     }
 
@@ -27,7 +27,7 @@
       flex-direction: row-reverse;
       order: 3;
 
-      @include m.tab {
+      @media (max-width: 1100px) {
         order: 1;
         max-width: 100%;
         justify-content: space-between;
@@ -63,6 +63,7 @@
 
         @include m.tab {
           transform: translateX(-2rem);
+          font-size: 1.2rem;
         }
         @include m.sp {
           transform: translateX(0);
@@ -78,19 +79,36 @@
       letter-spacing: 0.5em;
       writing-mode: vertical-rl;
 
+      @include m.fade(up, 50px, 2s, 0.4s);
+
+      @media (max-width: 1100px) {
+        line-height: 3;
+        font-size: 1.2rem;
+      }
+
       @include m.tab {
         width: 70%;
         line-height: clamp(3em, 0.595vw - 1.571em, 2em);
         margin: 0 auto;
+        font-size: 1rem;
       }
       @media (max-width: 650px) {
         width: 85%;
-        margin: 0; 
-        margin-left: auto; 
+        margin: 0;
+        margin-left: auto;
       }
 
       @media (max-width: 550px) {
         line-height: 2;
+      }
+
+      @media (max-width: 435px) {
+        padding-right: 3%;
+      }
+
+      @include m.sp {
+        padding-right: 5%;
+        line-height: 1.8;
       }
     }
 
@@ -100,7 +118,9 @@
       width: 85%;
       margin: auto;
 
-      @include m.tab {
+      @include m.fade(up, 50px, 2s, 0.4s);
+
+      @media (max-width: 1100px) {
         order: 2;
         width: 80%;
         margin: 0 auto;
@@ -116,10 +136,14 @@
       padding-top: 3rem;
       margin: auto;
 
-      @include m.tab {
+      @include m.fade(up, 50px, 2s, 0.4s);
+
+      @media (max-width: 1100px) {
         order: 3;
         width: 100%;
         margin: 0 auto;
+        max-width: 500px; // ←これが重要（幅を制限）
+        text-align: left;
       }
 
       @include m.sp {
