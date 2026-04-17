@@ -2021,7 +2021,7 @@ img {
   -webkit-transform: translate(0, 0);
           transform: translate(0, 0);
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   #access .access-content {
     grid-template-columns: 1fr;
     gap: 50px;
@@ -2047,7 +2047,7 @@ img {
   width: 100%;
   border-bottom: 1px solid #000000;
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   #access .access-content .access-table-wrap-1 .access-table .access-row,
   #access .access-content .access-table-wrap-2 .access-table .access-row {
     width: 100%;
@@ -2087,7 +2087,7 @@ img {
   font-size: 0.95rem;
   letter-spacing: 0.05em;
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   #access .access-content .access-table-wrap-1 .access-table dt,
   #access .access-content .access-table-wrap-1 .access-table dd,
   #access .access-content .access-table-wrap-2 .access-table dt,
@@ -2107,10 +2107,10 @@ img {
   /* フレックスで潰れるのを防ぐ */
 }
 #access .access-content .access-table-wrap-1 {
-  width: 80%;
+  width: 85%;
   margin-left: auto;
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   #access .access-content .access-table-wrap-1 {
     margin-left: 0;
     width: 85%;
@@ -2122,19 +2122,11 @@ img {
     width: 100%;
   }
 }
-#access .access-content .access-table-wrap-1 dd {
-  width: calc(100% - 100px);
-}
-@media (min-width: 1000px) {
-  #access .access-content .access-table-wrap-1 dd {
-    width: calc(100% - 200px);
-  }
-}
 #access .access-content .access-table-wrap-1 dt {
   width: 100px;
 }
 #access .access-content .access-table-wrap-2 {
-  width: 80%;
+  width: 85%;
   margin-right: auto;
 }
 @media (min-width: 1000px) {
@@ -2142,7 +2134,7 @@ img {
     margin-right: 100px;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   #access .access-content .access-table-wrap-2 {
     width: 85%;
     margin: 0 auto;
@@ -2153,18 +2145,10 @@ img {
     width: 100%;
   }
 }
-#access .access-content .access-table-wrap-2 dd {
-  width: calc(100% - 130px);
-}
-@media (min-width: 1000px) {
-  #access .access-content .access-table-wrap-2 dd {
-    width: calc(100% - 200px);
-  }
-}
 #access .access-content .access-table-wrap-2 dt {
   width: 130px;
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   #access .access-table-wrap-1 {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
@@ -2191,7 +2175,7 @@ img {
   margin: 50px auto;
   width: 100%;
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   #access .access-map-wrap-1,
   #access .access-map-wrap-2 {
     margin: 0 auto;
@@ -2222,7 +2206,7 @@ img {
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   #access .access-map-wrap-1 .map-embed,
   #access .access-map-wrap-2 .map-embed {
     width: 100%;
