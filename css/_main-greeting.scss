@@ -35,7 +35,7 @@
 
       .greeting-text {
         .vertical-title {
-          @include m.fade(up, 50px, 2.0s, 0.4s);
+          @include m.fade(left, 60px, 2.0s, 0.4s);
         }
       }
 
