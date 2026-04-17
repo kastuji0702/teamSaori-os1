@@ -813,6 +813,11 @@ img {
           writing-mode: vertical-rl;
   justify-self: end;
 }
+@media (max-width: 768px) {
+  #greeting .greeting-content .greeting-top .vertical-title {
+    font-size: 2rem;
+  }
+}
 @media (max-width: 390px) {
   #greeting .greeting-content .greeting-top .vertical-title {
     font-size: 1.5rem;
@@ -825,6 +830,13 @@ img {
   text-orientation: mixed;
   -webkit-transform: translateX(-3rem);
           transform: translateX(-3rem);
+}
+@media (max-width: 768px) {
+  #greeting .greeting-content .greeting-top .vertical-title span {
+    font-size: 1.2rem;
+    -webkit-transform: translateX(-2rem);
+            transform: translateX(-2rem);
+  }
 }
 @media (max-width: 390px) {
   #greeting .greeting-content .greeting-top .vertical-title span {
@@ -921,6 +933,16 @@ img {
   background-position: center;
   background-attachment: fixed;
 }
+@media (max-width: 768px) {
+  #menu {
+    padding: 3rem 1.5rem;
+  }
+}
+@media (max-width: 390px) {
+  #menu {
+    padding: 2rem 1.5rem;
+  }
+}
 #menu .sec-header {
   margin: 0 auto;
 }
@@ -937,6 +959,16 @@ img {
   -webkit-transform: translate(0, 0);
           transform: translate(0, 0);
 }
+@media (max-width: 768px) {
+  #menu .sec-header .sec-title {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 390px) {
+  #menu .sec-header .sec-title {
+    font-size: 1.5rem;
+  }
+}
 #menu .sec-header .sec-subtitle {
   font-size: 2rem;
   opacity: 0;
@@ -949,6 +981,16 @@ img {
   opacity: 1;
   -webkit-transform: translate(0, 0);
           transform: translate(0, 0);
+}
+@media (max-width: 768px) {
+  #menu .sec-header .sec-subtitle {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 390px) {
+  #menu .sec-header .sec-subtitle {
+    font-size: 1rem;
+  }
 }
 #menu .sec-header .sec-title.is-active,
 #menu .sec-header .sec-subtitle.is-active {
@@ -1411,8 +1453,8 @@ img {
 }
 @media (max-width: 768px) {
   #information .information-content .vertical-title span {
-    -webkit-transform: translateX(-2rem);
-            transform: translateX(-2rem);
+    -webkit-transform: translateX(-1.5rem);
+            transform: translateX(-1.5rem);
     font-size: 1.2rem;
   }
 }

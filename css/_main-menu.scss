@@ -14,17 +14,41 @@
   @extend .wrapper; // パララックス効果
   // paddingは.wrapperで担保するため削除
 
+  @include m.tab {
+    padding: 3rem 1.5rem;
+  }
+
+  @include m.sp {
+    padding: 2rem 1.5rem;
+  }
+
   .sec-header {
     margin: 0 auto;
 
     .sec-title {
       color: var(--color-main);
-       @include m.fade(up, 50px, 2.0s, 0.4s);
+      @include m.fade(up, 50px, 2s, 0.4s);
+
+      @include m.tab {
+        font-size: 2rem;
+      }
+
+      @include m.sp {
+        font-size: 1.5rem;
+      }
     }
 
     .sec-subtitle {
       font-size: 2rem;
-       @include m.fade(up, 50px, 2.0s, 0.4s);
+      @include m.fade(up, 50px, 2s, 0.4s);
+
+      @include m.tab {
+        font-size: 1.2rem;
+      }
+
+      @include m.sp {
+        font-size: 1rem;
+      }
     }
 
     .sec-title.is-active,
