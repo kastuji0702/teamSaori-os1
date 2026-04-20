@@ -22,15 +22,20 @@
     & .sec-title {
       writing-mode: vertical-rl;
       font-size: 8rem;
+      opacity: 1;
+      transform: translate(0, -40px);
 
-      // 右から左へ（フェードイン）
-      opacity: 0;
-      transform: translate(50px, -40px); // translateY(-40px) を維持したまま、右に50pxずらす
-      transition: all 1.5s cubic-bezier(0.22, 1, 0.36, 1) 0.2s; // 0.2秒遅れて1.5秒かけて表示
+      .char {
+        display: inline-block;
+        opacity: 0;
+        transform: translateX(50px);
+        transition: all 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+      }
 
-      &.is-active {
+      &.is-active .char {
         opacity: 1;
-        transform: translate(0, -40px); // 元の translateY(-40px) だけに戻る
+        transform: translate(0, 0);
+        transition-delay: calc(0.2s + var(--delay-offset, 0s));
       }
 
       line-height: 0.9;
@@ -113,10 +118,16 @@
         writing-mode: vertical-rl;
         font-size: clamp(4rem, 12vw, 9rem);
 
-        // --- フェードイン共通設定 ---
-        opacity: 0;
-        transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
-        &.is-show, &.is-active {
+
+        opacity: 1;
+
+        .char {
+          display: inline-block;
+          opacity: 0;
+          transition: all 2s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        &.is-show .char {
           opacity: 1;
           transform: translate(0, 0);
         }
@@ -158,16 +169,30 @@
       }
     }
 
-    .item2 {
+    .image-mask-wrap {
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+      margin: 0;
+    }
+
+    .masked-image {
+      display: block;
       width: 100%;
       height: auto;
       aspect-ratio: 16 / 9;
       object-fit: cover;
+      clip-path: inset(0 100% 0 0);
+      transition: clip-path 1.2s ease-out; /*アニメーションスピード*/
+    }
 
-      // --- フェードイン共通設定 ---
+    .item2 {
+      width: 100%;
+      // 以前のふわっとスライドするアニメーションを復元（連動用）
       opacity: 0;
       transition: all 2s cubic-bezier(0.22, 1, 0.36, 1);
-      &.is-show, &.is-active {
+
+      &.is-active {
         opacity: 1;
         transform: translate(0, 0);
       }
@@ -175,11 +200,10 @@
 
     .item3 {
       width: 100%;
-
-      // --- フェードイン共通設定 ---
       opacity: 0;
       transition: all 2s cubic-bezier(0.22, 1, 0.36, 1);
-      &.is-show, &.is-active {
+
+      &.is-active {
         opacity: 1;
         transform: translate(0, 0);
       }
@@ -196,18 +220,23 @@
     }
   }
 
-  /* occasion-item : 1, 2, 3 の順番 (PC) */
   &-item {
-    grid-template-columns: 15% 1fr 45%; // ３列の比率
+    grid-template-columns: 15% 1fr 45%;
     padding-left: 60px;
 
     .item1 {
       order: 1;
       padding-bottom: 5rem;
       margin-left: -30px;
+
       & .vertical-title {
-        transform: translateX(-50px); // 左から右へ
-        transition-delay: 0.5s;
+        .char {
+          transform: translateX(-50px);
+        }
+
+        &.is-show .char {
+          transition-delay: calc(0.5s + var(--delay-offset, 0s));
+        }
       }
     }
 
@@ -224,7 +253,6 @@
       transition-delay: 1.0s;
     }
 
-    // スマホ・タブレット表示（縦並び）
     @include m.tab {
       grid-template-columns: 1fr 4fr;
       gap: 20px;
@@ -249,9 +277,8 @@
     }
   }
 
-  /* occasion-item-reverse : 3, 2, 1 の順番 (PC) */
   &-item-reverse {
-    grid-template-columns: 45% 1fr 15%; // ３列の比率
+    grid-template-columns: 45% 1fr 15%;
     padding-right: 60px;
 
     .item1 {
@@ -263,37 +290,37 @@
       margin-right: -30px;
 
       & .vertical-title {
-        transform: translateX(50px); // 右から左へ
-        transition-delay: 0.5s;
+        .char {
+          transform: translateX(50px);
+        }
+
+        &.is-show .char {
+          transition-delay: calc(0.5s + var(--delay-offset, 0s));
+        }
       }
     }
 
-    // titleを一番右へ
     .item2 {
       order: 1;
       transform: translateX(50px);
       transition-delay: 1.5s;
 
+      .masked-image {
+        clip-path: inset(0 0 0 100%);
+      }
+
       @include m.tab {
         transition-delay: 1.0s;
       }
     }
 
-    // imgは真ん中
     .item3 {
       order: 2;
       line-height: 2;
       transform: translateX(50px);
-      transition-delay: 1.5s;
-
-      @include m.tab {
-        transition-delay: 1.0s;
-      }
+      transition-delay: 1.0s;
     }
 
-    // descを画面横幅いっぱいに
-
-    // スマホ・タブレット表示（縦並び）
     @include m.tab {
       grid-template-columns: 4fr 1fr;
       gap: 40px;
