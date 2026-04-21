@@ -184,68 +184,8 @@
     }
   }
 
-  // SP用ハンバーガーアイコン
-  .toggle-btn {
-    display: none;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 30px;
-    height: 30px;
-    z-index: 1002;
-    cursor: pointer;
-
-    @include m.tab {
-      display: block; // タブレット以下で表示
-      mix-blend-mode: difference; // 解除されたため、メイン背景まで透過して反転が効く
-    }
-
-    span {
-      position: absolute;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background-color: #a9a9a9; // ヒーロー背景に対応
-      transition: all 0.3s;
-
-      &:nth-child(1) {
-        top: 4px;
-      }
-
-      &:nth-child(2) {
-        top: 14px;
-      }
-
-      &:nth-child(3) {
-        top: 24px;
-      }
-    }
-  }
-
   // SP用メニュー展開時
   &.open {
-    .toggle-btn {
-      mix-blend-mode: normal; // メニュー展開時は反転を解除
-    }
-
-    .toggle-btn span {
-      background-color: #fff; // 背景が白のオーバーレイ用
-
-      &:nth-child(1) {
-        top: 14px;
-        transform: rotate(45deg);
-      }
-
-      &:nth-child(2) {
-        opacity: 0;
-      }
-
-      &:nth-child(3) {
-        top: 14px;
-        transform: rotate(-45deg);
-      }
-    }
-
     .logo {
       position: fixed;
       top: 15px;
@@ -381,12 +321,75 @@
   span.arrow {
     font-size: 0.8rem;
     display: inline-block;
-    transform: translateX(-0.1875rem); 
+    transform: translateX(-0.1875rem);
     margin-top: 1.4em;
   }
 
   @include m.sp {
     font-size: 1rem;
     padding: 1rem 0;
+  }
+}
+
+// ============================================================
+// ハンバーガー (#headerの外側に置くことでmix-blend-modeが機能する)
+// ============================================================
+.h-menu {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  z-index: 1002;
+  cursor: pointer;
+
+  @include m.tab {
+    display: block;
+    mix-blend-mode: difference; // #headerの外にあるので背景まで反転が効く
+  }
+
+  span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    border-radius: 2px;
+    background-color: #fff;
+    transition: all 0.3s;
+
+    &:nth-child(1) {
+      top: 4px;
+    }
+
+    &:nth-child(2) {
+      top: 14px;
+    }
+
+    &:nth-child(3) {
+      top: 24px;
+    }
+  }
+
+  &.open {
+    mix-blend-mode: normal;
+
+    span {
+      background-color: #fff;
+
+      &:nth-child(1) {
+        top: 14px;
+        transform: rotate(45deg);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        top: 14px;
+        transform: rotate(-45deg);
+      }
+    }
   }
 }

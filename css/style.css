@@ -360,59 +360,6 @@ img {
     width: 22px;
   }
 }
-#header .toggle-btn {
-  display: none;
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  width: 30px;
-  height: 30px;
-  z-index: 1002;
-  cursor: pointer;
-}
-@media (max-width: 768px) {
-  #header .toggle-btn {
-    display: block;
-    mix-blend-mode: difference;
-  }
-}
-#header .toggle-btn span {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #a9a9a9;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-#header .toggle-btn span:nth-child(1) {
-  top: 4px;
-}
-#header .toggle-btn span:nth-child(2) {
-  top: 14px;
-}
-#header .toggle-btn span:nth-child(3) {
-  top: 24px;
-}
-#header.open .toggle-btn {
-  mix-blend-mode: normal;
-}
-#header.open .toggle-btn span {
-  background-color: #fff;
-}
-#header.open .toggle-btn span:nth-child(1) {
-  top: 14px;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
-#header.open .toggle-btn span:nth-child(2) {
-  opacity: 0;
-}
-#header.open .toggle-btn span:nth-child(3) {
-  top: 14px;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-}
 #header.open .logo {
   position: fixed;
   top: 15px;
@@ -566,6 +513,61 @@ img {
     font-size: 1rem;
     padding: 1rem 0;
   }
+}
+
+.h-menu {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  z-index: 1002;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .h-menu {
+    display: block;
+    mix-blend-mode: difference;
+  }
+}
+.h-menu span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  border-radius: 2px;
+  background-color: #fff;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.h-menu span:nth-child(1) {
+  top: 4px;
+}
+.h-menu span:nth-child(2) {
+  top: 14px;
+}
+.h-menu span:nth-child(3) {
+  top: 24px;
+}
+.h-menu.open {
+  mix-blend-mode: normal;
+}
+.h-menu.open span {
+  background-color: #fff;
+}
+.h-menu.open span:nth-child(1) {
+  top: 14px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.h-menu.open span:nth-child(2) {
+  opacity: 0;
+}
+.h-menu.open span:nth-child(3) {
+  top: 14px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 #hero {
@@ -1105,16 +1107,24 @@ img {
       -ms-writing-mode: tb-rl;
           writing-mode: vertical-rl;
   font-size: 8rem;
-  opacity: 0;
-  -webkit-transform: translate(50px, -40px);
-          transform: translate(50px, -40px);
-  -webkit-transition: all 1.5s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
-  transition: all 1.5s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
-}
-.occasion-header .sec-title.is-active {
   opacity: 1;
   -webkit-transform: translate(0, -40px);
           transform: translate(0, -40px);
+}
+.occasion-header .sec-title .char {
+  display: inline-block;
+  opacity: 0;
+  -webkit-transform: translateX(50px);
+          transform: translateX(50px);
+  -webkit-transition: all 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: all 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.occasion-header .sec-title.is-active .char {
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  -webkit-transition-delay: calc(0.2s + var(--delay-offset, 0s));
+          transition-delay: calc(0.2s + var(--delay-offset, 0s));
 }
 .occasion-header .sec-title {
   line-height: 0.9;
@@ -1210,11 +1220,15 @@ img {
       -ms-writing-mode: tb-rl;
           writing-mode: vertical-rl;
   font-size: clamp(4rem, 12vw, 9rem);
-  opacity: 0;
-  -webkit-transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
-  transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+  opacity: 1;
 }
-.occasion-item .item1 .vertical-title.is-show, .occasion-item .item1 .vertical-title.is-active, .occasion-item-reverse .item1 .vertical-title.is-show, .occasion-item-reverse .item1 .vertical-title.is-active {
+.occasion-item .item1 .vertical-title .char, .occasion-item-reverse .item1 .vertical-title .char {
+  display: inline-block;
+  opacity: 0;
+  -webkit-transition: all 2s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: all 2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.occasion-item .item1 .vertical-title.is-show .char, .occasion-item-reverse .item1 .vertical-title.is-show .char {
   opacity: 1;
   -webkit-transform: translate(0, 0);
           transform: translate(0, 0);
@@ -1269,17 +1283,30 @@ img {
     margin-left: 1rem;
   }
 }
-.occasion-item .item2, .occasion-item-reverse .item2 {
+.occasion-item .image-mask-wrap, .occasion-item-reverse .image-mask-wrap {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  margin: 0;
+}
+.occasion-item .masked-image, .occasion-item-reverse .masked-image {
+  display: block;
   width: 100%;
   height: auto;
   aspect-ratio: 16/9;
   -o-object-fit: cover;
      object-fit: cover;
+  clip-path: inset(0 100% 0 0);
+  -webkit-transition: clip-path 1.2s ease-out;
+  transition: clip-path 1.2s ease-out; /*アニメーションスピード*/
+}
+.occasion-item .item2, .occasion-item-reverse .item2 {
+  width: 100%;
   opacity: 0;
   -webkit-transition: all 2s cubic-bezier(0.22, 1, 0.36, 1);
   transition: all 2s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.occasion-item .item2.is-show, .occasion-item .item2.is-active, .occasion-item-reverse .item2.is-show, .occasion-item-reverse .item2.is-active {
+.occasion-item .item2.is-active, .occasion-item-reverse .item2.is-active {
   opacity: 1;
   -webkit-transform: translate(0, 0);
           transform: translate(0, 0);
@@ -1290,7 +1317,7 @@ img {
   -webkit-transition: all 2s cubic-bezier(0.22, 1, 0.36, 1);
   transition: all 2s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.occasion-item .item3.is-show, .occasion-item .item3.is-active, .occasion-item-reverse .item3.is-show, .occasion-item-reverse .item3.is-active {
+.occasion-item .item3.is-active, .occasion-item-reverse .item3.is-active {
   opacity: 1;
   -webkit-transform: translate(0, 0);
           transform: translate(0, 0);
@@ -1307,9 +1334,6 @@ img {
     font-size: 0.9rem;
   }
 }
-.occasion {
-  /* occasion-item : 1, 2, 3 の順番 (PC) */
-}
 .occasion-item {
   grid-template-columns: 15% 1fr 45%;
   padding-left: 60px;
@@ -1321,11 +1345,13 @@ img {
   padding-bottom: 5rem;
   margin-left: -30px;
 }
-.occasion-item .item1 .vertical-title {
+.occasion-item .item1 .vertical-title .char {
   -webkit-transform: translateX(-50px);
           transform: translateX(-50px);
-  -webkit-transition-delay: 0.5s;
-          transition-delay: 0.5s;
+}
+.occasion-item .item1 .vertical-title.is-show .char {
+  -webkit-transition-delay: calc(0.5s + var(--delay-offset, 0s));
+          transition-delay: calc(0.5s + var(--delay-offset, 0s));
 }
 .occasion-item .item2 {
   -webkit-box-ordinal-group: 4;
@@ -1373,9 +1399,6 @@ img {
     padding-right: 1.5rem;
   }
 }
-.occasion {
-  /* occasion-item-reverse : 3, 2, 1 の順番 (PC) */
-}
 .occasion-item-reverse {
   grid-template-columns: 45% 1fr 15%;
   padding-right: 60px;
@@ -1391,11 +1414,13 @@ img {
   padding-bottom: 5rem;
   margin-right: -30px;
 }
-.occasion-item-reverse .item1 .vertical-title {
+.occasion-item-reverse .item1 .vertical-title .char {
   -webkit-transform: translateX(50px);
           transform: translateX(50px);
-  -webkit-transition-delay: 0.5s;
-          transition-delay: 0.5s;
+}
+.occasion-item-reverse .item1 .vertical-title.is-show .char {
+  -webkit-transition-delay: calc(0.5s + var(--delay-offset, 0s));
+          transition-delay: calc(0.5s + var(--delay-offset, 0s));
 }
 .occasion-item-reverse .item2 {
   -webkit-box-ordinal-group: 2;
@@ -1405,6 +1430,9 @@ img {
           transform: translateX(50px);
   -webkit-transition-delay: 1.5s;
           transition-delay: 1.5s;
+}
+.occasion-item-reverse .item2 .masked-image {
+  clip-path: inset(0 0 0 100%);
 }
 @media (max-width: 768px) {
   .occasion-item-reverse .item2 {
@@ -1419,14 +1447,8 @@ img {
   line-height: 2;
   -webkit-transform: translateX(50px);
           transform: translateX(50px);
-  -webkit-transition-delay: 1.5s;
-          transition-delay: 1.5s;
-}
-@media (max-width: 768px) {
-  .occasion-item-reverse .item3 {
-    -webkit-transition-delay: 1s;
-            transition-delay: 1s;
-  }
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
 }
 @media (max-width: 768px) {
   .occasion-item-reverse {
